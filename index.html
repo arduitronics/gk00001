@@ -329,15 +329,14 @@
 <ol>
 <li>สร้างไฟล์ใหม่และใช้ชื่อ <code>Hello.ino</code> จากนั้น copy โปรกแกรมไปไว้ในไฟล์ที่สร้าง:</li>
 </ol>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span> <span class="c1">// initializes the serial port with a baud rate of 9600</span>
-<span class="p">}</span>
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;hello, world&quot;</span><span class="p">);</span> <span class="c1">// prints a string to a serial port</span>
-  <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="c1">//delay of 1 second</span>
-<span class="p">}</span>
-</code></pre></div>
-
+<pre><code class="Cpp">void setup() {
+  Serial.begin(9600); // initializes the serial port with a baud rate of 9600
+}
+void loop() {
+  Serial.println(&quot;hello, world&quot;); // prints a string to a serial port
+  delay(1000); //delay of 1 second
+}
+</code></pre>
 
 <ol>
 <li>ที่มุมด้านซ้ายบนของ Arduino IDE จะมีปุ่ม 2 ปุ่มได้แก่ <strong>Verify and Upload</strong>  ปุ่มแรก (✓) กดเพื่อคอมไพล์ หลังจากที่คอมไพล์ผ่านแล้วให้กดปุ่มอัพโหลดโปรแกรม (→)</li>
@@ -379,33 +378,29 @@
         - เปิดโปรแกรม Arduino IDE <br/>
         - Copy โปรแกรมต่อไปนี้ เลือก Verify เพื่อตรวจสอบว่าทำงานได้หรือไม่ มีข้อผิดพลาดหรือไม่ จากนั้น Upload โปรแกรมลงที่บอร์ด</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="c1">//LED Blink</span>
-<span class="c1">//The LED will turn on for one second and then turn off for one second</span>
-<span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-  <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-  <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-  <span class="p">}</span>
-</code></pre></div>
-
+<pre><code class="cpp">//LED Blink
+//The LED will turn on for one second and then turn off for one second
+int ledPin = 4;
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  }
+void loop() {
+  digitalWrite(ledPin, HIGH);
+  delay(1000);
+  digitalWrite(ledPin, LOW);
+  delay(1000);
+  }
+</code></pre>
 
 <ul>
 <li><font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font></li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="n">setup</span><span class="p">(){</span>
-<span class="p">}</span>
-</code></pre></div>
-
+<pre><code class="cpp">setup(){
+}
+</code></pre>
 
 <p>ทุกครั้งที่เริ่มต้นการทำงาน sketch ฟังก์ชั่น <code>setup()</code> จะถูกเรียกเพื่อทำงานก่อนเป็นลำดับแรก  ซึ่งจะรวบรวมส่วนที่เป็นการกำหนดค่าตัวแปร และค่าเริ่มต้นต่างๆ  การกำหนดโหมดการทำงานของ pin ที่ใช้  การเรียกใช้ Library เป็นต้น  ฟังก์ชั่น <code>setup()</code> จะทำงานเมื่อเริ่มต้นเพียงครั้งเดียวหลังจากที่จ่ายไฟเลี้ยงให้วงจร หรือ กดปุ่ม reset บนตัวบอร์ด</p>
-<p>Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit[^2].</p>
-<p>[^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-[^2]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p>Lorem ipsum<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> dolor sit amet, consectetur adipiscing elit<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
 <h2 id="commands">Commands</h2>
 <ul>
 <li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
@@ -414,11 +409,22 @@
 <li><code>mkdocs -h</code> - Print help message and exit.</li>
 </ul>
 <h2 id="project-layout">Project layout แผนภาพโครงการ</h2>
-<div class="codehilite"><pre><span></span><code><span class="err">mkdocs.yml    # The configuration file.</span>
-<span class="err">docs/</span>
-<span class="err">    index.md  # The documentation homepage.</span>
-<span class="err">    ...       # Other markdown pages, images and other files.</span>
-</code></pre></div>
+<pre><code>mkdocs.yml    # The configuration file.
+docs/
+    index.md  # The documentation homepage.
+    ...       # Other markdown pages, images and other files.
+</code></pre>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
               
             </div>
           </div>
@@ -465,5 +471,5 @@
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2020-06-03 17:34:13.823840+00:00
+Build Date UTC : 2020-06-03 17:40:12.544930+00:00
 -->
