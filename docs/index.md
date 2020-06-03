@@ -190,6 +190,8 @@ void loop() {
   delay(1000);
   }
 ```
+
+
 ``` python hl_lines="3 4"
 """ Bubble sort """
 def bubble_sort(items):
@@ -208,6 +210,12 @@ setup(){
 ทุกครั้งที่เริ่มต้นการทำงาน sketch ฟังก์ชั่น `setup()` จะถูกเรียกเพื่อทำงานก่อนเป็นลำดับแรก  ซึ่งจะรวบรวมส่วนที่เป็นการกำหนดค่าตัวแปร และค่าเริ่มต้นต่างๆ  การกำหนดโหมดการทำงานของ pin ที่ใช้  การเรียกใช้ Library เป็นต้น  ฟังก์ชั่น `setup()` จะทำงานเมื่อเริ่มต้นเพียงครั้งเดียวหลังจากที่จ่ายไฟเลี้ยงให้วงจร หรือ กดปุ่ม reset บนตัวบอร์ด
 
 
+
+
+Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit[^2].
+
+[^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+[^2]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 ## Commands
 

@@ -8,3 +8,6 @@ language: th
 markdown_extensions:
   - codehilite:
       linenums: true
+
+markdown_extensions:
+  - footnotes
