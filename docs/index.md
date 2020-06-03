@@ -190,7 +190,14 @@ void loop() {
   delay(1000);
   }
 ```
-
+``` python hl_lines="3 4"
+""" Bubble sort """
+def bubble_sort(items):
+    for i in range(len(items)):
+        for j in range(len(items) - 1 - i):
+            if items[j] > items[j + 1]:
+                items[j], items[j + 1] = items[j + 1], items[j]
+```
 
 - <font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font>
 

@@ -328,7 +328,13 @@
 <ol>
 <li>สร้างไฟล์ใหม่และใช้ชื่อ <code>Hello.ino</code> จากนั้น copy โปรกแกรมไปไว้ในไฟล์ที่สร้าง:</li>
 </ol>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span> <span class="c1">// initializes the serial port with a baud rate of 9600</span>
 <span class="p">}</span>
 <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
@@ -336,7 +342,7 @@
   <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="c1">//delay of 1 second</span>
 <span class="p">}</span>
 </code></pre></div>
-
+</td></tr></table>
 
 <ol>
 <li>ที่มุมด้านซ้ายบนของ Arduino IDE จะมีปุ่ม 2 ปุ่มได้แก่ <strong>Verify and Upload</strong>  ปุ่มแรก (✓) กดเพื่อคอมไพล์ หลังจากที่คอมไพล์ผ่านแล้วให้กดปุ่มอัพโหลดโปรแกรม (→)</li>
@@ -378,7 +384,18 @@
         - เปิดโปรแกรม Arduino IDE <br/>
         - Copy โปรแกรมต่อไปนี้ เลือก Verify เพื่อตรวจสอบว่าทำงานได้หรือไม่ มีข้อผิดพลาดหรือไม่ จากนั้น Upload โปรแกรมลงที่บอร์ด</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="c1">//LED Blink</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">//LED Blink</span>
 <span class="c1">//The LED will turn on for one second and then turn off for one second</span>
 <span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
@@ -391,15 +408,30 @@
   <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
   <span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
 
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="sd">&quot;&quot;&quot; Bubble sort &quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+<span class="hll">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
+</span><span class="hll">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
+</span>            <span class="k">if</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+                <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
 
 <ul>
 <li><font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font></li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="n">setup</span><span class="p">(){</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">setup</span><span class="p">(){</span>
 <span class="p">}</span>
 </code></pre></div>
-
+</td></tr></table>
 
 <p>ทุกครั้งที่เริ่มต้นการทำงาน sketch ฟังก์ชั่น <code>setup()</code> จะถูกเรียกเพื่อทำงานก่อนเป็นลำดับแรก  ซึ่งจะรวบรวมส่วนที่เป็นการกำหนดค่าตัวแปร และค่าเริ่มต้นต่างๆ  การกำหนดโหมดการทำงานของ pin ที่ใช้  การเรียกใช้ Library เป็นต้น  ฟังก์ชั่น <code>setup()</code> จะทำงานเมื่อเริ่มต้นเพียงครั้งเดียวหลังจากที่จ่ายไฟเลี้ยงให้วงจร หรือ กดปุ่ม reset บนตัวบอร์ด</p>
 <h2 id="commands">Commands</h2>
@@ -410,11 +442,15 @@
 <li><code>mkdocs -h</code> - Print help message and exit.</li>
 </ul>
 <h2 id="project-layout">Project layout แผนภาพโครงการ</h2>
-<div class="codehilite"><pre><span></span><code><span class="err">mkdocs.yml    # The configuration file.</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">mkdocs.yml    # The configuration file.</span>
 <span class="err">docs/</span>
 <span class="err">    index.md  # The documentation homepage.</span>
 <span class="err">    ...       # Other markdown pages, images and other files.</span>
 </code></pre></div>
+</td></tr></table>
               
             </div>
           </div>
@@ -459,5 +495,5 @@
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2020-06-03 16:01:18.503857+00:00
+Build Date UTC : 2020-06-03 16:17:37.996871+00:00
 -->

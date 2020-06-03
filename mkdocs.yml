@@ -4,5 +4,7 @@ nav:
     - About: about.md
 theme: readthedocs
 language: th
+
 markdown_extensions:
-  - codehilite
+  - codehilite:
+      linenums: true
