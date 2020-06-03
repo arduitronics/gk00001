@@ -391,6 +391,14 @@ void loop() {
   }
 </code></pre>
 
+<ul>
+<li><font size=5;font color=#314B9F >Code Analysis</font></li>
+</ul>
+<pre><code class="cpp">setup(){
+}
+</code></pre>
+
+<p>ทุกครั้งที่เริ่มต้นการทำงาน sketch ฟังก์ชั่น <code>setup()</code> จะถูกเรียกเพื่อทำงานก่อนเป็นลำดับแรก  ซึ่งจะรวบรวมส่วนที่เป็นการกำหนดค่าตัวแปร และค่าเริ่มต้นต่างๆ  การกำหนดโหมดการทำงานของ pin ที่ใช้  การเรียกใช้ Library เป็นต้น  ฟังก์ชั่น <code>setup()</code> จะทำงานเมื่อเริ่มต้นเพียงครั้งเดียวหลังจากที่จ่ายไฟเลี้ยงให้วงจร หรือ กดปุ่ม reset บนตัวบอร์ด</p>
 <h2 id="commands">Commands</h2>
 <ul>
 <li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
@@ -448,5 +456,5 @@ docs/
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2020-06-03 05:23:25.812534+00:00
+Build Date UTC : 2020-06-03 13:05:57.200563+00:00
 -->
