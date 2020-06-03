@@ -297,21 +297,14 @@
 <p>3.Click <code>Tools</code> -&gt; <code>Port</code> to select the correct Port (the Serial Port showed in Device Manager in the previous step). In this case, <code>COM6</code> is selected. <strong>For Mac OS users</strong>, it should be <code>/dev/cu.SLAB_USBtoUART</code>.</p>
 <p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/port.png" /></p>
 <p>4.Create a new Arduino file and name it <code>Hello.ino</code>, then copy the following code into it:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span> <span class="c1">// initializes the serial port with a baud rate of 9600</span>
-<span class="p">}</span>
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;hello, world&quot;</span><span class="p">);</span> <span class="c1">// prints a string to a serial port</span>
-  <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="c1">//delay of 1 second</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="Cpp">void setup() {
+  Serial.begin(9600); // initializes the serial port with a baud rate of 9600
+}
+void loop() {
+  Serial.println(&quot;hello, world&quot;); // prints a string to a serial port
+  delay(1000); //delay of 1 second
+}
+</code></pre>
 
 <p>5.In the upper left corner of the Arduino IDE, there are two buttons, <strong>Verify and Upload</strong>. First, press the Verify button(✓) to compile. After the compilation is successful, press the upload button(→).</p>
 <p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/func.png" /></p>
@@ -358,52 +351,35 @@
 </ul>
 </li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">//LED Blink</span>
-<span class="c1">//The LED will turn on for one second and then turn off for one second</span>
-<span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="Cpp">//LED Blink
+//The LED will turn on for one second and then turn off for one second
+int ledPin = 4;
+void setup() {
+    pinMode(ledPin, OUTPUT);
+}
+void loop() {
+    digitalWrite(ledPin, HIGH);
+    delay(1000);
+    digitalWrite(ledPin, LOW);
+    delay(1000);
+}
+</code></pre>
 
 <ul>
 <li><font size=5;font color=#314B9F >Code Analysis</font></li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">setup</span><span class="p">(){</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">setup(){
+}
+</code></pre>
 
 <p>The <code>setup()</code> function is called when a sketch starts. Use it to initialize variables, pin modes, start using libraries, etc. The <code>setup()</code> function will only run once, after each powerup or reset of the Arduino board.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">loop</span><span class="p">(){</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">loop(){
+}
+</code></pre>
 
 <p>After creating a <code>setup()</code> function, which initializes and sets the initial values, the <code>loop()</code> function does precisely what its name suggests, and loops consecutively, allowing your program to change and respond. Use it to actively control the Arduino board.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">int ledPin = 4;
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Converts a value to the int data type.</p>
@@ -412,9 +388,8 @@
 <p><strong>Parameters:</strong></p>
 <p><strong>x</strong>: a value. Allowed data types: any type.</p>
 <p>Assigned an <code>int</code> type 4 to variable named ledPin.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">pinMode(ledPin, OUTPUT);
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Configures the specified pin to behave either as an input or an output. See the Digital Pins page for details on the functionality of the pins.</p>
@@ -425,9 +400,8 @@
 <p><strong>pin</strong>: the Arduino pin number to set the mode of.</p>
 <p><strong>mode</strong>: <code>INPUT</code>, <code>OUTPUT</code>, or <code>INPUT_PULLUP</code>.</p>
 <p>Setting ledPin to the output mode.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">digitalWrite(ledPin, HIGH);
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Write a <code>HIGH</code> or a <code>LOW</code> value to a digital pin.</p>
@@ -440,14 +414,12 @@
 <p><strong>pin</strong>: the Arduino pin number.</p>
 <p><strong>value</strong>: <code>HIGH</code> or <code>LOW</code>.</p>
 <p>When we set the ledPin as output, HIGH means sending high level to the pin, LED turns on.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">digitalWrite(ledPin, LOW);
+</code></pre>
 
 <p>When we set the led as output, low stands for sending low level to the pin, LED turns off.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">delay(1000);
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Pauses the program for the amount of time (in milliseconds) specified as a parameter. (There are 1000 milliseconds in a second.)</p>
@@ -512,80 +484,49 @@
 </ul>
 </li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">//Button to turn ON/OFF LED</span>
-<span class="c1">//Constants won&#39;t change. They&#39;re used here to set pin numbers:</span>
-<span class="k">const</span> <span class="kt">int</span> <span class="n">buttonPin</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>     <span class="c1">// the number of the pushbutton pin</span>
-<span class="k">const</span> <span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span>  <span class="mi">4</span><span class="p">;</span>      <span class="c1">// the number of the LED pin</span>
+<pre><code class="Cpp">//Button to turn ON/OFF LED
+//Constants won't change. They're used here to set pin numbers:
+const int buttonPin = 6;     // the number of the pushbutton pin
+const int ledPin =  4;      // the number of the LED pin
 
-<span class="c1">// variables will change:</span>
-<span class="kt">int</span> <span class="n">buttonState</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>         <span class="c1">// variable for reading the pushbutton status</span>
+// variables will change:
+int buttonState = 0;         // variable for reading the pushbutton status
 
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">// initialize the LED pin as an output:</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
-  <span class="c1">// initialize the pushbutton pin as an input:</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
-<span class="p">}</span>
+void setup() {
+  // initialize the LED pin as an output:
+  pinMode(ledPin, OUTPUT);
+  // initialize the pushbutton pin as an input:
+  pinMode(buttonPin, INPUT);
+}
 
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">// read the state of the pushbutton value:</span>
-  <span class="n">buttonState</span> <span class="o">=</span> <span class="n">digitalRead</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">);</span>
+void loop() {
+  // read the state of the pushbutton value:
+  buttonState = digitalRead(buttonPin);
 
-  <span class="c1">// check if the pushbutton is pressed. If it is, the buttonState is HIGH:</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">buttonState</span> <span class="o">==</span> <span class="n">HIGH</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// turn LED on:</span>
-    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="c1">// turn LED off:</span>
-    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+  if (buttonState == HIGH) {
+    // turn LED on:
+    digitalWrite(ledPin, HIGH);
+  } else {
+    // turn LED off:
+    digitalWrite(ledPin, LOW);
+  }
+}
+</code></pre>
 
 <ul>
 <li><font size=5;font color=#314B9F >Code Analysis</font></li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">pinMode(ledPin, OUTPUT);
+</code></pre>
 
 <p>Define LED as the output unit.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">pinMode</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">pinMode(buttonPin, INPUT);
+</code></pre>
 
 <p>Define button as the input unit.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">buttonState</span> <span class="o">=</span> <span class="n">digitalRead</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">buttonState = digitalRead(buttonPin);
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Reads the value from a specified digital pin, either <code>HIGH</code> or <code>LOW</code>.</p>
@@ -594,44 +535,29 @@
 <p><strong>Parameters:</strong></p>
 <p><strong>pin</strong>: the Arduino <code>pin</code> number you want to read</p>
 <p>This function is used to read the states of digital pins, either HIGH or LOW. When the button is pressed, the state is HIGH, otherwise is LOW.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>  <span class="k">if</span> <span class="p">(</span><span class="n">buttonState</span> <span class="o">==</span> <span class="n">HIGH</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">  if (buttonState == HIGH) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+}
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>The if…​else allows greater control over the flow of code than the basic if statement, by allowing multiple tests to be grouped. An else clause (if at all exists) will be executed if the condition in the if statement results in false. The else can proceed another if test, so that multiple, mutually exclusive tests can be run at the same time.</p>
 <p>Each test will proceed to the next one until a true test is encountered. When a true test is found, its associated block of code is run, and the program then skips to the line following the entire if/else construction. If no test proves to be true, the default else block is executed, if one is present, and sets the default behaviour.</p>
 <p>Note that an else if block may be used with or without a terminating else block and vice versa. An unlimited number of such else if branches are allowed.</p>
 <p><strong>Syntax:</strong></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">condition1</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// do Thing A</span>
-<span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">condition2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// do Thing B</span>
-<span class="p">}</span>
-<span class="k">else</span> <span class="p">{</span>
-  <span class="c1">// do Thing C</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">if (condition1) {
+  // do Thing A
+}
+else if (condition2) {
+  // do Thing B
+}
+else {
+  // do Thing C
+}
+</code></pre>
 
 <p>The usage of the statement is: if the logical expression in parentheses is true, execute the statement in curly braces after <strong>if</strong>, if not, execute the statement in curly braces after the <strong>else</strong>. If the state of the button is high, the LED pin outputs a high level and turn the LED on, else turn LED off.</p>
 <p><strong>Demo Effect and Serial Print Result:</strong></p>
@@ -686,70 +612,44 @@
 </ul>
 </li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">//Rotary controls LED</span>
-<span class="kt">int</span> <span class="n">rotaryPin</span> <span class="o">=</span> <span class="n">A0</span><span class="p">;</span>    <span class="c1">// select the input pin for the rotary</span>
-<span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>      <span class="c1">// select the pin for the LED</span>
-<span class="kt">int</span> <span class="n">rotaryValue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// variable to store the value coming from the rotary</span>
+<pre><code class="Cpp">//Rotary controls LED
+int rotaryPin = A0;    // select the input pin for the rotary
+int ledPin = 4;      // select the pin for the LED
+int rotaryValue = 0;  // variable to store the value coming from the rotary
 
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">// declare the ledPin as an OUTPUT:</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">rotaryPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
-<span class="p">}</span>
+void setup() {
+  // declare the ledPin as an OUTPUT:
+  pinMode(ledPin, OUTPUT);
+  pinMode(rotaryPin, INPUT);
+}
 
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">// read the value from the sensor:</span>
-  <span class="n">rotaryValue</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">rotaryPin</span><span class="p">);</span>
-  <span class="c1">// turn the ledPin on</span>
-  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-  <span class="c1">// stop the program for &lt;sensorValue&gt; milliseconds:</span>
-  <span class="n">delay</span><span class="p">(</span><span class="n">rotaryValue</span><span class="p">);</span>
-  <span class="c1">// turn the ledPin off:</span>
-  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-  <span class="c1">// stop the program for for &lt;sensorValue&gt; milliseconds:</span>
-  <span class="n">delay</span><span class="p">(</span><span class="n">rotaryValue</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+void loop() {
+  // read the value from the sensor:
+  rotaryValue = analogRead(rotaryPin);
+  // turn the ledPin on
+  digitalWrite(ledPin, HIGH);
+  // stop the program for &lt;sensorValue&gt; milliseconds:
+  delay(rotaryValue);
+  // turn the ledPin off:
+  digitalWrite(ledPin, LOW);
+  // stop the program for for &lt;sensorValue&gt; milliseconds:
+  delay(rotaryValue);
+}
+</code></pre>
 
 <ul>
 <li><font size=5;font color=#314B9F >Code Analysis</font></li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">rotaryPin</span> <span class="o">=</span> <span class="n">A0</span><span class="p">;</span>    <span class="c1">// select the input pin for the rotary</span>
-<span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>      <span class="c1">// select the pin for the LED</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">int rotaryPin = A0;    // select the input pin for the rotary
+int ledPin = 4;      // select the pin for the LED
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>You may find that we define rotatePin and ledPin in different ways. This is because Rotary Potentiometer generates an analog signal, and the LED is controlled by a digital signal.</p>
 <p>To <strong>define for Analog Pin</strong>, use A + the number of the Pin (For Example here <code>A0</code>).</p>
 <p>To <strong>define for Digital Pin</strong>, use just the number of the pin (For Example here <code>4</code>).</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">rotaryValue</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">rotaryPin</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">rotaryValue = analogRead(rotaryPin);
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Reads the value from the specified analog pin. Arduino boards contain a multichannel, 10-bit analog to digital converter. This means that it will map input voltages between 0 and the operating voltage(5V or 3.3V) into integer values between 0 and 1023. On an Arduino UNO, for example, this yields a resolution between readings of: 5 volts / 1024 units or, 0.0049 volts (4.9 mV) per unit.</p>
@@ -759,9 +659,8 @@
 <p><strong>pin</strong>: the name of the analog input pin to read from (A0 to A5 on most boards).</p>
 <p><strong>Returns:</strong> The analog reading on the pin. Although it is limited to the resolution of the analog to digital converter (0-1023 for 10 bits or 0-4095 for 12 bits). Data type: int.</p>
 <p>This function is used to read the value of Analog pins(the rotary sensor position), the range of values is: 0 ~ 1023.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">delay</span><span class="p">(</span><span class="n">rotaryValue</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">delay(rotaryValue);
+</code></pre>
 
 <p>Delay function, The millisecond duration of the delay is the value in parentheses. Because the value is the value of the analog signal of the knob pin being read, so the delay time can be controlled by the knob.</p>
 <p><strong>Demo Effect and Serial Print Result:</strong></p>
@@ -809,42 +708,27 @@
 </ul>
 </li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">BuzzerPin</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">Potentiometer</span> <span class="o">=</span> <span class="n">A0</span><span class="p">;</span>
+<pre><code class="Cpp">int BuzzerPin = 5;
+int Potentiometer = A0;
 
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">BuzzerPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">Potentiometer</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
-<span class="p">}</span>
+void setup() {
+  pinMode(BuzzerPin, OUTPUT);
+  pinMode(Potentiometer, INPUT);
+}
 
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kt">int</span> <span class="n">potentioValue</span><span class="p">,</span> <span class="n">Value</span><span class="p">;</span>
-  <span class="n">potentioValue</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">Potentiometer</span><span class="p">);</span>
-  <span class="n">Value</span> <span class="o">=</span> <span class="n">map</span><span class="p">(</span><span class="n">potentioValue</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span> <span class="c1">//Mapping potentiometer value to PWM signal value</span>
-  <span class="n">analogWrite</span><span class="p">(</span><span class="n">BuzzerPin</span><span class="p">,</span> <span class="n">Value</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+void loop() {
+  int potentioValue, Value;
+  potentioValue = analogRead(Potentiometer);
+  Value = map(potentioValue, 0, 1023, 0, 255); //Mapping potentiometer value to PWM signal value
+  analogWrite(BuzzerPin, Value);
+}
+</code></pre>
 
 <ul>
 <li><font size=5;font color=#314B9F >Code Analysis</font></li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">Value</span> <span class="o">=</span> <span class="n">map</span><span class="p">(</span><span class="n">potentioValue</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">Value = map(potentioValue, 0, 1023, 0, 255);
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Re-maps a number from one range to another. That is, a value of <strong>fromLow</strong> would get mapped to <strong>toLow</strong>, a value of <strong>fromHigh</strong> to <strong>toHigh</strong>, values in-between to values in-between, etc.</p>
@@ -864,9 +748,8 @@
 <p><strong>toLow</strong>: the lower bound of the value’s target range.</p>
 <p><strong>toHigh</strong>: the upper bound of the value’s target range.</p>
 <p>Mapping Potentiometer sensor analog signal(0 to 1023)to the loudness of Buzzer(0 to 255).</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">analogWrite</span><span class="p">(</span><span class="n">BuzzerPin</span><span class="p">,</span> <span class="n">Value</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">analogWrite(BuzzerPin, Value);
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Writes an analog value (PWM wave) to a pin. Can be used to light a LED at varying brightnesses or drive a motor at various speeds. After a call to analogWrite(), the pin will generate a steady rectangular wave of the specified duty cycle until the next call to analogWrite() (or a call to digitalRead() or digitalWrite()) on the same pin.</p>
@@ -937,69 +820,41 @@
 </ul>
 </li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">// Light Switch</span>
-<span class="kt">int</span> <span class="n">sensorpin</span> <span class="o">=</span> <span class="n">A6</span><span class="p">;</span> <span class="c1">// Analog input pin that the sensor is attached to</span>
-<span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>    <span class="c1">// LED port</span>
-<span class="kt">int</span> <span class="n">sensorValue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>        <span class="c1">// value read from the port</span>
-<span class="kt">int</span> <span class="n">outputValue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>        <span class="c1">// value output to the PWM (analog out)</span>
+<pre><code class="Cpp">// Light Switch
+int sensorpin = A6; // Analog input pin that the sensor is attached to
+int ledPin = 4;    // LED port
+int sensorValue = 0;        // value read from the port
+int outputValue = 0;        // value output to the PWM (analog out)
 
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">sensorpin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
-  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
-<span class="p">}</span>
+void setup() {
+  pinMode(ledPin,OUTPUT);
+  pinMode(sensorpin, INPUT);
+  Serial.begin(9600);
+}
 
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">// read the analog in value:</span>
-  <span class="n">sensorValue</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">sensorpin</span><span class="p">);</span>
+void loop() {
+  // read the analog in value:
+  sensorValue = analogRead(sensorpin);
 
-  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">sensorValue</span><span class="p">);</span>
+  Serial.println(sensorValue);
 
-  <span class="k">if</span> <span class="p">(</span><span class="n">sensorValue</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">else</span> <span class="p">{</span>
-    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-  <span class="p">}</span>
+  if (sensorValue &lt; 200) {
+    digitalWrite(ledPin, LOW);
+  }
+  else {
+    digitalWrite(ledPin, HIGH);
+  }
 
-  <span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+  delay(200);
+}
+</code></pre>
 
 <p>You can also see the light intensity readings from the <strong>Serial Monitor</strong>, navigate to <strong>Tools</strong> -&gt; <strong>Serial Monitor</strong>.</p>
 <ul>
 <li><font size=5;font color=#314B9F >Code Analysis</font></li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">Serial.begin(9600);
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Sets the data rate in bits per second (baud) for serial data transmission. For communicating with Serial Monitor, make sure to use one of the baud rates listed in the menu at the bottom right corner of its screen. You can, however, specify other rates - for example, to communicate over pins 0 and 1 with a component that requires a particular baud rate.</p>
@@ -1010,9 +865,8 @@
 <p><strong>Parameters:</strong></p>
 <p><strong>speed</strong>: Speed of Serial communication. i.e <code>9600</code>, <code>115200</code> and etc.</p>
 <p>Set the Serial baud rate to 9600.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">sensorValue</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">Serial.println(sensorValue);
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Prints data to the serial port as human-readable ASCII text followed by a carriage return character (ASCII 13, or '\r') and a newline character (ASCII 10, or '\n'). This command takes the same forms as Serial.print().</p>
@@ -1072,71 +926,47 @@
 </ul>
 </li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">//Sound Control Light</span>
-<span class="kt">int</span> <span class="n">soundPin</span> <span class="o">=</span> <span class="n">A2</span><span class="p">;</span> <span class="c1">// Analog sound sensor is to be attached to analog</span>
-<span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// Digital LED is to be attached to digital</span>
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">soundPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
-  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">(){</span>
-  <span class="kt">int</span> <span class="n">soundState</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">soundPin</span><span class="p">);</span> <span class="c1">// Read sound sensor’s value</span>
-  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">soundState</span><span class="p">);</span>
-  <span class="c1">// if the sound sensor’s value is greater than 400, the light will be on.</span>
-  <span class="c1">//Otherwise, the light will be turned off</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">soundState</span> <span class="o">&gt;</span> <span class="mi">400</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
-  <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="Cpp">//Sound Control Light
+int soundPin = A2; // Analog sound sensor is to be attached to analog
+int ledPin = 4; // Digital LED is to be attached to digital
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  pinMode(soundPin, INPUT);
+  Serial.begin(9600);
+}
+void loop(){
+  int soundState = analogRead(soundPin); // Read sound sensor’s value
+  Serial.println(soundState);
+  // if the sound sensor’s value is greater than 400, the light will be on.
+  //Otherwise, the light will be turned off
+  if (soundState &gt; 400) {
+    digitalWrite(ledPin, HIGH);
+    delay(100);
+  }else{
+    digitalWrite(ledPin, LOW);
+  }
+}
+</code></pre>
 
 <p>You can also see the light intensity readings from the <strong>Serial Plotter</strong>, navigate to <strong>Tools</strong> -&gt; <strong>Serial Plotter</strong>.</p>
 <p><strong>Note: You can also adjust the value according to your surrounding light intensity.</strong></p>
 <ul>
 <li><font size=5;font color=#314B9F >Code Analysis</font></li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">Serial.begin(9600);
+</code></pre>
 
 <p>The software running on the computer communicates with the development board, and the baud rate is 9600.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">Serial.print(&quot; &quot;);
+</code></pre>
 
 <p>This function is used to output data from the serial port, the output is what is contained in the double quotation marks.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span> <span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">Serial.println( );
+</code></pre>
 
 <p>This statement is similar to the one above, except that <strong>serial.println</strong> has a newline return.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">soundState</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">Serial.println(soundState);
+</code></pre>
 
 <p>Serial port print the sound sensor’s value.  So you open the <strong>serial monitor</strong> on the IDE interface, and you see the value of the output sensor.</p>
 <p><strong>Demo Effect and Serial Print Result:</strong></p>
@@ -1186,71 +1016,51 @@
 <ul>
 <li>Copy the following code, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;Arduino.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;U8x8lib.h&gt;</span><span class="cp"></span>
+<pre><code class="cpp">#include &lt;Arduino.h&gt;
+#include &lt;U8x8lib.h&gt;
 
-<span class="n">U8X8_SSD1306_128X64_ALT0_HW_I2C</span> <span class="nf">u8x8</span><span class="p">(</span><span class="cm">/* reset=*/</span> <span class="n">U8X8_PIN_NONE</span><span class="p">);</span>
+U8X8_SSD1306_128X64_ALT0_HW_I2C u8x8(/* reset=*/ U8X8_PIN_NONE);
 
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">setFlipMode</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="p">}</span>
+void setup(void) {
+  u8x8.begin();
+  u8x8.setFlipMode(1);
+}
 
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">u8x8_font_chroma48medium8_r</span><span class="p">);</span>
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+void loop(void) {
+  u8x8.setFont(u8x8_font_chroma48medium8_r);
+  u8x8.setCursor(0, 0);
+  u8x8.print(&quot;Hello World!&quot;);
+}
+</code></pre>
 
 <ul>
 <li><strong>Code analysis</strong></li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;&gt;</span><span class="cp"></span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">#include &lt;&gt;
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p><code>#include</code> is used to include outside libraries in your sketch. This gives the programmer access to a large group of standard C libraries (groups of pre-made functions), and also libraries written especially for Arduino.</p>
 <p>Note that <code>#include</code>, similar to <code>#define</code>, has no semicolon terminator, and the compiler will yield cryptic error messages if you add one.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;U8x8lib.h&gt;</span><span class="cp"></span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">#include &lt;U8x8lib.h&gt;
+</code></pre>
 
 <p><strong>#include</strong> is an instruction that introduces a header file. Here we use the U8x8lib.h library.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">U8X8_SSD1306_128X64_ALT0_HW_I2C</span> <span class="nf">u8x8</span><span class="p">(</span><span class="cm">/* reset=*/</span> <span class="n">U8X8_PIN_NONE</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">U8X8_SSD1306_128X64_ALT0_HW_I2C u8x8(/* reset=*/ U8X8_PIN_NONE);
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Once the object is declared, you can use functions from the library.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">u8x8</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">u8x8.begin();
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Simplified setup procedure of the display for the Arduino environment. See the setup guide for the selection of a suitable U8g2 constructor.</p>
 <p><strong>Syntax:</strong></p>
 <p>u8x8.begin()</p>
 <p>Initialize the u8g2 library</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">u8x8</span><span class="p">.</span><span class="n">setFlipMode</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">u8x8.setFlipMode(1);
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Some displays support a 180-degree rotation of the internal frame buffer. This hardware feature can be controlled with this procedure. Important: Redraw the complete display after changing the flip mode. Best is to clear the display first, then change the flip mode and finally redraw the content. Results will be undefined for any existing content on the screen.</p>
@@ -1259,9 +1069,8 @@
 <p><strong>Parameters:</strong></p>
 <p><strong>mode</strong>: <code>0</code> or <code>1</code></p>
 <p>Flips the display 180 degrees.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">u8x8</span><span class="p">.</span><span class="n">setCursor</span><span class="p">();</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">u8x8.setCursor();
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Define the cursor for the print function. Any output of the print function will start at this position.</p>
@@ -1270,18 +1079,16 @@
 <p><strong>Parameters:</strong></p>
 <p><strong>x, y</strong>: Column/row position for the cursor of the print function.</p>
 <p>Sets the draw cursor position.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">u8x8</span><span class="p">.</span><span class="n">setFont</span><span class="p">()</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">u8x8.setFont()
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Define a u8x8 font for the glyph and string drawing functions.</p>
 <p><strong>Syntax:</strong></p>
 <p>u8x8.setFont(<strong>font_8x8</strong>)</p>
 <p>Set the font for display.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">u8x8.print();
+</code></pre>
 
 <p>Draw the content on the OLED.</p>
 <p><strong>Demo Effect and Serial Print Result:</strong></p>
@@ -1340,97 +1147,56 @@
 <ul>
 <li>Copy the following code, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">//Temperature and Humidity Sensor</span>
-<span class="cp">#include</span> <span class="cpf">&quot;DHT.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;Arduino.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;U8x8lib.h&gt;</span><span class="cp"></span>
+<pre><code class="Cpp">//Temperature and Humidity Sensor
+#include &quot;DHT.h&quot;
+#include &lt;Arduino.h&gt;
+#include &lt;U8x8lib.h&gt;
 
-<span class="cp">#define DHTPIN 3     </span><span class="c1">// what pin we&#39;re connected to</span>
-<span class="cp">#define DHTTYPE DHT11   </span><span class="c1">// DHT 11</span>
-<span class="n">DHT</span> <span class="nf">dht</span><span class="p">(</span><span class="n">DHTPIN</span><span class="p">,</span> <span class="n">DHTTYPE</span><span class="p">);</span>
+#define DHTPIN 3     // what pin we're connected to
+#define DHTTYPE DHT11   // DHT 11
+DHT dht(DHTPIN, DHTTYPE);
 
-<span class="n">U8X8_SSD1306_128X64_ALT0_HW_I2C</span> <span class="nf">u8x8</span><span class="p">(</span><span class="cm">/* reset=*/</span> <span class="n">U8X8_PIN_NONE</span><span class="p">);</span>
+U8X8_SSD1306_128X64_ALT0_HW_I2C u8x8(/* reset=*/ U8X8_PIN_NONE);
 
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
-  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;DHTxx test!&quot;</span><span class="p">);</span>
-  <span class="n">dht</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">setPowerSave</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>  
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">setFlipMode</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="p">}</span>
+void setup(void) {
+  Serial.begin(9600);
+  Serial.println(&quot;DHTxx test!&quot;);
+  dht.begin();
+  u8x8.begin();
+  u8x8.setPowerSave(0);  
+  u8x8.setFlipMode(1);
+}
 
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+void loop(void) {
 
-  <span class="kt">float</span> <span class="n">temp</span><span class="p">,</span> <span class="n">humi</span><span class="p">;</span>
-  <span class="n">temp</span> <span class="o">=</span> <span class="n">dht</span><span class="p">.</span><span class="n">readTemperature</span><span class="p">();</span>
-  <span class="n">humi</span> <span class="o">=</span> <span class="n">dht</span><span class="p">.</span><span class="n">readHumidity</span><span class="p">();</span>
+  float temp, humi;
+  temp = dht.readTemperature();
+  humi = dht.readHumidity();
 
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">u8x8_font_chroma48medium8_r</span><span class="p">);</span>
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">33</span><span class="p">);</span>
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Temp:&quot;</span><span class="p">);</span>
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">);</span>
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">);</span>
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Humidity:&quot;</span><span class="p">);</span>
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">humi</span><span class="p">);</span>
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;%&quot;</span><span class="p">);</span>
-  <span class="n">u8x8</span><span class="p">.</span><span class="n">refreshDisplay</span><span class="p">();</span>
-  <span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+  u8x8.setFont(u8x8_font_chroma48medium8_r);
+  u8x8.setCursor(0, 33);
+  u8x8.print(&quot;Temp:&quot;);
+  u8x8.print(temp);
+  u8x8.print(&quot;C&quot;);
+  u8x8.setCursor(0,50);
+  u8x8.print(&quot;Humidity:&quot;);
+  u8x8.print(humi);
+  u8x8.print(&quot;%&quot;);
+  u8x8.refreshDisplay();
+  delay(200);
+}
+</code></pre>
 
 <ul>
 <li><font size=5;font color=#314B9F >Code Analysis</font></li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">float</span> <span class="n">temp</span><span class="p">,</span> <span class="n">humi</span><span class="p">;</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">float temp, humi;
+</code></pre>
 
 <p>Defines variables to store readings.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">temp</span> <span class="o">=</span> <span class="n">dht</span><span class="p">.</span><span class="n">readTemperature</span><span class="p">();</span>
-<span class="n">humi</span> <span class="o">=</span> <span class="n">dht</span><span class="p">.</span><span class="n">readHumidity</span><span class="p">();</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">temp = dht.readTemperature();
+humi = dht.readHumidity();
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Functions to be used to read temperature and humidity values from the sensor.</p>
@@ -1478,127 +1244,83 @@
 <li>Copy the following code, click Verify to check for syntax errors. Verify that there are no errors, and you can upload the code.</li>
 <li>In this program, Barometer sensor information is sent from the sensor to Seeeduino via I2C bus and then Seeeduino printed them onto the serial monitor. Open the <strong>serial monitor</strong> to check the result.</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">//Air pressure detection</span>
-<span class="cp">#include</span> <span class="cpf">&quot;Seeed_BMP280.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;Wire.h&gt;</span><span class="cp"></span>
+<pre><code class="Cpp">//Air pressure detection
+#include &quot;Seeed_BMP280.h&quot;
+#include &lt;Wire.h&gt;
 
-<span class="n">BMP280</span> <span class="n">bmp280</span><span class="p">;</span>
+BMP280 bmp280;
 
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">bmp280</span><span class="p">.</span><span class="n">init</span><span class="p">())</span> <span class="p">{</span>
-        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Device not connected or broken!&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+void setup() {
+    Serial.begin(9600);
+    if (!bmp280.init()) {
+        Serial.println(&quot;Device not connected or broken!&quot;);
+    }
+}
 
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+void loop() {
 
-    <span class="kt">float</span> <span class="n">pressure</span><span class="p">;</span>
+    float pressure;
 
-    <span class="c1">//get and print temperatures</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Temp: &quot;</span><span class="p">);</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">bmp280</span><span class="p">.</span><span class="n">getTemperature</span><span class="p">());</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">);</span> <span class="c1">// The unit for  Celsius because original arduino don&#39;t support speical symbols</span>
+    //get and print temperatures
+    Serial.print(&quot;Temp: &quot;);
+    Serial.print(bmp280.getTemperature());
+    Serial.println(&quot;C&quot;); // The unit for  Celsius because original arduino don't support speical symbols
 
-    <span class="c1">//get and print atmospheric pressure data</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Pressure: &quot;</span><span class="p">);</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">pressure</span> <span class="o">=</span> <span class="n">bmp280</span><span class="p">.</span><span class="n">getPressure</span><span class="p">());</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Pa&quot;</span><span class="p">);</span>
+    //get and print atmospheric pressure data
+    Serial.print(&quot;Pressure: &quot;);
+    Serial.print(pressure = bmp280.getPressure());
+    Serial.println(&quot;Pa&quot;);
 
-    <span class="c1">//get and print altitude data</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Altitude: &quot;</span><span class="p">);</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">bmp280</span><span class="p">.</span><span class="n">calcAltitude</span><span class="p">(</span><span class="n">pressure</span><span class="p">));</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;m&quot;</span><span class="p">);</span>
+    //get and print altitude data
+    Serial.print(&quot;Altitude: &quot;);
+    Serial.print(bmp280.calcAltitude(pressure));
+    Serial.println(&quot;m&quot;);
 
-    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="c1">//add a line between output of different times.</span>
+    Serial.println(&quot;\n&quot;);//add a line between output of different times.
 
-    <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+    delay(1000);
+}
+</code></pre>
 
 <ul>
 <li><font size=5;font color=#314B9F >Code Analysis</font></li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;Wire.h&gt;</span><span class="cp"></span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">#include &lt;Wire.h&gt;
+</code></pre>
 
 <p><strong>#include</strong> is an instruction that introduces a header file. Here we use the <Wire.h> library, this library is included in Arduino IDE.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;Seeed_BMP280.h&quot;</span><span class="cp"></span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">#include &quot;Seeed_BMP280.h&quot;
+</code></pre>
 
 <p>Represents the Seeed_BMP280.h header file that introduces the current path.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">bmp280</span><span class="p">.</span><span class="n">init</span><span class="p">())</span> <span class="p">{</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Device not connected or broken!&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">if (!bmp280.init()) {
+    Serial.println(&quot;Device not connected or broken!&quot;);
+}
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>To initialize the air pressure sensor using bmp280.init(). Further, using if condition to check if it started properly then skips the message. If having trouble to initiate then prints the message as ! means NOT in programming.</p>
 <p><strong>Syntax:</strong></p>
 <p><strong>bmp280.init()</strong></p>
 <p>if the Air pressure sensor did not start properly, then prints out an error to the serial monitor.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">bmp280</span><span class="p">.</span><span class="n">getTemperature</span><span class="p">());</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">Serial.print(bmp280.getTemperature());
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Functions to be used to read temperature value from the sensor.</p>
 <p><strong>Syntax:</strong></p>
 <p><strong>bmp280.getTemperature()</strong>. Return type: float</p>
 <p>Prints the temperature data to the serial monitor.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">pressure</span> <span class="o">=</span> <span class="n">bmp280</span><span class="p">.</span><span class="n">getPressure</span><span class="p">());</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">Serial.print(pressure = bmp280.getPressure());
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Functions to be used to read air pressure value from the sensor.</p>
 <p><strong>Syntax:</strong></p>
 <p><strong>bmp280.getPressure()</strong>. Return type: float</p>
 <p>Prints the current air pressure.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">bmp280</span><span class="p">.</span><span class="n">calcAltitude</span><span class="p">(</span><span class="n">pressure</span><span class="p">));</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">Serial.print(bmp280.calcAltitude(pressure));
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Takes the pressure value can convert to altitude.</p>
@@ -1650,125 +1372,75 @@
 </ul>
 </li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">//Gravity Acceleration</span>
-<span class="cp">#include</span> <span class="cpf">&quot;LIS3DHTR.h&quot;</span><span class="cp"></span>
-<span class="cp">#ifdef SOFTWAREWIRE</span>
-    <span class="cp">#include</span> <span class="cpf">&lt;SoftwareWire.h&gt;</span><span class="cp"></span>
-    <span class="n">SoftwareWire</span> <span class="nf">myWire</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-    <span class="n">LIS3DHTR</span><span class="o">&lt;</span><span class="n">SoftwareWire</span><span class="o">&gt;</span> <span class="n">LIS</span><span class="p">;</span>       <span class="c1">//Software I2C</span>
-    <span class="cp">#define WIRE myWire</span>
-<span class="cp">#else</span>
-    <span class="cp">#include</span> <span class="cpf">&lt;Wire.h&gt;</span><span class="cp"></span>
-    <span class="n">LIS3DHTR</span><span class="o">&lt;</span><span class="n">TwoWire</span><span class="o">&gt;</span> <span class="n">LIS</span><span class="p">;</span>           <span class="c1">//Hardware I2C</span>
-    <span class="cp">#define WIRE Wire</span>
-<span class="cp">#endif</span>
+<pre><code class="Cpp">//Gravity Acceleration
+#include &quot;LIS3DHTR.h&quot;
+#ifdef SOFTWAREWIRE
+    #include &lt;SoftwareWire.h&gt;
+    SoftwareWire myWire(3, 2);
+    LIS3DHTR&lt;SoftwareWire&gt; LIS;       //Software I2C
+    #define WIRE myWire
+#else
+    #include &lt;Wire.h&gt;
+    LIS3DHTR&lt;TwoWire&gt; LIS;           //Hardware I2C
+    #define WIRE Wire
+#endif
 
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
-    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">Serial</span><span class="p">)</span> <span class="p">{};</span>
-    <span class="n">LIS</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">WIRE</span><span class="p">,</span> <span class="mh">0x19</span><span class="p">);</span> <span class="c1">//IIC init</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
-    <span class="n">LIS</span><span class="p">.</span><span class="n">setOutputDataRate</span><span class="p">(</span><span class="n">LIS3DHTR_DATARATE_50HZ</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">LIS</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;LIS3DHTR didn&#39;t connect.&quot;</span><span class="p">);</span>
-        <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="c1">//3 axis</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;x:&quot;</span><span class="p">);</span> <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationX</span><span class="p">());</span> <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;  &quot;</span><span class="p">);</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;y:&quot;</span><span class="p">);</span> <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationY</span><span class="p">());</span> <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;  &quot;</span><span class="p">);</span>
-    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;z:&quot;</span><span class="p">);</span> <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationZ</span><span class="p">());</span>
+void setup() {
+    Serial.begin(9600);
+    while (!Serial) {};
+    LIS.begin(WIRE, 0x19); //IIC init
+    delay(100);
+    LIS.setOutputDataRate(LIS3DHTR_DATARATE_50HZ);
+}
+void loop() {
+    if (!LIS) {
+        Serial.println(&quot;LIS3DHTR didn't connect.&quot;);
+        while (1);
+        return;
+    }
+    //3 axis
+    Serial.print(&quot;x:&quot;); Serial.print(LIS.getAccelerationX()); Serial.print(&quot;  &quot;);
+    Serial.print(&quot;y:&quot;); Serial.print(LIS.getAccelerationY()); Serial.print(&quot;  &quot;);
+    Serial.print(&quot;z:&quot;); Serial.println(LIS.getAccelerationZ());
 
-    <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+    delay(500);
+}
+</code></pre>
 
 <ul>
 <li><font size=5;font color=#314B9F >Code Analysis</font></li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;LIS3DHTR.h&quot;</span><span class="cp"></span>
-<span class="cp">#ifdef SOFTWAREWIRE</span>
-    <span class="cp">#include</span> <span class="cpf">&lt;SoftwareWire.h&gt;</span><span class="cp"></span>
-    <span class="n">SoftwareWire</span> <span class="nf">myWire</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-    <span class="n">LIS3DHTR</span><span class="o">&lt;</span><span class="n">SoftwareWire</span><span class="o">&gt;</span> <span class="n">LIS</span><span class="p">;</span>   <span class="c1">//Software I2C</span>
-    <span class="cp">#define WIRE myWire</span>
-<span class="cp">#else</span>
-    <span class="cp">#include</span> <span class="cpf">&lt;Wire.h&gt;</span><span class="cp"></span>
-    <span class="n">LIS3DHTR</span><span class="o">&lt;</span><span class="n">TwoWire</span><span class="o">&gt;</span> <span class="n">LIS</span><span class="p">;</span>        <span class="c1">//Hardware I2C</span>
-    <span class="cp">#define WIRE Wire</span>
-<span class="cp">#endif</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">#include &quot;LIS3DHTR.h&quot;
+#ifdef SOFTWAREWIRE
+    #include &lt;SoftwareWire.h&gt;
+    SoftwareWire myWire(3, 2);
+    LIS3DHTR&lt;SoftwareWire&gt; LIS;   //Software I2C
+    #define WIRE myWire
+#else
+    #include &lt;Wire.h&gt;
+    LIS3DHTR&lt;TwoWire&gt; LIS;        //Hardware I2C
+    #define WIRE Wire
+#endif
+</code></pre>
 
 <p>Initializing the module using software I2C or hardware I2C.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">Serial</span><span class="p">)</span> <span class="p">{};</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">while (!Serial) {};
+</code></pre>
 
 <p>Code stops here if don't open the serial monitor, so open serial monitor.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">LIS</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">WIRE</span><span class="p">,</span> <span class="mh">0x19</span><span class="p">);</span>
-<span class="n">LIS</span><span class="p">.</span><span class="n">setOutputDataRate</span><span class="p">(</span><span class="n">LIS3DHTR_DATARATE_50HZ</span><span class="p">);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">LIS.begin(WIRE, 0x19);
+LIS.setOutputDataRate(LIS3DHTR_DATARATE_50HZ);
+</code></pre>
 
 <p><strong>Description:</strong> Initialize the accelerator.</p>
 <p><strong>Syntax:</strong> <code>LIS.begin(Wire, address)</code>.</p>
 <p><strong>Description:</strong> Sets the output data rate of the accelerator.</p>
 <p><strong>Syntax:</strong> <code>LIS.setOutputDataRate(odr_type_t odr)</code>.</p>
 <p>Initialize the accelerator and set the output rate to 50Hz.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;x:&quot;</span><span class="p">);</span> <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationX</span><span class="p">());</span> <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;  &quot;</span><span class="p">);</span>
-<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;y:&quot;</span><span class="p">);</span> <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationY</span><span class="p">());</span> <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;  &quot;</span><span class="p">);</span>
-<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;z:&quot;</span><span class="p">);</span> <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationZ</span><span class="p">());</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">Serial.print(&quot;x:&quot;); Serial.print(LIS.getAccelerationX()); Serial.print(&quot;  &quot;);
+Serial.print(&quot;y:&quot;); Serial.print(LIS.getAccelerationY()); Serial.print(&quot;  &quot;);
+Serial.print(&quot;z:&quot;); Serial.println(LIS.getAccelerationZ());
+</code></pre>
 
 <p><strong>Description:</strong></p>
 <p>Functions to be used to read X-axis value from the sensor.</p>
@@ -1825,236 +1497,130 @@
 </ul>
 </li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">//Music Dynamic Rhythm Lamp</span>
-<span class="cp">#define NTD0 -1</span>
-<span class="cp">#define NTD1 294</span>
-<span class="cp">#define NTD2 330</span>
-<span class="cp">#define NTD3 350</span>
-<span class="cp">#define NTD4 393</span>
-<span class="cp">#define NTD5 441</span>
-<span class="cp">#define NTD6 495</span>
-<span class="cp">#define NTD7 556</span>
+<pre><code class="cpp">//Music Dynamic Rhythm Lamp
+#define NTD0 -1
+#define NTD1 294
+#define NTD2 330
+#define NTD3 350
+#define NTD4 393
+#define NTD5 441
+#define NTD6 495
+#define NTD7 556
 
-<span class="cp">#define NTDL1 147</span>
-<span class="cp">#define NTDL2 165</span>
-<span class="cp">#define NTDL3 175</span>
-<span class="cp">#define NTDL4 196</span>
-<span class="cp">#define NTDL5 221</span>
-<span class="cp">#define NTDL6 248</span>
-<span class="cp">#define NTDL7 278</span>
+#define NTDL1 147
+#define NTDL2 165
+#define NTDL3 175
+#define NTDL4 196
+#define NTDL5 221
+#define NTDL6 248
+#define NTDL7 278
 
-<span class="cp">#define NTDH1 589</span>
-<span class="cp">#define NTDH2 661</span>
-<span class="cp">#define NTDH3 700</span>
-<span class="cp">#define NTDH4 786</span>
-<span class="cp">#define NTDH5 882</span>
-<span class="cp">#define NTDH6 990</span>
-<span class="cp">#define NTDH7 112</span>
+#define NTDH1 589
+#define NTDH2 661
+#define NTDH3 700
+#define NTDH4 786
+#define NTDH5 882
+#define NTDH6 990
+#define NTDH7 112
 
-<span class="cp">#define WHOLE 1</span>
-<span class="cp">#define HALF 0.5</span>
-<span class="cp">#define QUARTER 0.25</span>
-<span class="cp">#define EIGHTH 0.25</span>
-<span class="cp">#define SIXTEENTH 0.625</span>
+#define WHOLE 1
+#define HALF 0.5
+#define QUARTER 0.25
+#define EIGHTH 0.25
+#define SIXTEENTH 0.625
 
-<span class="kt">int</span> <span class="n">tune</span><span class="p">[]</span><span class="o">=</span>
-<span class="p">{</span>
-<span class="n">NTD3</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD5</span><span class="p">,</span>
-<span class="n">NTD5</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span>
-<span class="n">NTD1</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span>
-<span class="n">NTD3</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span>
-<span class="n">NTD3</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD5</span><span class="p">,</span>
-<span class="n">NTD5</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span>
-<span class="n">NTD1</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span>
-<span class="n">NTD2</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span>
-<span class="n">NTD2</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span>
-<span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span>
-<span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span>
-<span class="n">NTD1</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTDL5</span><span class="p">,</span><span class="n">NTD0</span><span class="p">,</span>
-<span class="n">NTD3</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD5</span><span class="p">,</span>
-<span class="n">NTD5</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span>
-<span class="n">NTD1</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span>
-<span class="n">NTD2</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="n">NTD1</span>
-<span class="p">};</span>
+int tune[]=
+{
+NTD3,NTD3,NTD4,NTD5,
+NTD5,NTD4,NTD3,NTD2,
+NTD1,NTD1,NTD2,NTD3,
+NTD3,NTD2,NTD2,
+NTD3,NTD3,NTD4,NTD5,
+NTD5,NTD4,NTD3,NTD2,
+NTD1,NTD1,NTD2,NTD3,
+NTD2,NTD1,NTD1,
+NTD2,NTD2,NTD3,NTD1,
+NTD2,NTD3,NTD4,NTD3,NTD1,
+NTD2,NTD3,NTD4,NTD3,NTD2,
+NTD1,NTD2,NTDL5,NTD0,
+NTD3,NTD3,NTD4,NTD5,
+NTD5,NTD4,NTD3,NTD4,NTD2,
+NTD1,NTD1,NTD2,NTD3,
+NTD2,NTD1,NTD1
+};
 
-<span class="kt">float</span> <span class="n">durt</span><span class="p">[]</span><span class="o">=</span>
-<span class="p">{</span>
-<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
-<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
-<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
-<span class="mi">1</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
-<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
-<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
-<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
-<span class="mi">1</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
-<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
-<span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
-<span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
-<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
-<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
-<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span>
-<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
-<span class="mi">1</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
-<span class="p">};</span>
+float durt[]=
+{
+1,1,1,1,
+1,1,1,1,
+1,1,1,1,
+1+0.5,0.5,1+1,
+1,1,1,1,
+1,1,1,1,
+1,1,1,1,
+1+0.5,0.5,1+1,
+1,1,1,1,
+1,0.5,0.5,1,1,
+1,0.5,0.5,1,1,
+1,1,1,1,
+1,1,1,1,
+1,1,1,0.5,0.5,
+1,1,1,1,
+1+0.5,0.5,1+1,
+};
 
-<span class="kt">int</span> <span class="n">length</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">tonepin</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">ledp</span><span class="o">=</span><span class="mi">4</span><span class="p">;</span>
+int length;
+int tonepin=5;
+int ledp=4;
 
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
-<span class="p">{</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">tonepin</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">ledp</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span>
-  <span class="n">length</span><span class="o">=</span><span class="k">sizeof</span><span class="p">(</span><span class="n">tune</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">tune</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-<span class="p">}</span>
+void setup()
+{
+  pinMode(tonepin,OUTPUT);
+  pinMode(ledp,OUTPUT);
+  length=sizeof(tune)/sizeof(tune[0]);
+}
 
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
-<span class="p">{</span>
-  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">x</span><span class="o">&lt;</span><span class="n">length</span><span class="p">;</span><span class="n">x</span><span class="o">++</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="n">tone</span><span class="p">(</span><span class="n">tonepin</span><span class="p">,</span><span class="n">tune</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span>
-    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledp</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">400</span><span class="o">*</span><span class="n">durt</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span>
-    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledp</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-    <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">durt</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span>
-    <span class="n">noTone</span><span class="p">(</span><span class="n">tonepin</span><span class="p">);</span>
+void loop()
+{
+  for(int x=0;x&lt;length;x++)
+  {
+    tone(tonepin,tune[x]);
+    digitalWrite(ledp, HIGH);
+    delay(400*durt[x]);
+    digitalWrite(ledp, LOW);
+    delay(100*durt[x]);
+    noTone(tonepin);
 
-  <span class="p">}</span>
-  <span class="n">delay</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+  }
+  delay(4000);
+}
+</code></pre>
 
 <ul>
 <li><font size=5;font color=#314B9F >Code Analysis</font></li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cp">#define NTD</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">#define NTD
+</code></pre>
 
 <p>Here is the definition of the frequency of the D key, which is divided into bass, alto, and treble.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cp">#define WHOLE 1</span>
-<span class="cp">#define HALF 0.5</span>
-<span class="cp">#define QUARTER 0.25</span>
-<span class="cp">#define EIGHTH 0.25</span>
-<span class="cp">#define SIXTEENTH 0.625</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">#define WHOLE 1
+#define HALF 0.5
+#define QUARTER 0.25
+#define EIGHTH 0.25
+#define SIXTEENTH 0.625
+</code></pre>
 
 <p>Note: rhythm is divided into one beat, half beat, 1/4 beat, 1/8 beat, we specify a beat note time is 1;Half beat is 0.5;1/4 beat is 0.25;1/8 of 0.125.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">tune</span><span class="p">[]</span><span class="o">=</span><span class="p">...</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">int tune[]=...
+</code></pre>
 
 <p>List the frequencies according to the spectrum.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="kt">float</span> <span class="n">durt</span><span class="p">[]</span><span class="o">=</span><span class="p">...</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">float durt[]=...
+</code></pre>
 
 <p>List the beats according to the spectrum.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">durt</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">delay(100*durt[x]);
+</code></pre>
 
 <p>Control LED lights on and off respectively.</p>
 <p><strong>Demo Effect and Serial Print Result:</strong></p>
@@ -2099,64 +1665,38 @@
 </ul>
 </li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">//light Induction Desk Lamp</span>
-<span class="kt">int</span> <span class="n">soundPin</span> <span class="o">=</span> <span class="n">A2</span><span class="p">;</span> <span class="c1">// Analog sound sensor is to be attached to analog</span>
-<span class="kt">int</span> <span class="n">lightPin</span> <span class="o">=</span> <span class="n">A6</span><span class="p">;</span> <span class="c1">//Analog light sensor is to be attached to analog</span>
-<span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// Digital LED is to be attached to digital</span>
+<pre><code class="Cpp">//light Induction Desk Lamp
+int soundPin = A2; // Analog sound sensor is to be attached to analog
+int lightPin = A6; //Analog light sensor is to be attached to analog
+int ledPin = 4; // Digital LED is to be attached to digital
 
-<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">lightPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
-  <span class="n">pinMode</span><span class="p">(</span><span class="n">soundPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
-<span class="p">}</span>
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  pinMode(lightPin, INPUT);
+  pinMode(soundPin, INPUT);
+}
 
-<span class="kt">void</span> <span class="nf">loop</span><span class="p">(){</span>
-  <span class="kt">int</span> <span class="n">soundState</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">soundPin</span><span class="p">);</span> <span class="c1">// Read sound sensor’s value</span>
-  <span class="kt">int</span> <span class="n">lightState</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">lightPin</span><span class="p">);</span> <span class="c1">// Read light sensor’s value</span>
-  <span class="c1">// if the sound sensor&#39;s value is greater than 500 or the sound sensor&#39;s is less than 200, the light will be on.</span>
-  <span class="c1">//Otherwise, the light will be turned off</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">soundState</span> <span class="o">&gt;</span> <span class="mi">500</span> <span class="o">||</span> <span class="n">lightState</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
-  <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span> <span class="c1">//You can add the &quot;//&quot; to remove the delay</span>
-<span class="p">}</span><span class="k">else</span><span class="p">{</span>
-  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+void loop(){
+  int soundState = analogRead(soundPin); // Read sound sensor’s value
+  int lightState = analogRead(lightPin); // Read light sensor’s value
+  // if the sound sensor's value is greater than 500 or the sound sensor's is less than 200, the light will be on.
+  //Otherwise, the light will be turned off
+if (soundState &gt; 500 || lightState &lt; 200) {
+  digitalWrite(ledPin, HIGH);
+  delay(500); //You can add the &quot;//&quot; to remove the delay
+}else{
+  digitalWrite(ledPin, LOW);
+}
+}
+</code></pre>
 
 <ul>
 <li><font size=5;font color=#314B9F >Code Analysis</font></li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">soundState</span> <span class="o">&gt;</span> <span class="mi">500</span> <span class="o">||</span> <span class="n">lightState</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
-  <span class="p">...</span>
-<span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+<pre><code class="cpp">if (soundState &gt; 500 || lightState &lt; 200) {
+  ...
+}
+</code></pre>
 
 <p>In parentheses is a logical expression. Both <strong>&amp;&amp;</strong> and <strong>||</strong> are commonly used in logical expressions. The common usage is <strong>if (expression 1 || expression 2)</strong> and <strong>if (expression 1 &amp;&amp; expression 2)</strong>.</p>
 <p><strong>||</strong> represents "<strong>or</strong>", satisfies one of them, the whole expression is true, and satisfies the condition of the if judgment.</p>
