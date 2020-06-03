@@ -1,0 +1,6 @@
+site_name: Arduitronicshub
+nav:
+    - Home: index.md
+    - About: about.md
+theme: readthedocs
+language: th
