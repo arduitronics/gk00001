@@ -5,17 +5,17 @@
 ![Screenshot](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Parts.jpg)
 
 <b>ขนาดของอุปกรณ์</b> - 17.69 * 11.64 * 1.88cm  
-1. [<b>Grove - Led</b>](https://www.arduitronics.com/product3565): โมดูลแอลอีดีพร้อมใช้งานได้สะดวก
-1. [<b>Grove - Buzzer</b>](https://www.arduitronics.com/product/3566): โมดูลบัซเซอร์ (buzzer) <br/>
-1. <b>Grove - OLED ขนาด 0.96 นิ้ว</b>: โมดูล OLED ขนาด 0.96 นิ้ว <br/>
-1. [<b>Grove - ปุ่มกด</b>](https://www.arduitronics.com/product/3578): โมดูลปุ่มกด (buzzer) <br/>
-1. [<b>Grove - Rotary Potentiometer</b>](https://www.arduitronics.com/product/3562): โมดูลตัวต้านทานปรับค่าได้แบบหมุน <br/>
-1. [<b>Grove - Sound sensor</b>](https://www.arduitronics.com/product/3563): โมดูลวัดเสียง <br/>
-1. [<b>Grove - Light Sensor </b>](https://www.arduitronics.com/product/3564): โมดูลวัดค่าแสง <br/>
-1. [<b>Grove - Temperature and Humidity sensor</b>](https://www.arduitronics.com/product/3571): โมดูลวัดอุณหภูมิและความชื้น<br/>
-1. <b>Grove - Air Presure sensor</b>: โมดูลวัดความดันอากาศ <br/>
-1. <b>Grove - 3-Axis Accelerator</b>: โมดูลวัดความเร่งของวัตถุ <br/>
-1. <b>Seeeduino Lotus</b>: บอร์ด Arduino ของ Seeed studio ซึ่งมาพร้อมกับพอร์ดของ Grove <br/>  
+1. [<b>Grove - Led</b>](https://www.arduitronics.com/product3565): โมดูลแอลอีดีพร้อมใช้งานได้สะดวก  <br/>
+2. [<b>Grove - Buzzer</b>](https://www.arduitronics.com/product/3566): โมดูลบัซเซอร์ (buzzer) <br/>
+3. <b>Grove - OLED ขนาด 0.96 นิ้ว</b>: โมดูล OLED ขนาด 0.96 นิ้ว <br/>
+4. [<b>Grove - ปุ่มกด</b>](https://www.arduitronics.com/product/3578): โมดูลปุ่มกด (buzzer) <br/>
+5. [<b>Grove - Rotary Potentiometer</b>](https://www.arduitronics.com/product/3562): โมดูลตัวต้านทานปรับค่าได้แบบหมุน <br/>
+6. [<b>Grove - Sound sensor</b>](https://www.arduitronics.com/product/3563): โมดูลวัดเสียง <br/>
+7. [<b>Grove - Light Sensor </b>](https://www.arduitronics.com/product/3564): โมดูลวัดค่าแสง <br/>
+8. [<b>Grove - Temperature and Humidity sensor</b>](https://www.arduitronics.com/product/3571): โมดูลวัดอุณหภูมิและความชื้น<br/>
+9. <b>Grove - Air Presure sensor</b>: โมดูลวัดความดันอากาศ <br/>
+10. <b>Grove - 3-Axis Accelerator</b>: โมดูลวัดความเร่งของวัตถุ <br/>
+11. <b>Seeeduino Lotus</b>: บอร์ด Arduino ของ Seeed studio ซึ่งมาพร้อมกับพอร์ดของ Grove <br/>  
 
 <b>หมายเหตุ</b>  อุปกรณ์ต่างๆ บนบอร์ดได้มีการต่อเชื่อมกับบอร์ด Seeeduino Lotus แล้วด้วยลายวงจรบนบอร์ด ดังนั้นไม่จำเป็นต้องเชื่อมต่อวงจรด้วยสายเคเบิ้ลของ Grove หากยังไม่ได้แยกอุปกรณ์ออกเป็นชื้นย่อยๆ  
 
@@ -176,7 +176,7 @@ void loop() {
 
 
 
-```cpp
+``` cpp linenums="1"
 //LED Blink
 //The LED will turn on for one second and then turn off for one second
 int ledPin = 4;
@@ -192,12 +192,13 @@ void loop() {
 ```
 
 
-- <font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font>
+## <font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font>
 
-```cpp
-setup(){
+``` cpp linenums="1"
+setup(){  
 }
 ```
+
 ทุกครั้งที่เริ่มต้นการทำงาน sketch ฟังก์ชั่น `setup()` จะถูกเรียกเพื่อทำงานก่อนเป็นลำดับแรก  ซึ่งจะรวบรวมส่วนที่เป็นการกำหนดค่าตัวแปร และค่าเริ่มต้นต่างๆ  การกำหนดโหมดการทำงานของ pin ที่ใช้  การเรียกใช้ Library เป็นต้น  ฟังก์ชั่น `setup()` จะทำงานเมื่อเริ่มต้นเพียงครั้งเดียวหลังจากที่จ่ายไฟเลี้ยงให้วงจร หรือ กดปุ่ม reset บนตัวบอร์ด
 
 $$
@@ -210,7 +211,14 @@ Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit[^2].
 [^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 [^2]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-
+``` python linenums="1"
+""" Bubble sort """
+def bubble_sort(items):
+    for i in range(len(items)):
+        for j in range(len(items) - 1 - i):
+            if items[j] > items[j + 1]:
+                items[j], items[j + 1] = items[j + 1], items[j]
+```
 
 ## Commands
 

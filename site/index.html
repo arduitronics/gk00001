@@ -280,6 +280,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    อธิบายการทำงานของโค้ด
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#commands" class="md-nav__link">
     Commands
   </a>
@@ -433,6 +440,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    อธิบายการทำงานของโค้ด
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#commands" class="md-nav__link">
     Commands
   </a>
@@ -467,17 +481,17 @@
 <h2 id="_1">ภาพรวมอุปกรณ์</h2>
 <p><img alt="Screenshot" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Parts.jpg" /></p>
 <p><b>ขนาดของอุปกรณ์</b> - 17.69 * 11.64 * 1.88cm<br />
-1. <a href="https://www.arduitronics.com/product3565"><b>Grove - Led</b></a>: โมดูลแอลอีดีพร้อมใช้งานได้สะดวก
-1. <a href="https://www.arduitronics.com/product/3566"><b>Grove - Buzzer</b></a>: โมดูลบัซเซอร์ (buzzer) <br/>
-1. <b>Grove - OLED ขนาด 0.96 นิ้ว</b>: โมดูล OLED ขนาด 0.96 นิ้ว <br/>
-1. <a href="https://www.arduitronics.com/product/3578"><b>Grove - ปุ่มกด</b></a>: โมดูลปุ่มกด (buzzer) <br/>
-1. <a href="https://www.arduitronics.com/product/3562"><b>Grove - Rotary Potentiometer</b></a>: โมดูลตัวต้านทานปรับค่าได้แบบหมุน <br/>
-1. <a href="https://www.arduitronics.com/product/3563"><b>Grove - Sound sensor</b></a>: โมดูลวัดเสียง <br/>
-1. <a href="https://www.arduitronics.com/product/3564"><b>Grove - Light Sensor </b></a>: โมดูลวัดค่าแสง <br/>
-1. <a href="https://www.arduitronics.com/product/3571"><b>Grove - Temperature and Humidity sensor</b></a>: โมดูลวัดอุณหภูมิและความชื้น<br/>
-1. <b>Grove - Air Presure sensor</b>: โมดูลวัดความดันอากาศ <br/>
-1. <b>Grove - 3-Axis Accelerator</b>: โมดูลวัดความเร่งของวัตถุ <br/>
-1. <b>Seeeduino Lotus</b>: บอร์ด Arduino ของ Seeed studio ซึ่งมาพร้อมกับพอร์ดของ Grove <br/>  </p>
+1. <a href="https://www.arduitronics.com/product3565"><b>Grove - Led</b></a>: โมดูลแอลอีดีพร้อมใช้งานได้สะดวก  <br/>
+2. <a href="https://www.arduitronics.com/product/3566"><b>Grove - Buzzer</b></a>: โมดูลบัซเซอร์ (buzzer) <br/>
+3. <b>Grove - OLED ขนาด 0.96 นิ้ว</b>: โมดูล OLED ขนาด 0.96 นิ้ว <br/>
+4. <a href="https://www.arduitronics.com/product/3578"><b>Grove - ปุ่มกด</b></a>: โมดูลปุ่มกด (buzzer) <br/>
+5. <a href="https://www.arduitronics.com/product/3562"><b>Grove - Rotary Potentiometer</b></a>: โมดูลตัวต้านทานปรับค่าได้แบบหมุน <br/>
+6. <a href="https://www.arduitronics.com/product/3563"><b>Grove - Sound sensor</b></a>: โมดูลวัดเสียง <br/>
+7. <a href="https://www.arduitronics.com/product/3564"><b>Grove - Light Sensor </b></a>: โมดูลวัดค่าแสง <br/>
+8. <a href="https://www.arduitronics.com/product/3571"><b>Grove - Temperature and Humidity sensor</b></a>: โมดูลวัดอุณหภูมิและความชื้น<br/>
+9. <b>Grove - Air Presure sensor</b>: โมดูลวัดความดันอากาศ <br/>
+10. <b>Grove - 3-Axis Accelerator</b>: โมดูลวัดความเร่งของวัตถุ <br/>
+11. <b>Seeeduino Lotus</b>: บอร์ด Arduino ของ Seeed studio ซึ่งมาพร้อมกับพอร์ดของ Grove <br/>  </p>
 <p><b>หมายเหตุ</b>  อุปกรณ์ต่างๆ บนบอร์ดได้มีการต่อเชื่อมกับบอร์ด Seeeduino Lotus แล้วด้วยลายวงจรบนบอร์ด ดังนั้นไม่จำเป็นต้องเชื่อมต่อวงจรด้วยสายเคเบิ้ลของ Grove หากยังไม่ได้แยกอุปกรณ์ออกเป็นชื้นย่อยๆ  </p>
 <p>ตำแหน่งการเชื่อมต่อบนลายวงจรมีดังต่อไปนี้  </p>
 <table>
@@ -718,7 +732,18 @@
         - เปิดโปรแกรม Arduino IDE <br/>
         - Copy โปรแกรมต่อไปนี้ เลือก Verify เพื่อตรวจสอบว่าทำงานได้หรือไม่ มีข้อผิดพลาดหรือไม่ จากนั้น Upload โปรแกรมลงที่บอร์ด</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1">//LED Blink</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">//LED Blink</span>
 <span class="c1">//The LED will turn on for one second and then turn off for one second</span>
 <span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
@@ -731,14 +756,16 @@
   <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
   <span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
 
-<ul>
-<li><font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font></li>
-</ul>
-<p><div class="highlight"><pre><span></span><code><span class="n">setup</span><span class="p">(){</span>
+<h2 id="_5"><font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">setup</span><span class="p">(){</span>  
 <span class="p">}</span>
 </code></pre></div>
-ทุกครั้งที่เริ่มต้นการทำงาน sketch ฟังก์ชั่น <code>setup()</code> จะถูกเรียกเพื่อทำงานก่อนเป็นลำดับแรก  ซึ่งจะรวบรวมส่วนที่เป็นการกำหนดค่าตัวแปร และค่าเริ่มต้นต่างๆ  การกำหนดโหมดการทำงานของ pin ที่ใช้  การเรียกใช้ Library เป็นต้น  ฟังก์ชั่น <code>setup()</code> จะทำงานเมื่อเริ่มต้นเพียงครั้งเดียวหลังจากที่จ่ายไฟเลี้ยงให้วงจร หรือ กดปุ่ม reset บนตัวบอร์ด</p>
+</td></tr></table>
+
+<p>ทุกครั้งที่เริ่มต้นการทำงาน sketch ฟังก์ชั่น <code>setup()</code> จะถูกเรียกเพื่อทำงานก่อนเป็นลำดับแรก  ซึ่งจะรวบรวมส่วนที่เป็นการกำหนดค่าตัวแปร และค่าเริ่มต้นต่างๆ  การกำหนดโหมดการทำงานของ pin ที่ใช้  การเรียกใช้ Library เป็นต้น  ฟังก์ชั่น <code>setup()</code> จะทำงานเมื่อเริ่มต้นเพียงครั้งเดียวหลังจากที่จ่ายไฟเลี้ยงให้วงจร หรือ กดปุ่ม reset บนตัวบอร์ด</p>
 <div>
 <div class="MathJax_Preview">
 \frac{n!}{k!(n-k)!} = \binom{n}{k}
@@ -748,6 +775,20 @@
 </script>
 </div>
 <p>Lorem ipsum<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> dolor sit amet, consectetur adipiscing elit<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot; Bubble sort &quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+                <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+
 <h2 id="commands">Commands</h2>
 <ul>
 <li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
@@ -820,6 +861,8 @@
           }, typeof search !== "undefined" && search)
         })
       </script>
+      
+        <script src="javascripts/extra.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
