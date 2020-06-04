@@ -274,15 +274,15 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    บทเรียนที่ 2: ปุ่มเพื่อควบคุมหลอดแอลอีดี
+  </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    อธิบายการทำงานของโค้ด
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -434,15 +434,15 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    บทเรียนที่ 2: ปุ่มเพื่อควบคุมหลอดแอลอีดี
+  </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    อธิบายการทำงานของโค้ด
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -683,7 +683,13 @@
 <ol>
 <li>สร้างไฟล์ใหม่และใช้ชื่อ <code>Hello.ino</code> จากนั้น copy โปรกแกรมไปไว้ในไฟล์ที่สร้าง:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span> <span class="c1">// initializes the serial port with a baud rate of 9600</span>
 <span class="p">}</span>
 <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
@@ -691,6 +697,7 @@
   <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> <span class="c1">//delay of 1 second</span>
 <span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
 
 <ol>
 <li>ที่มุมด้านซ้ายบนของ Arduino IDE จะมีปุ่ม 2 ปุ่มได้แก่ <strong>Verify and Upload</strong>  ปุ่มแรก (✓) กดเพื่อคอมไพล์ หลังจากที่คอมไพล์ผ่านแล้วให้กดปุ่มอัพโหลดโปรแกรม (→)</li>
@@ -758,7 +765,9 @@
 </code></pre></div>
 </td></tr></table>
 
-<h2 id="_5"><font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font></h2>
+<ul>
+<li><font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font></li>
+</ul>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">setup</span><span class="p">(){</span>  
 <span class="p">}</span>
@@ -766,6 +775,80 @@
 </td></tr></table>
 
 <p>ทุกครั้งที่เริ่มต้นการทำงาน sketch ฟังก์ชั่น <code>setup()</code> จะถูกเรียกเพื่อทำงานก่อนเป็นลำดับแรก  ซึ่งจะรวบรวมส่วนที่เป็นการกำหนดค่าตัวแปร และค่าเริ่มต้นต่างๆ  การกำหนดโหมดการทำงานของ pin ที่ใช้  การเรียกใช้ Library เป็นต้น  ฟังก์ชั่น <code>setup()</code> จะทำงานเมื่อเริ่มต้นเพียงครั้งเดียวหลังจากที่จ่ายไฟเลี้ยงให้วงจร หรือ กดปุ่ม reset บนตัวบอร์ด</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">loop</span><span class="p">(){</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+หลังจากสร้างฟังก์ชั่น <code>setup()</code>ซึ่งจะตั้งและกำหนดค่าเริ่มต้น จากนั้นฟังก์ชั่น <code>loop()</code> จะทำงานวนลูปอย่างต่อเนื่อง ซึ่งจะทำงานตามโปรแกรมที่เขียนไว้เพื่อควบคุมการทำงานของบอร์ด</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<br/>
+<strong>ลักษณะการทำงาน:</strong></p>
+<p>แปลงค่าให้เป็นตัวแปรชนิด int</p>
+<p><strong>Syntax:</strong></p>
+<p>int(<strong>x</strong>) or (int)<strong>x</strong> (C-style type conversion)</p>
+<p><strong>พารามิเตอร์:</strong></p>
+<p><strong>x</strong>: ตัวแปรที่ต้องการแปลงค่า  สามารถเป็นตัวแปรชนิดใด้ก็ได้</p>
+<p>กำหนดค่าตัวแปรชนิดจำนวนเต็ม (integer) ให้มีค่าเท่ากับ 4 ในชื่อตัวแปร ledPin</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<br/>
+<strong>ลักษณะการทำงาน:</strong></p>
+<p>กำหนดให้โหมดการทำงานของ pin มีลักษณะเป็นอินพุต หรือ เอาท์พุต  โปรดศึกษารายละเอียดการทำงานของ pin แบบดิจิทัลในรูปแบบต่รุ่นต่างๆ  </p>
+<p>ตั้งแต่ Arduino 1.0.1 ตัวต้านทานภายในแบบพูลอัพ (pull-up resistor) สามารถเลือกได้โดยกำหนดเป็น <code>INPUT_PULLUP</code>  นอกจากนี้หากต้องการกำหนดให้ "ไม่ต้องใช้" "ตัวต้านทานภายนในแบบพูลอัพ สามารถทำได้โดยกำหนดเป็น <code>INPUT</code></p>
+<p><strong>Syntax:</strong></p>
+<p>pinMode(<strong>pin, mode</strong>)</p>
+<p><strong>พารามิเตอร์:</strong></p>
+<p><strong>pin</strong>: คือ หมายเลข pin ของบอร์ดที่ต้องการกำหนดโหมดการทำงาน</p>
+<p><strong>mode</strong>: <code>INPUT</code>, <code>OUTPUT</code>, หรือ <code>INPUT_PULLUP</code>.</p>
+<p>กำหนด ledPin เป็นโหมดการทำงานแบบ output</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<br/>
+<strong>ลักษณะการทำงาน:</strong></p>
+<p>กำหนดค่า <code>HIGH</code> หรือ <code>LOW</code> ให้ pin แบบดิจิทัล
+เมื่อ pin ถูกกำหนดโหมดเป็น OUTPUT โดยใช้ pinMode()  แรงดันจะมีค่า 5 V เมื่อกำหนดแบบ <code>HIGH</code> (หรือ 3.3 V บนบอร์ดที่มีแรงดันทำงานที่ 3.3 V เช่น NodeMCU) หรือ 0 V (กราวด์) เมื่อกำหนดแบบ <code>LOW</code>  </p>
+<p>หาก pin ถูกกำหนดให้ใช้โหมด INPUT สามารถใช้คำสั่ง digitalWrite() เพื่อกำหนดให้มีแรงดันแบบ HIGH หรือ LOW  ทั้งนี้แนะนำให้ใช้ pinMode() เพื่อกำหนด  <code>INPUT_PULLUP</code> เพื่อกำหนดใช้ตัวต้านทานภายในแบบพูลอัพ</p>
+<p>หากยังไม่ได้กำหนด pinMode() เป็น OUTPUT แต่ได้ต่อหลอดแอลอีดีไว้ที่ pin  เมื่อเลือก digitalWrite(HIGH) หลอดแอลอีดีอาจจะสว่างไม่เต็มที่   และหากไม่ได้กำหนด pinMode() ไว้ digitalWrite() จะกำหนดให้ตัวต้ตัวต้านทานภายในแบบพูลอัพทำงาน ซึ่งจะทำหน้าที่เหมือนตัวต้านทานที่จำกัดการไหลของกระแสขนาดใหญ่ (current-limiting resistor)</p>
+<p><br/>
+<strong>ลักษณะการทำงาน:</strong></p>
+<p>digitalWrite(<strong>pin, value</strong>)</p>
+<p><strong>พารามิเตอร์:</strong></p>
+<p><strong>pin</strong>: หมายเลข pin บนบอร์ด Arduino</p>
+<p><strong>value</strong>: <code>HIGH</code> or <code>LOW</code>.</p>
+<p>เมื่อกำหนดให้ ledPin ทำงานเป็น output  การกำหนดให้มีค่า HIGH จะทำให้หลอดแอลอีดีสว่าง</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+เมื่อกำหนดให้ ledPin ทำงานเป็น output  การกำหนดให้มีค่า LOW จะทำให้หลอดแอลอีดีดับ</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<br/>
+<strong>ลักษณะการทำงาน:</strong><br />
+หยุดการทำงานของโปรแกรมตามระยะเวลาที่กำหนดค่าพารามิเตอร์เป็นมิลลิวินาที (1000 มิลลิวินาทีเท่ากับ 1 วินาที)</p>
+<p><strong>Syntax:</strong></p>
+<p>delay(<strong>ms</strong>)</p>
+<p><strong>พารามิเตอร์:</strong></p>
+<p><strong>ms</strong>: ตัวเลขกำหนดเวลาหน่วยมิลลิวินาที (ms): ตัวแปรชนิด unsigned long</p>
+<p>หน่วงเวลา 1000 ms หรือ 1 วินาที  </p>
+<p><strong>ผลการทำงานและการแสดงผลคำสั่ง serialPrint:</strong></p>
+<p>โมดูลหลอดแอลอีดีจะติดสลับกับดับอย่างละ 1 วินาที  </p>
+<p><br/>
+<strong>การปรับค่าความสว่างของหลอดแอลอีดี:</strong></p>
+<div align=center><img src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/LED-res.jpeg"/></div>
+
+<p></br></p>
+<p>บนตัวโมดูลหลอดแอลอีดีจะมี <strong>ตัวต้านทานปรับค่าได้ซึ่งต้องปรับค่าโดยใช้ไขควงปากแฉก</strong> การบิดปรับค่าจะทำให้หลอดแอลอีดีสว่างขึ้น!  </p>
+<p><br/>
+- <font size=5;font color=#314B9F >เมื่อแยกโมดูลหลอดแอลอีดีออกจากตัวบอร์ดแล้ว</font></p>
+<p>ในกรณีที่ได้ตัดแยกโมดูลออกจากตัวบอร์ด Grove Beginner Kit แล้ว ให้ใช้สายเคเบิ้ลของ Grove เพื่อต่อเชื่อมระหว่าง <strong>โมดูลหลอดแอลอีดี</strong> กับบอร์ด Seeeduino Lotus ที่ตำแหน่ง pin <strong>D4</strong></p>
+<h3 id="2">บทเรียนที่ 2: ปุ่มเพื่อควบคุมหลอดแอลอีดี</h3>
+<p>ก่อนอื่นต้องเข้าใจว่าสัญญาณขาเข้าจากปุ่มกดมีลักษณะเป็นสัสัญญาณดิจิทัล และมี 2 สถาวะ ได้แก่ 0 หรือ 1  ดังนั้นเราจึงต้องควบคุมการทำงานของเอาท์พุตต่างๆ จากปุ่มกดโดยเลือกจากสวาวะการทำงานเหล่านี้  </p>
 <div>
 <div class="MathJax_Preview">
 \frac{n!}{k!(n-k)!} = \binom{n}{k}
@@ -775,20 +858,6 @@
 </script>
 </div>
 <p>Lorem ipsum<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> dolor sit amet, consectetur adipiscing elit<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot; Bubble sort &quot;&quot;&quot;</span>
-<span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
-                <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-</code></pre></div>
-</td></tr></table>
-
 <h2 id="commands">Commands</h2>
 <ul>
 <li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
