@@ -4,13 +4,31 @@ nav:
     - About: about.md
 
 theme:
-    name: readthedocs
+    name: material
 
+# Extensions
 markdown_extensions:
-  - codehilite:
-      linenums: false
-  - footnotes
+  - codehilite
+  - markdown.extensions.admonition
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
   - pymdownx.arithmatex
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tilde
+  - pymdownx.keys
+  - codehilite:
+      linenums: true
+
+
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML

@@ -204,6 +204,7 @@ $$
 \frac{n!}{k!(n-k)!} = \binom{n}{k}
 $$
 
+
 Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit[^2].
 
 [^1]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
