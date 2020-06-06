@@ -270,7 +270,7 @@
         
           <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
-    บทเรียนที่ 2: ปุ่มเพื่อควบคุมหลอดแอลอีดี
+    บทเรียนที่ 2: การใช้ปุ่มเพื่อควบคุมหลอดแอลอีดี
   </a>
   
 </li>
@@ -424,7 +424,7 @@
         
           <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
-    บทเรียนที่ 2: ปุ่มเพื่อควบคุมหลอดแอลอีดี
+    บทเรียนที่ 2: การใช้ปุ่มเพื่อควบคุมหลอดแอลอีดี
   </a>
   
 </li>
@@ -686,7 +686,7 @@
 <li>ไปที่เมนู <code>Tools</code> -&gt; <code>Serial Monitor</code> หรือกดปุ่ม <strong>Serial Monitor</strong> ที่มุมขวาบน (รูปแว่นขยาย) คุณสามารถดูหน้าจอแสดงผลการทำงานของโปรแกรม:<br/>
 <img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/print.png" /><br/>
 <strong>หมายเหตุ:</strong> หากคุณติตตั้งโปรแกรมของเราจาก <a href="https://www.seeedstudio.com/4GB-Plug-and-Go-USB-Flash-Driver-for-Grove-Beginner-Kit-All-Resources-Included-p-4547.html">USB drive ของ Seeeddtudio</a> , จะมี  <strong>Files</strong> -&gt; <strong>Sketch Book</strong>, ไลบรารี่ทั้งหมดที่ต้องใช้
-<img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Sketchbook.png" />
+<img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Sketchbook.png" /><br />
 <br/>
 <strong>หมายเหตุ:</strong><br />
         โมดูลทุกตัวบนบอร์ดได้ถูกเชื่อมต่อบน PCB เข้ากับ Seeeduino ไว้แล้ว ไม่จำเป็นต้องต่อสาย หรือ บัดกรีเพิ่มเติม   อย่างไรก็ตามหากคุณได้ตัดแยกชิ้นออกจากกัน และต้องการทดลองโดยต่อสายเคเบิ้ล  โปรดศึกษาคู่มือการใช้งานของแต่ละโมดูล
@@ -697,17 +697,19 @@
 <h3 id="1">บทเรียนที่ 1: ไฟแอลอีดีกระพริบ</h3>
 <p><br/>
 เราได้ทดลองโปรแกรม "Hello world" ไปแล้วก่อนหน้านี้  ตอนนี้เรามาทดลองการสั้งให้โมดูลแอลอีดีแสดงการกระพริบกัน   เราได้รู้จักองค์ประกอบพื้นฐานของการควบคุม ได้แก่ อินพุท การควบคุม และ เอาท์พุท  ในตัวอย่างแอลอีดีกระพริบนี้ จะเป็นการสั่งผ่านเอาท์พุทเท่านั้น ไม่มีการรับค่าอินพุท  โดยมี Seeeduino เป็นตัวควบคุมการทำงาน และแอลอีดีเป็นเอาท์พุท และสัญญาณที่ใช้เป็นสัญญาณดิจิทัล  การส่งสัญญาณในระดับ "สูง" จะทำให้แอลอีดีติดสว่าง<br/><br />
-<font size=5;font color=#314B9F >ข้อมูลประกอบพื้นฐาน:</font></p>
+<font size=5;font color=#314B9F >ข้อมูลประกอบพื้นฐาน:</font>  </p>
 <ul>
 <li><strong>สัญญาณดิจิทัลคืออะไร?</strong></li>
 </ul>
 <p><strong>สัญญาณดิจิทัล:</strong> เป็นสัญญาณที่มีระดับแอมพลิจูดเป็นระดับไม่ต่อเนื่อง (Discrete) ค่าแอมพลิจูดมีระดับที่ตายตัว เลือกไว้แล้ว   ในการใช้งานกับบอร์ดควบคุมของเรา สัญญาณดิจิทัลถูกกำหนดให้มีค่าเป็น 2 ระดับ คือ 0 โวลต์ (ระดับต่ำ หรือ 0) และ 5 โวลต์ (ระดับสูง หรือ 1)<br />
 <img alt="Alt text" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/digital.png" /><br />
-- <font size=5;font color=#314B9F >อุปกรณ์ที่ต้องใช้ (มีให้ในชุด <a href="https://www.arduitronics.com/product/3553">GK00001</a>)</font><br />
-    1. บอร์ด Seeeduino Lotus<br />
-    2. Grove LED<br />
-    3. Grove Cable (หากแยกโมดูลเซนเซอร์ออกจากตัวบอร์ด)<br />
-<img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/LED.png" /></p>
+- <font size=5;font color=#314B9F >อุปกรณ์ที่ต้องใช้ (มีให้ในชุด <a href="https://www.arduitronics.com/product/3553">GK00001</a>)</font>  </p>
+<ol>
+<li>บอร์ด Seeeduino Lotus  </li>
+<li>Grove LED  </li>
+<li>Grove Cable (หากแยกโมดูลเซนเซอร์ออกจากตัวบอร์ด)  </li>
+</ol>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/LED.png" /></p>
 <ul>
 <li>
 <p><font size=5;font color=#314B9F>การเชื่อมต่อฮาร์ดแวร์</font></p>
@@ -833,8 +835,165 @@
 <p><br/>
 - <font size=5;font color=#314B9F >เมื่อแยกโมดูลหลอดแอลอีดีออกจากตัวบอร์ดแล้ว</font></p>
 <p>ในกรณีที่ได้ตัดแยกโมดูลออกจากตัวบอร์ด Grove Beginner Kit แล้ว ให้ใช้สายเคเบิ้ลของ Grove เพื่อต่อเชื่อมระหว่าง <strong>โมดูลหลอดแอลอีดี</strong> กับบอร์ด Seeeduino Lotus ที่ตำแหน่ง pin <strong>D4</strong></p>
-<h3 id="2">บทเรียนที่ 2: ปุ่มเพื่อควบคุมหลอดแอลอีดี</h3>
-<p>ก่อนอื่นต้องเข้าใจว่าสัญญาณขาเข้าจากปุ่มกดมีลักษณะเป็นสัสัญญาณดิจิทัล และมี 2 สถาวะ ได้แก่ 0 หรือ 1  ดังนั้นเราจึงต้องควบคุมการทำงานของเอาท์พุตต่างๆ จากปุ่มกดโดยเลือกจากสวาวะการทำงานเหล่านี้  </p>
+<hr />
+<h3 id="2">บทเรียนที่ 2: การใช้ปุ่มเพื่อควบคุมหลอดแอลอีดี</h3>
+<p>ก่อนอื่นต้องเข้าใจว่าสัญญาณขาเข้าจากปุ่มกดมีลักษณะเป็นสัญญาณดิจิทัล และมี 2 สถาวะ ได้แก่ 0 หรือ 1  ดังนั้นเราจึงต้องควบคุมการทำงานของเอาท์พุตต่างๆ จากปุ่มกดโดยเลือกจากสภาวะการทำงานเหล่านี้ <br/>  </p>
+<p><strong>การปฏิบัติในบทเรียนนี้:</strong> ใช้ปุ่มกดเพื่อเปิด และปิด โมดูโมดูลหลอดแอลอีดี  <br/>  </p>
+<p><font size=5;font color=#314B9F >อุปกรณ์ที่ต้องใช้ (มีให้ในชุด <a href="https://www.arduitronics.com/product/3553">GK00001</a>)</font>  </p>
+<ol>
+<li>Seeeduino Lotus</li>
+<li>โมดูโมดูลหลอดแอลอีดี</li>
+<li>โมดูลปุ่มกด</li>
+<li>สายเคเบิ้ล (หากแยกโมดูลเซนเซอร์ออกจากตัวบอร์ด)</li>
+</ol>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Button.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >การต่อเชื่อมฮาร์ดแวร์</font>  </p>
+<ul>
+<li>
+<p><strong>การต่อกับโมดูล:</strong></p>
+<ul>
+<li>โมดูลถูกต่อเชื่อมไว้ด้วยลายวงจรบนบอร์ดอยู่แล้ว  </li>
+<li>บอร์ด Seeeduino เชื่อมต่อเข้ากับ PC โดยใช้สาย USB ที่ให้ในชุด  </li>
+</ul>
+</li>
+<li>
+<p><strong>รายละเอียดการใช้ฮาร์ดแวร์</strong>:</p>
+<ul>
+<li>Input: ปุ่มกด</li>
+<li>Control: บอร์ด Seeeduino</li>
+<li>Output: โมดูลหลอดแอลอีดี</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>ทั้งเซนเซอร์และหลอดแอลอีดีใช้งานกับสัสัญญาณดิจิทัล ดังนั้นต่อเชื่อมต่อโดยใช้โหมดดิจิทัล</p>
+<ul>
+<li><strong>ซอฟแวร์ที่ใช้</strong>:<ul>
+<li>เปิด Arduino IDE.</li>
+<li>ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด  ให้ Upload โปรแกรมลงที่บอร์ด</li>
+</ul>
+</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">//Button to turn ON/OFF LED</span>
+<span class="c1">//Constants won&#39;t change. They&#39;re used here to set pin numbers:</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">buttonPin</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>     <span class="c1">// the number of the pushbutton pin</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span>  <span class="mi">4</span><span class="p">;</span>      <span class="c1">// the number of the LED pin</span>
+<span class="c1">// variables will change:</span>
+<span class="kt">int</span> <span class="n">buttonState</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>         <span class="c1">// variable for reading the pushbutton status</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// initialize the LED pin as an output:</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+    <span class="c1">// initialize the pushbutton pin as an input:</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="c1">// read the state of the pushbutton value:</span>
+<span class="n">buttonState</span> <span class="o">=</span> <span class="n">digitalRead</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">);</span>
+
+<span class="c1">// check if the pushbutton is pressed. If it is, the buttonState is HIGH:</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">buttonState</span> <span class="o">==</span> <span class="n">HIGH</span><span class="p">)</span> <span class="p">{</span>
+<span class="c1">// turn LED on:</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="c1">// turn LED off:</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+      <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+<ul>
+<li><font size=5;font color=#314B9F >วิเคราะห์การทำงานของโปรแกรม</font></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</code></pre></div>
+
+<p>กำหนดให้หลอดแอลอีดีเป็นโหมด output</p>
+<div class="highlight"><pre><span></span><code><span class="n">pinMode</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+</code></pre></div>
+
+<p>กำหนดให้ปุ่มกดเป็นโหมด Input</p>
+<div class="highlight"><pre><span></span><code><span class="n">buttonState</span> <span class="o">=</span> <span class="n">digitalRead</span><span class="p">(</span><span class="n">buttonPin</span><span class="p">);</span>
+</code></pre></div>
+
+<p><br/>
+<strong>ลักษณะการทำงาน:</strong></p>
+<p>&emsp;อ่านค่าจากดิจิทัล pin ซึ่งจะมีค่าเป็น <code>HIGH</code> หรือ <code>LOW</code>.</p>
+<p><strong>Syntax:</strong></p>
+<p>&emsp;digitalRead(<strong>pin</strong>)</p>
+<p><strong>Parameters:</strong></p>
+<p>&emsp;<strong>pin</strong>: หมายเลข <code>pin</code> ที่ต้องการอ่านค่า</p>
+<p><br/>
+ใช้ฟังก์ชั่นนี้เพื่ออ่านค่อ่านค่าจากดิจิทัล pin ซึ่งมีค่า HIGH หรือ LOW เมื่อมีการกดปุ่ม จะได้สถาวะ HIGH  ถ้าไม่กดจะเป็น LOW</p>
+<div class="highlight"><pre><span></span><code>  <span class="k">if</span> <span class="p">(</span><span class="n">buttonState</span> <span class="o">==</span> <span class="n">HIGH</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><br/>
+<strong>ลักษณะการทำงาน:</strong></p>
+<p>การใช้ if...else ทำให้การควบคุมการทำงานได้มากกว่าการใช้ If เพียงอย่างเดียว &emsp; นอกจากนี้ยังสามารถทดสอบเงื่อนไข (condition) การทำงานได้หลายเงื่อนไข โดยใช้ else if...  และหากไม่ตรงกับเงื่อนไขที่กำหนดไว้ใน if... และ else if...เลย จึงจะทำงานโดยโปรแกรมส่วนที่เขียนใน else ...</p>
+<p>การตรวจสอบเงื่อนไขแต่ละส่วนจะดำเนินไปตามลำดับ หากเงื่อนไขที่กำหนดไว้ไม่เป็นจริง (False) จะข้ามโปรแกรมในส่วนนั้นไป  และวนทำจนกว่าจะพบกับเงื่อนไขที่เป็นจริง (True) จากนั้นจะ run ตามเงื่อนไขในส่วนที่ต่อท้าย if() หรือ else if () นั้น หากไม่พบเงื่อนไขใดเลยที่เป็นจริง จะไป run ในส่วน else()</p>
+<p>ข้อสังเกตคือ การใช้งาน if()...else() นั้นสามารถเลือกลงท้ายด้วยการใช้ else() หรือ else if() เป็นท่อนสุดท้ายได้   และสามารถใช้ if... และตามด้วย else if() ได้โดยไม่จำกัดจำนวนครั้ง</p>
+<p><strong>Syntax:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">condition1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// do Thing A</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">condition2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// do Thing B</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// do Thing C</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li><font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font></li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">rotaryPin</span> <span class="o">=</span> <span class="n">A0</span><span class="p">;</span>    <span class="c1">// select the input pin for the rotary</span>
+<span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>      <span class="c1">// select the pin for the LED</span>
+</code></pre></div>
+<strong>ลักษณะการทำงาน:</strong></p>
+<p>คุณอาจสังเกตว่าเราได้กำหนดค่าให้ rotatePin และ ledPin ด้วยวิธีที่ต่างกัน  ทั้งนี้เนื่องจากตัวต้านทานปรับค่าได้แบบหมุนสร้างสัญญาณแบบแอนะลอก (analog signal) ในขณะที่หลอดแอลอีดีควบคุมโดยใช้สัญญาณดิจิทัล  </p>
+<p>เพื่อ <strong>กำหนดต่า Analog Pin</strong>, ให้ใช้ A + หมายเลขของ Pin (เช่น <code>A0</code>).</p>
+<p>เพื่อ <strong>กำหนดต่า Digital Pin</strong>, ให้เขียนหมายเลข pin ได้เลย (เช่น <code>4</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="n">rotaryValue</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">rotaryPin</span><span class="p">);</span>
+</code></pre></div>
+
 <div>
 <div class="MathJax_Preview">
 \frac{n!}{k!(n-k)!} = \binom{n}{k}
