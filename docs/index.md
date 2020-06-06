@@ -128,7 +128,7 @@ void loop() {
 6. ไปที่เมนู `Tools` -> `Serial Monitor` หรือกดปุ่ม **Serial Monitor** ที่มุมขวาบน (รูปแว่นขยาย) คุณสามารถดูหน้าจอแสดงผลการทำงานของโปรแกรม:<br/>
 ![](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/print.png)<br/>
 **หมายเหตุ:** หากคุณติตตั้งโปรแกรมของเราจาก [USB drive ของ Seeeddtudio](https://www.seeedstudio.com/4GB-Plug-and-Go-USB-Flash-Driver-for-Grove-Beginner-Kit-All-Resources-Included-p-4547.html) , จะมี  **Files** -> **Sketch Book**, ไลบรารี่ทั้งหมดที่ต้องใช้
-![](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Sketchbook.png)
+![](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Sketchbook.png)  
 <br/>
 **หมายเหตุ:**  
         โมดูลทุกตัวบนบอร์ดได้ถูกเชื่อมต่อบน PCB เข้ากับ Seeeduino ไว้แล้ว ไม่จำเป็นต้องต่อสาย หรือ บัดกรีเพิ่มเติม   อย่างไรก็ตามหากคุณได้ตัดแยกชิ้นออกจากกัน และต้องการทดลองโดยต่อสายเคเบิ้ล  โปรดศึกษาคู่มือการใช้งานของแต่ละโมดูล
@@ -138,16 +138,18 @@ void loop() {
 ### บทเรียนที่ 1: ไฟแอลอีดีกระพริบ
 <br/>
 เราได้ทดลองโปรแกรม "Hello world" ไปแล้วก่อนหน้านี้  ตอนนี้เรามาทดลองการสั้งให้โมดูลแอลอีดีแสดงการกระพริบกัน   เราได้รู้จักองค์ประกอบพื้นฐานของการควบคุม ได้แก่ อินพุท การควบคุม และ เอาท์พุท  ในตัวอย่างแอลอีดีกระพริบนี้ จะเป็นการสั่งผ่านเอาท์พุทเท่านั้น ไม่มีการรับค่าอินพุท  โดยมี Seeeduino เป็นตัวควบคุมการทำงาน และแอลอีดีเป็นเอาท์พุท และสัญญาณที่ใช้เป็นสัญญาณดิจิทัล  การส่งสัญญาณในระดับ "สูง" จะทำให้แอลอีดีติดสว่าง<br/>  
-<font size=5;font color=#314B9F >ข้อมูลประกอบพื้นฐาน:</font>
+<font size=5;font color=#314B9F >ข้อมูลประกอบพื้นฐาน:</font>  
 
 - **สัญญาณดิจิทัลคืออะไร?**
 
 **สัญญาณดิจิทัล:** เป็นสัญญาณที่มีระดับแอมพลิจูดเป็นระดับไม่ต่อเนื่อง (Discrete) ค่าแอมพลิจูดมีระดับที่ตายตัว เลือกไว้แล้ว   ในการใช้งานกับบอร์ดควบคุมของเรา สัญญาณดิจิทัลถูกกำหนดให้มีค่าเป็น 2 ระดับ คือ 0 โวลต์ (ระดับต่ำ หรือ 0) และ 5 โวลต์ (ระดับสูง หรือ 1)  
 ![Alt text](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/digital.png)  
 - <font size=5;font color=#314B9F >อุปกรณ์ที่ต้องใช้ (มีให้ในชุด [GK00001](https://www.arduitronics.com/product/3553))</font>  
-    1. บอร์ด Seeeduino Lotus  
-    2. Grove LED  
-    3. Grove Cable (หากแยกโมดูลเซนเซอร์ออกจากตัวบอร์ด)  
+
+1. บอร์ด Seeeduino Lotus  
+2. Grove LED  
+3. Grove Cable (หากแยกโมดูลเซนเซอร์ออกจากตัวบอร์ด)  
+
 ![](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/LED.png)
 
 - <font size=5;font color=#314B9F>การเชื่อมต่อฮาร์ดแวร์</font>
@@ -296,12 +298,161 @@ delay(1000);
 
 ในกรณีที่ได้ตัดแยกโมดูลออกจากตัวบอร์ด Grove Beginner Kit แล้ว ให้ใช้สายเคเบิ้ลของ Grove เพื่อต่อเชื่อมระหว่าง **โมดูลหลอดแอลอีดี** กับบอร์ด Seeeduino Lotus ที่ตำแหน่ง pin **D4**
 
+*******
+
+
+### บทเรียนที่ 2: การใช้ปุ่มเพื่อควบคุมหลอดแอลอีดี  
+
+ก่อนอื่นต้องเข้าใจว่าสัญญาณขาเข้าจากปุ่มกดมีลักษณะเป็นสัญญาณดิจิทัล และมี 2 สถาวะ ได้แก่ 0 หรือ 1  ดังนั้นเราจึงต้องควบคุมการทำงานของเอาท์พุตต่างๆ จากปุ่มกดโดยเลือกจากสภาวะการทำงานเหล่านี้ <br/>  
+
+
+**การปฏิบัติในบทเรียนนี้:** ใช้ปุ่มกดเพื่อเปิด และปิด โมดูโมดูลหลอดแอลอีดี  <br/>  
+
+<font size=5;font color=#314B9F >อุปกรณ์ที่ต้องใช้ (มีให้ในชุด [GK00001](https://www.arduitronics.com/product/3553))</font>  
+
+1. Seeeduino Lotus
+1. โมดูโมดูลหลอดแอลอีดี
+1. โมดูลปุ่มกด
+1. สายเคเบิ้ล (หากแยกโมดูลเซนเซอร์ออกจากตัวบอร์ด)
+
+![](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Button.png)
+
+- <font size=5;font color=#314B9F >การต่อเชื่อมฮาร์ดแวร์</font>  
+    - **การต่อกับโมดูล:**
+        - โมดูลถูกต่อเชื่อมไว้ด้วยลายวงจรบนบอร์ดอยู่แล้ว  
+        - บอร์ด Seeeduino เชื่อมต่อเข้ากับ PC โดยใช้สาย USB ที่ให้ในชุด  
+
+    - **รายละเอียดการใช้ฮาร์ดแวร์**:
+        - Input: ปุ่มกด
+        - Control: บอร์ด Seeeduino
+        - Output: โมดูลหลอดแอลอีดี
+
+ทั้งเซนเซอร์และหลอดแอลอีดีใช้งานกับสัสัญญาณดิจิทัล ดังนั้นต่อเชื่อมต่อโดยใช้โหมดดิจิทัล
+
+- **ซอฟแวร์ที่ใช้**:
+      - เปิด Arduino IDE.
+      - ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด  ให้ Upload โปรแกรมลงที่บอร์ด
+
+``` cpp linenums="1"
+//Button to turn ON/OFF LED
+//Constants won't change. They're used here to set pin numbers:
+const int buttonPin = 6;     // the number of the pushbutton pin
+const int ledPin =  4;      // the number of the LED pin
+// variables will change:
+int buttonState = 0;         // variable for reading the pushbutton status
+
+void setup() {
+    // initialize the LED pin as an output:
+    pinMode(ledPin, OUTPUT);
+    // initialize the pushbutton pin as an input:
+    pinMode(buttonPin, INPUT);
+}
+
+void loop() {
+// read the state of the pushbutton value:
+buttonState = digitalRead(buttonPin);
+
+// check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+if (buttonState == HIGH) {
+// turn LED on:
+digitalWrite(ledPin, HIGH);
+} else {
+// turn LED off:
+digitalWrite(ledPin, LOW);
+      }
+}
+```
 
 
 
-### บทเรียนที่ 2: ปุ่มเพื่อควบคุมหลอดแอลอีดี  
+- <font size=5;font color=#314B9F >วิเคราะห์การทำงานของโปรแกรม</font>
 
-ก่อนอื่นต้องเข้าใจว่าสัญญาณขาเข้าจากปุ่มกดมีลักษณะเป็นสัสัญญาณดิจิทัล และมี 2 สถาวะ ได้แก่ 0 หรือ 1  ดังนั้นเราจึงต้องควบคุมการทำงานของเอาท์พุตต่างๆ จากปุ่มกดโดยเลือกจากสวาวะการทำงานเหล่านี้  
+```cpp
+pinMode(ledPin, OUTPUT);
+```
+
+กำหนดให้หลอดแอลอีดีเป็นโหมด output
+
+```cpp
+pinMode(buttonPin, INPUT);
+```
+
+กำหนดให้ปุ่มกดเป็นโหมด Input
+
+
+```cpp
+buttonState = digitalRead(buttonPin);
+```
+
+<br/>
+**ลักษณะการทำงาน:**
+
+&emsp;อ่านค่าจากดิจิทัล pin ซึ่งจะมีค่าเป็น `HIGH` หรือ `LOW`.
+
+**Syntax:**
+
+&emsp;digitalRead(**pin**)
+
+**Parameters:**
+
+&emsp;**pin**: หมายเลข `pin` ที่ต้องการอ่านค่า
+
+<br/>
+ใช้ฟังก์ชั่นนี้เพื่ออ่านค่อ่านค่าจากดิจิทัล pin ซึ่งมีค่า HIGH หรือ LOW เมื่อมีการกดปุ่ม จะได้สถาวะ HIGH  ถ้าไม่กดจะเป็น LOW
+
+```cpp
+  if (buttonState == HIGH) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+}
+```
+
+<br/>
+**ลักษณะการทำงาน:**
+
+การใช้ if...else ทำให้การควบคุมการทำงานได้มากกว่าการใช้ If เพียงอย่างเดียว &emsp; นอกจากนี้ยังสามารถทดสอบเงื่อนไข (condition) การทำงานได้หลายเงื่อนไข โดยใช้ else if...  และหากไม่ตรงกับเงื่อนไขที่กำหนดไว้ใน if... และ else if...เลย จึงจะทำงานโดยโปรแกรมส่วนที่เขียนใน else ...
+
+การตรวจสอบเงื่อนไขแต่ละส่วนจะดำเนินไปตามลำดับ หากเงื่อนไขที่กำหนดไว้ไม่เป็นจริง (False) จะข้ามโปรแกรมในส่วนนั้นไป  และวนทำจนกว่าจะพบกับเงื่อนไขที่เป็นจริง (True) จากนั้นจะ run ตามเงื่อนไขในส่วนที่ต่อท้าย if() หรือ else if () นั้น หากไม่พบเงื่อนไขใดเลยที่เป็นจริง จะไป run ในส่วน else()
+
+ข้อสังเกตคือ การใช้งาน if()...else() นั้นสามารถเลือกลงท้ายด้วยการใช้ else() หรือ else if() เป็นท่อนสุดท้ายได้   และสามารถใช้ if... และตามด้วย else if() ได้โดยไม่จำกัดจำนวนครั้ง
+
+
+**Syntax:**
+
+```cpp
+if (condition1) {
+  // do Thing A
+}
+else if (condition2) {
+  // do Thing B
+}
+else {
+  // do Thing C
+}
+```
+
+
+- <font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font>
+
+```cpp
+int rotaryPin = A0;    // select the input pin for the rotary
+int ledPin = 4;      // select the pin for the LED
+```
+**ลักษณะการทำงาน:**
+
+คุณอาจสังเกตว่าเราได้กำหนดค่าให้ rotatePin และ ledPin ด้วยวิธีที่ต่างกัน  ทั้งนี้เนื่องจากตัวต้านทานปรับค่าได้แบบหมุนสร้างสัญญาณแบบแอนะลอก (analog signal) ในขณะที่หลอดแอลอีดีควบคุมโดยใช้สัญญาณดิจิทัล  
+
+เพื่อ **กำหนดต่า Analog Pin**, ให้ใช้ A + หมายเลขของ Pin (เช่น `A0`).
+
+เพื่อ **กำหนดต่า Digital Pin**, ให้เขียนหมายเลข pin ได้เลย (เช่น `4`).
+
+```cpp
+rotaryValue = analogRead(rotaryPin);
+```
+
+
 
 
 
