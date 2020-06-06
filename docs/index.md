@@ -1,5 +1,5 @@
 # Welcome to Arduitronicshub  
-## ศูนย์กลางคู่มือบอร์ด โดย Arduitronics.com
+## ศูนย์กลางคู่มือบอร์ด Grove Beginner Kit for Arduino (GK00001) โดย Arduitronics.com
 
 ## ภาพรวมอุปกรณ์
 ![Screenshot](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Parts.jpg)
@@ -331,7 +331,7 @@ delay(1000);
 
 - **ซอฟแวร์ที่ใช้**:
       - เปิด Arduino IDE.
-      - ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด  ให้ Upload โปรแกรมลงที่บอร์ด
+      - ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify &emsp; เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด  ให้ Upload โปรแกรมลงที่บอร์ด
 
 ``` cpp linenums="1"
 //Button to turn ON/OFF LED
@@ -412,27 +412,113 @@ buttonState = digitalRead(buttonPin);
 <br/>
 **ลักษณะการทำงาน:**
 
-การใช้ if...else ทำให้การควบคุมการทำงานได้มากกว่าการใช้ If เพียงอย่างเดียว &emsp; นอกจากนี้ยังสามารถทดสอบเงื่อนไข (condition) การทำงานได้หลายเงื่อนไข โดยใช้ else if...  และหากไม่ตรงกับเงื่อนไขที่กำหนดไว้ใน if... และ else if...เลย จึงจะทำงานโดยโปรแกรมส่วนที่เขียนใน else ...
+    การใช้ if...else ทำให้การควบคุมการทำงานได้มากกว่าการใช้ If เพียงอย่างเดียว &emsp; นอกจากนี้ยังสามารถทดสอบเงื่อนไข (condition) การทำงานได้หลายเงื่อนไข โดยใช้ else if...  และหากไม่ตรงกับเงื่อนไขที่กำหนดไว้ใน if... และ else if...เลย จึงจะทำงานโดยโปรแกรมส่วนที่เขียนใน else ...
 
-การตรวจสอบเงื่อนไขแต่ละส่วนจะดำเนินไปตามลำดับ หากเงื่อนไขที่กำหนดไว้ไม่เป็นจริง (False) จะข้ามโปรแกรมในส่วนนั้นไป  และวนทำจนกว่าจะพบกับเงื่อนไขที่เป็นจริง (True) จากนั้นจะ run ตามเงื่อนไขในส่วนที่ต่อท้าย if() หรือ else if () นั้น หากไม่พบเงื่อนไขใดเลยที่เป็นจริง จะไป run ในส่วน else()
+    การตรวจสอบเงื่อนไขแต่ละส่วนจะดำเนินไปตามลำดับ หากเงื่อนไขที่กำหนดไว้ไม่เป็นจริง (False) จะข้ามโปรแกรมในส่วนนั้นไป  และวนทำจนกว่าจะพบกับเงื่อนไขที่เป็นจริง (True) จากนั้นจะ run ตามเงื่อนไขในส่วนที่ต่อท้าย if() หรือ else if () นั้น หากไม่พบเงื่อนไขใดเลยที่เป็นจริง จะไป run ในส่วน else()
 
-ข้อสังเกตคือ การใช้งาน if()...else() นั้นสามารถเลือกลงท้ายด้วยการใช้ else() หรือ else if() เป็นท่อนสุดท้ายได้   และสามารถใช้ if... และตามด้วย else if() ได้โดยไม่จำกัดจำนวนครั้ง
+    ข้อสังเกตคือ การใช้งาน if()...else() นั้นสามารถเลือกลงท้ายด้วยการใช้ else() หรือ else if() เป็นท่อนสุดท้ายได้   และสามารถใช้ if... และตามด้วย else if() ได้โดยไม่จำกัดจำนวนครั้ง
 
 
 **Syntax:**
 
-```cpp
-if (condition1) {
-  // do Thing A
+    ```cpp
+    if (condition1) {
+      // do Thing A
+    }
+    else if (condition2) {
+      // do Thing B
+    }
+    else {
+      // do Thing C
+    }
+    ```
+
+การใช้งานเงื่อนไขแบบ if ทำงานดังนี้:  หากเงื่อนไขที่กำหนดในวงเล็บหลัง **if(...)** "เป็นจริง" โปรแกรมในช่วงวงเล็บปีกกา {...} จะทำงาน   &emsp;หาก "เป็นเท็จ" โปรแกรมในช่วง **else(...)** จะทำงาน  &emsp;ดังนั้นจากเงื่อนไขในโปรแกรมที่เขียน ถ้าสภาวะของปุ่มกดเป็น HIGH จะทำให้ pin ที่ทำงานของหลอดแอลอีดีเป็น HIGH ด้วย หลอดจแอลอีดีจะสว่าง และในทางตรงข้าม หากสภาวะของปุ่มกดเป็น LOW หลอดแอลอีดีก็จะดับ
+
+
+**ผลการทำงานของบอร์ด และการแสดงใน Serial Print**
+
+เมื่อกดปุ่ม หลอดแอลอีดีจะติดสว่าง
+
+- <font size=5;font color=#314B9F >หากตัดแยกโมดูลออกจากบอร์ดแล้ว</font>
+
+กรณีที่ได้ตัดแยกโมดูลออกจากตัวบอร์ด Grove Beginner Kit แล้ว ให้ใช้สายเคเบิ้ลของ Grove เพื่อต่อเชื่อมระหว่าง โมดูลหลอดแอลอีดี กับบอร์ด Seeeduino Lotus ที่ตำแหน่ง pin **D4**  และต่อเชื่อมกับปุ่มกดที่ตำแหน่ง pin **D6**
+
+
+
+
+
+
+
+### บทเรียนที่ 3: การควบคุมความถี่ของการกระพริบ  
+
+<br/>
+ในบทเรียนที่แล้ว เราได้ศึกษาการทำงานของปุ่มกด ซึ่งมีสภาวะการทำงานเพียง 2 แบบ คือ เปิด/ปิด ซึ่งมีค่าแรงดันเป็น 5 V หรือ 0 V &emsp;อย่างไรก็ตามในทางปฏิบัติเรามักต้องการใช้งานสภาวะที่หลากหลายมากกว่าแค่ 0 หรือ 5 V  ดังนั้นจึงจำเป็นต้องมีการรับค่าจากสัญญาณแอนะลอก!!  และการใช้งานตัวต้านทานปรับค่าได้แบบหมุน (Rotary Potentiometer) จึงเป็นตัวอย่างที่นิยมนำมาศึกษาเพื่อเรียนรู้การทำงานของสัทั้งนี้เนื่องจากตัวต้านทานปรับค่าได้แบบหมุนสร้างสัญญาณแบบแอนะลอก  
+<br/>
+
+<font size=5;font color=#314B9F >ข้อมูลเบื้องต้น:</font>
+
+- **สัญญาณแอนะลอกคืออะไร !!**
+
+**สัญญาณแอนะลอกคือ:** สัญญาณที่มีค่าเปลี่ยนแปลงได้อย่าง "ต่อเนื่อง" ทั้งแอมพลิจูด ความถี่ และเฟส ตามเวลาที่เปลี่ยนผ่านไป  กล่าวอีกอย่างคือสัญญาณมีค่าเปลี่ยนไปได้แบบต่อเนื่องเมื่อเวลาเปลี่ยนไป &nbsp; ตัวอย่างของสัญญาณแอนะลอกคือ กระแสไฟฟ้า เสียง สัญญาณภาพ เป็นต้น  &nbsp; สัญญาณแบบไซนูซอยด์  สัญญาณรูปสามเหลี่ยม เป็นอีกตัวอย่างของสัญญาณแอนะลอก &nbsp; pin แบบแอนะลอกของบอร์ดไม่โครคอนโทรลเลอร์ของคุณมีค่าได้ระหว่าง 0 V ถึง 5 V โดยจะสั่งค่าได้ 1024 ขั้น ตั้งแต่ 0 ถึง 1023 &nbsp; โดย 0 หมายถึง 0 V  &nbsp;512 หมายถึง 2.5 V และ 1023 หมายถึง 5 V เป็นต้น
+
+![Alt text](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/analog.png)
+
+
+
+
+- <font size=5;font color=#314B9F >อุปกรณ์ที่ใช้</font>
+    1. บอร์ด Seeeduino Lotus
+    2. โมดูล Grove LED
+    3. โมดูล Grove Rotary Switch
+    4. ศายเคเบิ้ล (หากตัดแยกโมดูลออกจากบอร์ดแล้ว)
+
+![](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/rotary.png)
+
+
+
+- <font size=5;font color=#314B9F >การต่อเชื่อมฮาร์ดแวร์</font>  
+    - **การต่อกับโมดูล:**
+        - โมดูลถูกต่อเชื่อมไว้ด้วยลายวงจรบนบอร์ดอยู่แล้ว  
+        - บอร์ด Seeeduino เชื่อมต่อเข้ากับ PC โดยใช้สาย USB ที่ให้ในชุด  
+
+    - **รายละเอียดการใช้ฮาร์ดแวร์**:
+        - Input: ตัวต้านทานปรับค่าได้แบบหมุน
+        - Control: บอร์ด Seeeduino
+        - Output: โมดูลหลอดแอลอีดี
+
+อินพุตหรือสัญญาณขาเข้าของบอร์ดคือสัญญาณแอนะลอก  ดังนั้นจึงต้องต่อสัญญาณเข้าที่ Pin แบบแอนะลอก และโมดูลหลอดแอลอีดีต่อเชื่อมโดยใช้สัญญาณแบบดิจิทัล
+
+
+- **ซอฟแวร์ที่ใช้**:
+    - เปิด Arduino IDE.
+    - ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify &emsp; เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด  ให้ Upload โปรแกรมลงที่บอร์ด
+
+```Cpp linenums="1"
+//Rotary controls LED
+int rotaryPin = A0;    // select the input pin for the rotary
+int ledPin = 4;      // select the pin for the LED
+int rotaryValue = 0;  // variable to store the value coming from the rotary
+
+void setup() {
+// declare the ledPin as an OUTPUT:
+pinMode(ledPin, OUTPUT);
+pinMode(rotaryPin, INPUT);
 }
-else if (condition2) {
-  // do Thing B
-}
-else {
-  // do Thing C
+
+void loop() {
+// read the value from the sensor:
+rotaryValue = analogRead(rotaryPin);
+// turn the ledPin on
+digitalWrite(ledPin, HIGH);
+// stop the program for <sensorValue> milliseconds:
+delay(rotaryValue);
+// turn the ledPin off:
+digitalWrite(ledPin, LOW);
+// stop the program for for <sensorValue> milliseconds:
+delay(rotaryValue);
 }
 ```
-
 
 - <font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font>
 
@@ -440,18 +526,59 @@ else {
 int rotaryPin = A0;    // select the input pin for the rotary
 int ledPin = 4;      // select the pin for the LED
 ```
-**ลักษณะการทำงาน:**
+**ลักษณะการทำงาน:**  
+&emsp;คุณอาจสังเกตว่าเราได้กำหนดค่าให้ rotatePin และ ledPin ด้วยวิธีที่ต่างกัน  ทั้งนี้เนื่องจากตัวต้านทานปรับค่าได้แบบหมุนสร้างสัญญาณแบบแอนะลอก (analog signal) ในขณะที่หลอดแอลอีดีควบคุมโดยใช้สัญญาณดิจิทัล  
 
-คุณอาจสังเกตว่าเราได้กำหนดค่าให้ rotatePin และ ledPin ด้วยวิธีที่ต่างกัน  ทั้งนี้เนื่องจากตัวต้านทานปรับค่าได้แบบหมุนสร้างสัญญาณแบบแอนะลอก (analog signal) ในขณะที่หลอดแอลอีดีควบคุมโดยใช้สัญญาณดิจิทัล  
+&emsp;เพื่อ **กำหนดต่า Analog Pin**, ให้ใช้ A + หมายเลขของ Pin (เช่น `A0`).
 
-เพื่อ **กำหนดต่า Analog Pin**, ให้ใช้ A + หมายเลขของ Pin (เช่น `A0`).
-
-เพื่อ **กำหนดต่า Digital Pin**, ให้เขียนหมายเลข pin ได้เลย (เช่น `4`).
+&emsp;เพื่อ **กำหนดต่า Digital Pin**, ให้เขียนหมายเลข pin ได้เลย (เช่น `4`).
 
 ```cpp
 rotaryValue = analogRead(rotaryPin);
 ```
 
+**ลักษณะการทำงาน:**
+
+&emsp;โปรแกรมด้านบนมีการอ่านค่าซึ่งกำหนดไว้จาก pin แบบแอนะลอก &ensp; โดยบอร์ดไมโครคอนโทรลเลอร์ที่คุณใช้อยู่นี้มีช่องสัญญาณ (pin) หลายช่อง  &nbsp;มีทั้ง pin ดิจิทัลและแอนะลอก  &nbsp;โดยช่องสัญญาณแบบแอนะลอกทำงานโดยแปลงค่าจากวงจรแปลง (Digital converter) แบบ 10 บิต &nbsp;นั่นหมายถึงค่าที่อ่าน หรือ ค่าที่กำหนดในโปรแกรมจะมีค่าเป็นจำนวนเต็มตั้งแต่ 0 ถึง 1023 โดยแรงดันอินพุตจะมีค่าระหว่าง 0 V และค่าแรงดันทำงานสูงสุด (Operating voltage) ของบอร์ด (5 V หรือ 3.3 V แล้วแต่ชนิดของบอร์ดที่คุณเลือกใช้) &ensp;ตัวอย่างเช่นหากคุณเลือกใช้งานบอร์ด Arduino Uno R3 แรงดันสูงสุดจะอยู่ที่ 5 V / ซึ่งแบ่งเป็น 1024 ขั้น หรือ 0.0049 โวลต์ (4.9 มิลลิโวลต์) ต่อขั้น
+
+**Syntax:**
+
+&emsp;analogRead(**pin**)
+
+**พารามิเตอร์:**
+
+&emsp;**pin**: ชื่อของ pin แบบแอนะลอก (A0 ถึง A5 บนบอร์ดส่วนใหญ่).
+
+**ผลการทำงาน:**   
+&emsp;อ่านค่าแอนะลอกจาก pin ที่กำหนด &emsp; ความละเอียดของค่าที่อ่านจะขึ้นกับตัวแปลงค่าแอนะลอกเป็นดิจิทัลซึ่งเป็นฮาร์ดแวร์ที่ฝังอยู่บนบอร์ดที่คุณใช้ โดยมีค่าได้ตั้งแค่ 0-1023 สำหรับบอร์ดที่ใช้วงจรแบบ 10 บิต หรือ 0-4095 สำหรับบอร์ดที่ใช้วงจรแบบ 12 บิต &nbsp;และใช้ชนิดของตัวแปรที่รับค่าจาก Pin เป็นแบบ int &ensp; ฟังก์ชั่นนี้ใช้อ่านค่าจาก pin แบบแอนะลอก (ในบทเรียนนี้อ่านค่าจากตัวต้านทานปรับค่าได้แบบหมุน) ซึ่งสำหรับอบอร์ดที่เราใช้นี้จะมีความละเอีดย 0~1023
+
+```cpp
+delay(rotaryValue);
+```
+
+**ฟังก์ชั่นหน่วงเวลา (Delay):** &ensp; ค่าที่กำหนดไว้ในวงเล็บคือระยะเวลาที่ต้องการหน่วงในหน่วยมิลลิวินาที &nbsp; เนื่องจากค่าที่กำหนดได้มาจากค่าที่อ่านได้จาก Pin แบบแอนะลอก ซึ่งสัมพันธ์กับการหมุนของตัวต้านทานปรับค่าได้ &nbsp; ดังนั้นช่วงเวลาที่หน่วงไว้จึงถูกควบคุมด้วยการหมุมหัวบิด (knob)
+
+
+**ผลการทำงานของบอร์ด และการแสดงใน Serial Print:**
+
+&emsp;การหมุนที่ตัวต้านทานปรับค่าได้จะเปลี่ยนแปลงความถี่ของการกระพริบของหลอดแอลอีดี
+
+- <font size=5;font color=#314B9F >หากตัดแยกโมดูลออกจากบอร์ดแล้ว</font>
+
+&emsp;กรณีที่ได้ตัดแยกโมดูลออกจากตัวบอร์ด Grove Beginner Kit แล้ว ให้ใช้สายเคเบิ้ลของ Grove เพื่อต่อเชื่อมระหว่าง โมดูลหลอดแอลอีดี กับบอร์ด Seeeduino Lotus ที่ตำแหน่ง pin D4 และใช้เคเบิ้ลต่อเชื่อมกับตัวต้านทานปรับค่าได้แบบหมุนเข้าที่ pin แบบแอนะลอก ช่อง **A0**  
+
+
+
+### บทเรียนที่ 4: การทำให้บัซเซอร์ส่งเสียง
+
+&ensp; เช่นเดียวกับการทำงานของหลอดแอลอีดี  &nbsp; โมดูลบัซเซอร์ทำงานในโหมดเอาท์พุต แต่แทนที่จะติดสว่าง ก็ส่งเสียงดัง "ตี๊ด"
+Just like the LED module, Buzzer is also an output module, instead of lighting up it produces a beep sound. This can be used for many situations for indication purposes.  We studied the use of potentiometer in the last section, so how do we use the potentiometer to control the volume of the buzzer? This requires the used of PWM control!
+
+<font size=5;font color=#314B9F >Background Information:</font>
+
+- **What is PWM**
+
+**Pulse Width Modulation, or PWM**, is a technique for getting analog results with digital means. Digital control is used to create a square wave, a signal switched between on and off. This on-off pattern can simulate voltages in between full on (5 Volts) and off (0 Volts) by changing the portion of the time the signal spends on versus the time that the signal spends off. The duration of "on time" is called the pulse width. To get varying analog values, you change, or modulate, that pulse width. If you repeat this on-off pattern fast enough with an LED for example, the result is as if the signal is a steady voltage between 0 and 5v controlling the brightness of the LED. *Reference: [Arduino](https://www.arduino.cc/en/tutorial/PWM)*
 
 
 
@@ -461,6 +588,13 @@ rotaryValue = analogRead(rotaryPin);
 
 
 
+
+
+
+<br/>  
+<br/>  
+<br/>  
+# ทดสอบ
 
 $$
 \frac{n!}{k!(n-k)!} = \binom{n}{k}

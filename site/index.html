@@ -185,8 +185,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#arduitronicscom" class="md-nav__link">
-    ศูนย์กลางคู่มือบอร์ด โดย Arduitronics.com
+  <a href="#grove-beginner-kit-for-arduino-gk00001-arduitronicscom" class="md-nav__link">
+    ศูนย์กลางคู่มือบอร์ด Grove Beginner Kit for Arduino (GK00001) โดย Arduitronics.com
   </a>
   
 </li>
@@ -275,22 +275,22 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    บทเรียนที่ 3: การควบคุมความถี่ของการกระพริบ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    บทเรียนที่ 4: การทำให้บัซเซอร์ส่งเสียง
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout แผนภาพโครงการ
-  </a>
   
 </li>
       
@@ -339,8 +339,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#arduitronicscom" class="md-nav__link">
-    ศูนย์กลางคู่มือบอร์ด โดย Arduitronics.com
+  <a href="#grove-beginner-kit-for-arduino-gk00001-arduitronicscom" class="md-nav__link">
+    ศูนย์กลางคู่มือบอร์ด Grove Beginner Kit for Arduino (GK00001) โดย Arduitronics.com
   </a>
   
 </li>
@@ -429,22 +429,22 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    บทเรียนที่ 3: การควบคุมความถี่ของการกระพริบ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    บทเรียนที่ 4: การทำให้บัซเซอร์ส่งเสียง
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout แผนภาพโครงการ
-  </a>
   
 </li>
       
@@ -465,7 +465,7 @@
                 
                 
                 <h1 id="welcome-to-arduitronicshub">Welcome to Arduitronicshub</h1>
-<h2 id="arduitronicscom">ศูนย์กลางคู่มือบอร์ด โดย Arduitronics.com</h2>
+<h2 id="grove-beginner-kit-for-arduino-gk00001-arduitronicscom">ศูนย์กลางคู่มือบอร์ด Grove Beginner Kit for Arduino (GK00001) โดย Arduitronics.com</h2>
 <h2 id="_1">ภาพรวมอุปกรณ์</h2>
 <p><img alt="Screenshot" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Parts.jpg" /></p>
 <p><b>ขนาดของอุปกรณ์</b> - 17.69 * 11.64 * 1.88cm<br />
@@ -873,7 +873,7 @@
 <ul>
 <li><strong>ซอฟแวร์ที่ใช้</strong>:<ul>
 <li>เปิด Arduino IDE.</li>
-<li>ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด  ให้ Upload โปรแกรมลงที่บอร์ด</li>
+<li>ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify &emsp; เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด  ให้ Upload โปรแกรมลงที่บอร์ด</li>
 </ul>
 </li>
 </ul>
@@ -966,20 +966,147 @@
 
 <p><br/>
 <strong>ลักษณะการทำงาน:</strong></p>
-<p>การใช้ if...else ทำให้การควบคุมการทำงานได้มากกว่าการใช้ If เพียงอย่างเดียว &emsp; นอกจากนี้ยังสามารถทดสอบเงื่อนไข (condition) การทำงานได้หลายเงื่อนไข โดยใช้ else if...  และหากไม่ตรงกับเงื่อนไขที่กำหนดไว้ใน if... และ else if...เลย จึงจะทำงานโดยโปรแกรมส่วนที่เขียนใน else ...</p>
-<p>การตรวจสอบเงื่อนไขแต่ละส่วนจะดำเนินไปตามลำดับ หากเงื่อนไขที่กำหนดไว้ไม่เป็นจริง (False) จะข้ามโปรแกรมในส่วนนั้นไป  และวนทำจนกว่าจะพบกับเงื่อนไขที่เป็นจริง (True) จากนั้นจะ run ตามเงื่อนไขในส่วนที่ต่อท้าย if() หรือ else if () นั้น หากไม่พบเงื่อนไขใดเลยที่เป็นจริง จะไป run ในส่วน else()</p>
-<p>ข้อสังเกตคือ การใช้งาน if()...else() นั้นสามารถเลือกลงท้ายด้วยการใช้ else() หรือ else if() เป็นท่อนสุดท้ายได้   และสามารถใช้ if... และตามด้วย else if() ได้โดยไม่จำกัดจำนวนครั้ง</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">การใช้</span> <span class="k">if</span><span class="p">...</span><span class="k">else</span> <span class="err">ทำให้การควบคุมการทำงานได้มากกว่าการใช้</span> <span class="k">If</span> <span class="err">เพียงอย่างเดียว</span> <span class="o">&amp;</span><span class="n">emsp</span><span class="p">;</span> <span class="err">นอกจากนี้ยังสามารถทดสอบเงื่อนไข</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span> <span class="err">การทำงานได้หลายเงื่อนไข</span> <span class="err">โดยใช้</span> <span class="k">else</span> <span class="k">if</span><span class="p">...</span>  <span class="err">และหากไม่ตรงกับเงื่อนไขที่กำหนดไว้ใน</span> <span class="k">if</span><span class="p">...</span> <span class="err">และ</span> <span class="k">else</span> <span class="k">if</span><span class="p">...</span><span class="err">เลย</span> <span class="err">จึงจะทำงานโดยโปรแกรมส่วนที่เขียนใน</span> <span class="k">else</span> <span class="p">...</span>
+
+<span class="err">การตรวจสอบเงื่อนไขแต่ละส่วนจะดำเนินไปตามลำดับ</span> <span class="err">หากเงื่อนไขที่กำหนดไว้ไม่เป็นจริง</span> <span class="p">(</span><span class="k">False</span><span class="p">)</span> <span class="err">จะข้ามโปรแกรมในส่วนนั้นไป</span>  <span class="err">และวนทำจนกว่าจะพบกับเงื่อนไขที่เป็นจริง</span> <span class="p">(</span><span class="k">True</span><span class="p">)</span> <span class="err">จากนั้นจะ</span> <span class="n">run</span> <span class="err">ตามเงื่อนไขในส่วนที่ต่อท้าย</span> <span class="k">if</span><span class="p">()</span> <span class="err">หรือ</span> <span class="k">else</span> <span class="k">if</span> <span class="p">()</span> <span class="err">นั้น</span> <span class="err">หากไม่พบเงื่อนไขใดเลยที่เป็นจริง</span> <span class="err">จะไป</span> <span class="n">run</span> <span class="err">ในส่วน</span> <span class="k">else</span><span class="p">()</span>
+
+<span class="err">ข้อสังเกตคือ</span> <span class="err">การใช้งาน</span> <span class="k">if</span><span class="p">()...</span><span class="k">else</span><span class="p">()</span> <span class="err">นั้นสามารถเลือกลงท้ายด้วยการใช้</span> <span class="k">else</span><span class="p">()</span> <span class="err">หรือ</span> <span class="k">else</span> <span class="k">if</span><span class="p">()</span> <span class="err">เป็นท่อนสุดท้ายได้</span>   <span class="err">และสามารถใช้</span> <span class="k">if</span><span class="p">...</span> <span class="err">และตามด้วย</span> <span class="k">else</span> <span class="k">if</span><span class="p">()</span> <span class="err">ได้โดยไม่จำกัดจำนวนครั้ง</span>
+</code></pre></div>
+</td></tr></table>
+
 <p><strong>Syntax:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">condition1</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// do Thing A</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">```cpp</span>
+<span class="err">if (condition1) {</span>
+<span class="err">  // do Thing A</span>
+<span class="err">}</span>
+<span class="err">else if (condition2) {</span>
+<span class="err">  // do Thing B</span>
+<span class="err">}</span>
+<span class="err">else {</span>
+<span class="err">  // do Thing C</span>
+<span class="err">}</span>
+<span class="err">```</span>
+</code></pre></div>
+</td></tr></table>
+
+<p>การใช้งานเงื่อนไขแบบ if ทำงานดังนี้:  หากเงื่อนไขที่กำหนดในวงเล็บหลัง <strong>if(...)</strong> "เป็นจริง" โปรแกรมในช่วงวงเล็บปีกกา {...} จะทำงาน   &emsp;หาก "เป็นเท็จ" โปรแกรมในช่วง <strong>else(...)</strong> จะทำงาน  &emsp;ดังนั้นจากเงื่อนไขในโปรแกรมที่เขียน ถ้าสภาวะของปุ่มกดเป็น HIGH จะทำให้ pin ที่ทำงานของหลอดแอลอีดีเป็น HIGH ด้วย หลอดจแอลอีดีจะสว่าง และในทางตรงข้าม หากสภาวะของปุ่มกดเป็น LOW หลอดแอลอีดีก็จะดับ</p>
+<p><strong>ผลการทำงานของบอร์ด และการแสดงใน Serial Print</strong></p>
+<p>เมื่อกดปุ่ม หลอดแอลอีดีจะติดสว่าง</p>
+<ul>
+<li><font size=5;font color=#314B9F >หากตัดแยกโมดูลออกจากบอร์ดแล้ว</font></li>
+</ul>
+<p>กรณีที่ได้ตัดแยกโมดูลออกจากตัวบอร์ด Grove Beginner Kit แล้ว ให้ใช้สายเคเบิ้ลของ Grove เพื่อต่อเชื่อมระหว่าง โมดูลหลอดแอลอีดี กับบอร์ด Seeeduino Lotus ที่ตำแหน่ง pin <strong>D4</strong>  และต่อเชื่อมกับปุ่มกดที่ตำแหน่ง pin <strong>D6</strong></p>
+<h3 id="3">บทเรียนที่ 3: การควบคุมความถี่ของการกระพริบ</h3>
+<p><br/>
+ในบทเรียนที่แล้ว เราได้ศึกษาการทำงานของปุ่มกด ซึ่งมีสภาวะการทำงานเพียง 2 แบบ คือ เปิด/ปิด ซึ่งมีค่าแรงดันเป็น 5 V หรือ 0 V &emsp;อย่างไรก็ตามในทางปฏิบัติเรามักต้องการใช้งานสภาวะที่หลากหลายมากกว่าแค่ 0 หรือ 5 V  ดังนั้นจึงจำเป็นต้องมีการรับค่าจากสัญญาณแอนะลอก!!  และการใช้งานตัวต้านทานปรับค่าได้แบบหมุน (Rotary Potentiometer) จึงเป็นตัวอย่างที่นิยมนำมาศึกษาเพื่อเรียนรู้การทำงานของสัทั้งนี้เนื่องจากตัวต้านทานปรับค่าได้แบบหมุนสร้างสัญญาณแบบแอนะลอก<br />
+<br/></p>
+<p><font size=5;font color=#314B9F >ข้อมูลเบื้องต้น:</font></p>
+<ul>
+<li><strong>สัญญาณแอนะลอกคืออะไร !!</strong></li>
+</ul>
+<p><strong>สัญญาณแอนะลอกคือ:</strong> สัญญาณที่มีค่าเปลี่ยนแปลงได้อย่าง "ต่อเนื่อง" ทั้งแอมพลิจูด ความถี่ และเฟส ตามเวลาที่เปลี่ยนผ่านไป  กล่าวอีกอย่างคือสัญญาณมีค่าเปลี่ยนไปได้แบบต่อเนื่องเมื่อเวลาเปลี่ยนไป &nbsp; ตัวอย่างของสัญญาณแอนะลอกคือ กระแสไฟฟ้า เสียง สัญญาณภาพ เป็นต้น  &nbsp; สัญญาณแบบไซนูซอยด์  สัญญาณรูปสามเหลี่ยม เป็นอีกตัวอย่างของสัญญาณแอนะลอก &nbsp; pin แบบแอนะลอกของบอร์ดไม่โครคอนโทรลเลอร์ของคุณมีค่าได้ระหว่าง 0 V ถึง 5 V โดยจะสั่งค่าได้ 1024 ขั้น ตั้งแต่ 0 ถึง 1023 &nbsp; โดย 0 หมายถึง 0 V  &nbsp;512 หมายถึง 2.5 V และ 1023 หมายถึง 5 V เป็นต้น</p>
+<p><img alt="Alt text" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/analog.png" /></p>
+<ul>
+<li><font size=5;font color=#314B9F >อุปกรณ์ที่ใช้</font><ol>
+<li>บอร์ด Seeeduino Lotus</li>
+<li>โมดูล Grove LED</li>
+<li>โมดูล Grove Rotary Switch</li>
+<li>ศายเคเบิ้ล (หากตัดแยกโมดูลออกจากบอร์ดแล้ว)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/rotary.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >การต่อเชื่อมฮาร์ดแวร์</font>  </p>
+<ul>
+<li>
+<p><strong>การต่อกับโมดูล:</strong></p>
+<ul>
+<li>โมดูลถูกต่อเชื่อมไว้ด้วยลายวงจรบนบอร์ดอยู่แล้ว  </li>
+<li>บอร์ด Seeeduino เชื่อมต่อเข้ากับ PC โดยใช้สาย USB ที่ให้ในชุด  </li>
+</ul>
+</li>
+<li>
+<p><strong>รายละเอียดการใช้ฮาร์ดแวร์</strong>:</p>
+<ul>
+<li>Input: ตัวต้านทานปรับค่าได้แบบหมุน</li>
+<li>Control: บอร์ด Seeeduino</li>
+<li>Output: โมดูลหลอดแอลอีดี</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>อินพุตหรือสัญญาณขาเข้าของบอร์ดคือสัญญาณแอนะลอก  ดังนั้นจึงต้องต่อสัญญาณเข้าที่ Pin แบบแอนะลอก และโมดูลหลอดแอลอีดีต่อเชื่อมโดยใช้สัญญาณแบบดิจิทัล</p>
+<ul>
+<li><strong>ซอฟแวร์ที่ใช้</strong>:<ul>
+<li>เปิด Arduino IDE.</li>
+<li>ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify &emsp; เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด  ให้ Upload โปรแกรมลงที่บอร์ด</li>
+</ul>
+</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">//Rotary controls LED</span>
+<span class="kt">int</span> <span class="n">rotaryPin</span> <span class="o">=</span> <span class="n">A0</span><span class="p">;</span>    <span class="c1">// select the input pin for the rotary</span>
+<span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>      <span class="c1">// select the pin for the LED</span>
+<span class="kt">int</span> <span class="n">rotaryValue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// variable to store the value coming from the rotary</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+<span class="c1">// declare the ledPin as an OUTPUT:</span>
+<span class="n">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+<span class="n">pinMode</span><span class="p">(</span><span class="n">rotaryPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">condition2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// do Thing B</span>
-<span class="p">}</span>
-<span class="k">else</span> <span class="p">{</span>
-  <span class="c1">// do Thing C</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<span class="c1">// read the value from the sensor:</span>
+<span class="n">rotaryValue</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">rotaryPin</span><span class="p">);</span>
+<span class="c1">// turn the ledPin on</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+<span class="c1">// stop the program for &lt;sensorValue&gt; milliseconds:</span>
+<span class="n">delay</span><span class="p">(</span><span class="n">rotaryValue</span><span class="p">);</span>
+<span class="c1">// turn the ledPin off:</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+<span class="c1">// stop the program for for &lt;sensorValue&gt; milliseconds:</span>
+<span class="n">delay</span><span class="p">(</span><span class="n">rotaryValue</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
+</td></tr></table>
 
 <ul>
 <li><font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font></li>
@@ -987,13 +1114,43 @@
 <p><div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">rotaryPin</span> <span class="o">=</span> <span class="n">A0</span><span class="p">;</span>    <span class="c1">// select the input pin for the rotary</span>
 <span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>      <span class="c1">// select the pin for the LED</span>
 </code></pre></div>
-<strong>ลักษณะการทำงาน:</strong></p>
-<p>คุณอาจสังเกตว่าเราได้กำหนดค่าให้ rotatePin และ ledPin ด้วยวิธีที่ต่างกัน  ทั้งนี้เนื่องจากตัวต้านทานปรับค่าได้แบบหมุนสร้างสัญญาณแบบแอนะลอก (analog signal) ในขณะที่หลอดแอลอีดีควบคุมโดยใช้สัญญาณดิจิทัล  </p>
-<p>เพื่อ <strong>กำหนดต่า Analog Pin</strong>, ให้ใช้ A + หมายเลขของ Pin (เช่น <code>A0</code>).</p>
-<p>เพื่อ <strong>กำหนดต่า Digital Pin</strong>, ให้เขียนหมายเลข pin ได้เลย (เช่น <code>4</code>).</p>
+<strong>ลักษณะการทำงาน:</strong><br />
+&emsp;คุณอาจสังเกตว่าเราได้กำหนดค่าให้ rotatePin และ ledPin ด้วยวิธีที่ต่างกัน  ทั้งนี้เนื่องจากตัวต้านทานปรับค่าได้แบบหมุนสร้างสัญญาณแบบแอนะลอก (analog signal) ในขณะที่หลอดแอลอีดีควบคุมโดยใช้สัญญาณดิจิทัล  </p>
+<p>&emsp;เพื่อ <strong>กำหนดต่า Analog Pin</strong>, ให้ใช้ A + หมายเลขของ Pin (เช่น <code>A0</code>).</p>
+<p>&emsp;เพื่อ <strong>กำหนดต่า Digital Pin</strong>, ให้เขียนหมายเลข pin ได้เลย (เช่น <code>4</code>).</p>
 <div class="highlight"><pre><span></span><code><span class="n">rotaryValue</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">rotaryPin</span><span class="p">);</span>
 </code></pre></div>
 
+<p><strong>ลักษณะการทำงาน:</strong></p>
+<p>&emsp;โปรแกรมด้านบนมีการอ่านค่าซึ่งกำหนดไว้จาก pin แบบแอนะลอก &ensp; โดยบอร์ดไมโครคอนโทรลเลอร์ที่คุณใช้อยู่นี้มีช่องสัญญาณ (pin) หลายช่อง  &nbsp;มีทั้ง pin ดิจิทัลและแอนะลอก  &nbsp;โดยช่องสัญญาณแบบแอนะลอกทำงานโดยแปลงค่าจากวงจรแปลง (Digital converter) แบบ 10 บิต &nbsp;นั่นหมายถึงค่าที่อ่าน หรือ ค่าที่กำหนดในโปรแกรมจะมีค่าเป็นจำนวนเต็มตั้งแต่ 0 ถึง 1023 โดยแรงดันอินพุตจะมีค่าระหว่าง 0 V และค่าแรงดันทำงานสูงสุด (Operating voltage) ของบอร์ด (5 V หรือ 3.3 V แล้วแต่ชนิดของบอร์ดที่คุณเลือกใช้) &ensp;ตัวอย่างเช่นหากคุณเลือกใช้งานบอร์ด Arduino Uno R3 แรงดันสูงสุดจะอยู่ที่ 5 V / ซึ่งแบ่งเป็น 1024 ขั้น หรือ 0.0049 โวลต์ (4.9 มิลลิโวลต์) ต่อขั้น</p>
+<p><strong>Syntax:</strong></p>
+<p>&emsp;analogRead(<strong>pin</strong>)</p>
+<p><strong>พารามิเตอร์:</strong></p>
+<p>&emsp;<strong>pin</strong>: ชื่อของ pin แบบแอนะลอก (A0 ถึง A5 บนบอร์ดส่วนใหญ่).</p>
+<p><strong>ผลการทำงาน:</strong> <br />
+&emsp;อ่านค่าแอนะลอกจาก pin ที่กำหนด &emsp; ความละเอียดของค่าที่อ่านจะขึ้นกับตัวแปลงค่าแอนะลอกเป็นดิจิทัลซึ่งเป็นฮาร์ดแวร์ที่ฝังอยู่บนบอร์ดที่คุณใช้ โดยมีค่าได้ตั้งแค่ 0-1023 สำหรับบอร์ดที่ใช้วงจรแบบ 10 บิต หรือ 0-4095 สำหรับบอร์ดที่ใช้วงจรแบบ 12 บิต &nbsp;และใช้ชนิดของตัวแปรที่รับค่าจาก Pin เป็นแบบ int &ensp; ฟังก์ชั่นนี้ใช้อ่านค่าจาก pin แบบแอนะลอก (ในบทเรียนนี้อ่านค่าจากตัวต้านทานปรับค่าได้แบบหมุน) ซึ่งสำหรับอบอร์ดที่เราใช้นี้จะมีความละเอีดย 0~1023</p>
+<div class="highlight"><pre><span></span><code><span class="n">delay</span><span class="p">(</span><span class="n">rotaryValue</span><span class="p">);</span>
+</code></pre></div>
+
+<p><strong>ฟังก์ชั่นหน่วงเวลา (Delay):</strong> &ensp; ค่าที่กำหนดไว้ในวงเล็บคือระยะเวลาที่ต้องการหน่วงในหน่วยมิลลิวินาที &nbsp; เนื่องจากค่าที่กำหนดได้มาจากค่าที่อ่านได้จาก Pin แบบแอนะลอก ซึ่งสัมพันธ์กับการหมุนของตัวต้านทานปรับค่าได้ &nbsp; ดังนั้นช่วงเวลาที่หน่วงไว้จึงถูกควบคุมด้วยการหมุมหัวบิด (knob)</p>
+<p><strong>ผลการทำงานของบอร์ด และการแสดงใน Serial Print:</strong></p>
+<p>&emsp;การหมุนที่ตัวต้านทานปรับค่าได้จะเปลี่ยนแปลงความถี่ของการกระพริบของหลอดแอลอีดี</p>
+<ul>
+<li><font size=5;font color=#314B9F >หากตัดแยกโมดูลออกจากบอร์ดแล้ว</font></li>
+</ul>
+<p>&emsp;กรณีที่ได้ตัดแยกโมดูลออกจากตัวบอร์ด Grove Beginner Kit แล้ว ให้ใช้สายเคเบิ้ลของ Grove เพื่อต่อเชื่อมระหว่าง โมดูลหลอดแอลอีดี กับบอร์ด Seeeduino Lotus ที่ตำแหน่ง pin D4 และใช้เคเบิ้ลต่อเชื่อมกับตัวต้านทานปรับค่าได้แบบหมุนเข้าที่ pin แบบแอนะลอก ช่อง <strong>A0</strong>  </p>
+<h3 id="4">บทเรียนที่ 4: การทำให้บัซเซอร์ส่งเสียง</h3>
+<p>&ensp; เช่นเดียวกับการทำงานของหลอดแอลอีดี  &nbsp; โมดูลบัซเซอร์ทำงานในโหมดเอาท์พุต แต่แทนที่จะติดสว่าง ก็ส่งเสียงดัง "ตี๊ด"
+Just like the LED module, Buzzer is also an output module, instead of lighting up it produces a beep sound. This can be used for many situations for indication purposes.  We studied the use of potentiometer in the last section, so how do we use the potentiometer to control the volume of the buzzer? This requires the used of PWM control!</p>
+<p><font size=5;font color=#314B9F >Background Information:</font></p>
+<ul>
+<li><strong>What is PWM</strong></li>
+</ul>
+<p><strong>Pulse Width Modulation, or PWM</strong>, is a technique for getting analog results with digital means. Digital control is used to create a square wave, a signal switched between on and off. This on-off pattern can simulate voltages in between full on (5 Volts) and off (0 Volts) by changing the portion of the time the signal spends on versus the time that the signal spends off. The duration of "on time" is called the pulse width. To get varying analog values, you change, or modulate, that pulse width. If you repeat this on-off pattern fast enough with an LED for example, the result is as if the signal is a steady voltage between 0 and 5v controlling the brightness of the LED. <em>Reference: <a href="https://www.arduino.cc/en/tutorial/PWM">Arduino</a></em></p>
+<p><br/><br />
+<br/><br />
+<br/>  </p>
+<h1 id="_5">ทดสอบ</h1>
 <div>
 <div class="MathJax_Preview">
 \frac{n!}{k!(n-k)!} = \binom{n}{k}
