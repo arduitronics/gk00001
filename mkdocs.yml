@@ -1,6 +1,7 @@
 site_name: Arduitronicshub
 nav:
     - Home: index.md
+    - License: License.md
     - About: about.md
 
 theme:
