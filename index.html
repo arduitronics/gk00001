@@ -289,6 +289,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    บทเรียนที่ 5:  ให้ความสว่างภายนอกเป็นตัวควบคุมความสว่างของหลอดแอลอีดี
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -307,7 +314,19 @@
 
 
   <li class="md-nav__item">
-    <a href="about.md" title="About" class="md-nav__link">
+    <a href="License/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="about/" title="About" class="md-nav__link">
       About
     </a>
   </li>
@@ -439,6 +458,13 @@
           <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
     บทเรียนที่ 4: การทำให้บัซเซอร์ส่งเสียง
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    บทเรียนที่ 5:  ให้ความสว่างภายนอกเป็นตัวควบคุมความสว่างของหลอดแอลอีดี
   </a>
   
 </li>
@@ -965,47 +991,25 @@
 </code></pre></div>
 
 <p><br/>
-<strong>ลักษณะการทำงาน:</strong></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">การใช้</span> <span class="k">if</span><span class="p">...</span><span class="k">else</span> <span class="err">ทำให้การควบคุมการทำงานได้มากกว่าการใช้</span> <span class="k">If</span> <span class="err">เพียงอย่างเดียว</span> <span class="o">&amp;</span><span class="n">emsp</span><span class="p">;</span> <span class="err">นอกจากนี้ยังสามารถทดสอบเงื่อนไข</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span> <span class="err">การทำงานได้หลายเงื่อนไข</span> <span class="err">โดยใช้</span> <span class="k">else</span> <span class="k">if</span><span class="p">...</span>  <span class="err">และหากไม่ตรงกับเงื่อนไขที่กำหนดไว้ใน</span> <span class="k">if</span><span class="p">...</span> <span class="err">และ</span> <span class="k">else</span> <span class="k">if</span><span class="p">...</span><span class="err">เลย</span> <span class="err">จึงจะทำงานโดยโปรแกรมส่วนที่เขียนใน</span> <span class="k">else</span> <span class="p">...</span>
-
-<span class="err">การตรวจสอบเงื่อนไขแต่ละส่วนจะดำเนินไปตามลำดับ</span> <span class="err">หากเงื่อนไขที่กำหนดไว้ไม่เป็นจริง</span> <span class="p">(</span><span class="k">False</span><span class="p">)</span> <span class="err">จะข้ามโปรแกรมในส่วนนั้นไป</span>  <span class="err">และวนทำจนกว่าจะพบกับเงื่อนไขที่เป็นจริง</span> <span class="p">(</span><span class="k">True</span><span class="p">)</span> <span class="err">จากนั้นจะ</span> <span class="n">run</span> <span class="err">ตามเงื่อนไขในส่วนที่ต่อท้าย</span> <span class="k">if</span><span class="p">()</span> <span class="err">หรือ</span> <span class="k">else</span> <span class="k">if</span> <span class="p">()</span> <span class="err">นั้น</span> <span class="err">หากไม่พบเงื่อนไขใดเลยที่เป็นจริง</span> <span class="err">จะไป</span> <span class="n">run</span> <span class="err">ในส่วน</span> <span class="k">else</span><span class="p">()</span>
-
-<span class="err">ข้อสังเกตคือ</span> <span class="err">การใช้งาน</span> <span class="k">if</span><span class="p">()...</span><span class="k">else</span><span class="p">()</span> <span class="err">นั้นสามารถเลือกลงท้ายด้วยการใช้</span> <span class="k">else</span><span class="p">()</span> <span class="err">หรือ</span> <span class="k">else</span> <span class="k">if</span><span class="p">()</span> <span class="err">เป็นท่อนสุดท้ายได้</span>   <span class="err">และสามารถใช้</span> <span class="k">if</span><span class="p">...</span> <span class="err">และตามด้วย</span> <span class="k">else</span> <span class="k">if</span><span class="p">()</span> <span class="err">ได้โดยไม่จำกัดจำนวนครั้ง</span>
-</code></pre></div>
-</td></tr></table>
-
+<strong>ลักษณะการทำงาน:</strong>
+&emsp;การใช้ if...else ทำให้การควบคุมการทำงานได้มากกว่าการใช้ If เพียงอย่างเดียว &emsp; นอกจากนี้ยังสามารถทดสอบเงื่อนไข (condition) การทำงานได้หลายเงื่อนไข โดยใช้ else if...  และหากไม่ตรงกับเงื่อนไขที่กำหนดไว้ใน if... และ else if...เลย จึงจะทำงานโดยโปรแกรมส่วนที่เขียนใน else ...</p>
+<p>&emsp;การตรวจสอบเงื่อนไขแต่ละส่วนจะดำเนินไปตามลำดับ หากเงื่อนไขที่กำหนดไว้ไม่เป็นจริง (False) จะข้ามโปรแกรมในส่วนนั้นไป  และวนทำจนกว่าจะพบกับเงื่อนไขที่เป็นจริง (True) จากนั้นจะ run ตามเงื่อนไขในส่วนที่ต่อท้าย if() หรือ else if () นั้น หากไม่พบเงื่อนไขใดเลยที่เป็นจริง จะไป run ในส่วน else()</p>
+<p>&emsp;ข้อสังเกตคือ การใช้งาน if()...else() นั้นสามารถเลือกลงท้ายด้วยการใช้ else() หรือ else if() เป็นท่อนสุดท้ายได้   และสามารถใช้ if... และตามด้วย else if() ได้โดยไม่จำกัดจำนวนครั้ง</p>
 <p><strong>Syntax:</strong></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">```cpp</span>
-<span class="err">if (condition1) {</span>
-<span class="err">  // do Thing A</span>
-<span class="err">}</span>
-<span class="err">else if (condition2) {</span>
-<span class="err">  // do Thing B</span>
-<span class="err">}</span>
-<span class="err">else {</span>
-<span class="err">  // do Thing C</span>
-<span class="err">}</span>
-<span class="err">```</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">condition1</span><span class="p">)</span> <span class="p">{</span>
+<span class="c1">// do Thing A</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">condition2</span><span class="p">)</span> <span class="p">{</span>
+<span class="c1">// do Thing B</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+<span class="c1">// do Thing C</span>
+<span class="p">}</span>
 </code></pre></div>
-</td></tr></table>
 
-<p>การใช้งานเงื่อนไขแบบ if ทำงานดังนี้:  หากเงื่อนไขที่กำหนดในวงเล็บหลัง <strong>if(...)</strong> "เป็นจริง" โปรแกรมในช่วงวงเล็บปีกกา {...} จะทำงาน   &emsp;หาก "เป็นเท็จ" โปรแกรมในช่วง <strong>else(...)</strong> จะทำงาน  &emsp;ดังนั้นจากเงื่อนไขในโปรแกรมที่เขียน ถ้าสภาวะของปุ่มกดเป็น HIGH จะทำให้ pin ที่ทำงานของหลอดแอลอีดีเป็น HIGH ด้วย หลอดจแอลอีดีจะสว่าง และในทางตรงข้าม หากสภาวะของปุ่มกดเป็น LOW หลอดแอลอีดีก็จะดับ</p>
+<p>&emsp;การใช้งานเงื่อนไขแบบ if ทำงานดังนี้:  หากเงื่อนไขที่กำหนดในวงเล็บหลัง <strong>if(...)</strong> "เป็นจริง" โปรแกรมในช่วงวงเล็บปีกกา {...} จะทำงาน   &emsp;หาก "เป็นเท็จ" โปรแกรมในช่วง <strong>else(...)</strong> จะทำงาน  &emsp;ดังนั้นจากเงื่อนไขในโปรแกรมที่เขียน ถ้าสภาวะของปุ่มกดเป็น HIGH จะทำให้ pin ที่ทำงานของหลอดแอลอีดีเป็น HIGH ด้วย หลอดจแอลอีดีจะสว่าง และในทางตรงข้าม หากสภาวะของปุ่มกดเป็น LOW หลอดแอลอีดีก็จะดับ</p>
 <p><strong>ผลการทำงานของบอร์ด และการแสดงใน Serial Print</strong></p>
-<p>เมื่อกดปุ่ม หลอดแอลอีดีจะติดสว่าง</p>
+<p>&emsp;เมื่อกดปุ่ม หลอดแอลอีดีจะติดสว่าง</p>
 <ul>
 <li><font size=5;font color=#314B9F >หากตัดแยกโมดูลออกจากบอร์ดแล้ว</font></li>
 </ul>
@@ -1140,13 +1144,127 @@
 </ul>
 <p>&emsp;กรณีที่ได้ตัดแยกโมดูลออกจากตัวบอร์ด Grove Beginner Kit แล้ว ให้ใช้สายเคเบิ้ลของ Grove เพื่อต่อเชื่อมระหว่าง โมดูลหลอดแอลอีดี กับบอร์ด Seeeduino Lotus ที่ตำแหน่ง pin D4 และใช้เคเบิ้ลต่อเชื่อมกับตัวต้านทานปรับค่าได้แบบหมุนเข้าที่ pin แบบแอนะลอก ช่อง <strong>A0</strong>  </p>
 <h3 id="4">บทเรียนที่ 4: การทำให้บัซเซอร์ส่งเสียง</h3>
-<p>&ensp; เช่นเดียวกับการทำงานของหลอดแอลอีดี  &nbsp; โมดูลบัซเซอร์ทำงานในโหมดเอาท์พุต แต่แทนที่จะติดสว่าง ก็ส่งเสียงดัง "ตี๊ด"
-Just like the LED module, Buzzer is also an output module, instead of lighting up it produces a beep sound. This can be used for many situations for indication purposes.  We studied the use of potentiometer in the last section, so how do we use the potentiometer to control the volume of the buzzer? This requires the used of PWM control!</p>
-<p><font size=5;font color=#314B9F >Background Information:</font></p>
+<p>&ensp; เช่นเดียวกับการทำงานของหลอดแอลอีดี  &nbsp; โมดูลบัซเซอร์ทำงานในโหมดเอาท์พุต แต่แทนที่จะติดสว่าง ก็ส่งเสียงดัง "ตี๊ด" ซึ่งสามารถประยุกต์ใช้แจ้งเตือนได้ในหลายสถานการณ์ &nbsp; เราได้ศึกษาการใช้งานตัวต้านทานปรับค่าได้ในบทที่ผ่านมา ในบทนี้เราจะประยุกต์ใช้ตัวต้านทานปรับค่าได้ในการควบคุมระดับความดังของเสียงจากบัซเซอร์ การควบคุมนี้ต้องใช้สัญญาณ PWM (Pulse Width Modulation)!</p>
+<p><font size=5;font color=#314B9F >ข้อมูลเบื้องต้น:</font></p>
+<p><strong>PWM คืออะไร</strong>  <br/>
+&emsp; <strong>Pulse Width Modulation, หรือ PWM</strong> เป็นเทคนิคที่ใช้ในการสร้างสัญญาณแอนะลอกจากการสั่งงานแบบดิจิทัล  เนื่องจากสัญญาณจากการควบคุมแบบดิจิทัลจะมีรูปแบบเป็นคลื่นสี่เหลี่ยม (Square wave) ที่เกิดจากการเปิด/ปิด &nbsp;รูปแบบการเปิดปิดจะจำลองระดับแรงดันระหว่างระดับสูงสุด (5 V) และระดับปิด (0 V) โดยการปรับเปลี่ยนตามช่วงเวลาให้เป็นสัดส่วนระหว่างช่วงเวลาที่เปิดและปิด &nbsp; ช่วงเวลาที่สัญญาณอยู่ที่ระดับ "เปิด" คือช่วงกว้างของสัญญาณ &nbsp; และเพื่อให้เกิดระดับแรงดันที่เปลี่ยนแปลงได้แบบแอนะลอก เราจึงต้องควบคุมความกว้างของพัส (pulse width) &nbsp; ซึ่งหากมีการเปิดและปิดตามความกว้างของพัสที่กำหนดโดยมีการทำซ้ำที่รวดเร็วพอจะทำให้สัญญาณส่งผลให้อุปกรณ์ทำงานในลักษณะเดียวกับการควบคุมโดยช่องสัญญาณแบบแอนะลอก &nbsp;การใช้งาน PWM นี้เหมาะกับการใช้งานกับอุปกรณ์บางอย่าง เช่น บัซเซอร์ หลอดแอลอีดี มอเตอร์ เป็นต้น</p>
+<p>สำหรับการทำงานของหลอดแอลอีดี เมื่อมีการปรับความกว้างของพัส จะทำให้หลอดแอลอีดีสว่างขึ้น &nbsp;สำหรับการทำงานของบัซเซอร์ เมื่อปรับความกว้างของพัสมากขึ้นจะทำให้บัซเซอร์ส่งเสียงดังขึ้น เป็นต้น</p>
+<p>ดังที่แสดงในภาพด้านล่าง ใช้คำสั่ง <code>analogWrite()</code> เพื่อสร้างสัญญาณ PWM ยิ่งความกว้างของพัสมากขึ้น เสียงจากบัสเซอร์จะดังขึ้น</p>
+<div align=center><img src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/BuzzerPWM.jpg"/></div>
+
+<p>บนบอร์ด Seeeduino หรือบอร์ด Arduino UNO R3 จะมีช่องต่อ pin แบบดิจิทัล 6 ช่อง โดยมีสัญลักษณ ์“~” ซึ่งหมายถึงสามารถใช้งานเพื่อสร้างสัญญาณ PWM ได้ที่ช่อง: 3,5,6,9,10,11  จึงถูกเรียกว่า PWM pin</p>
 <ul>
-<li><strong>What is PWM</strong></li>
+<li><font size=5;font color=#314B9F >อุปกรณ์ที่ใช้</font><ol>
+<li>Seeeduino Lotus</li>
+<li>โมดูล Buzzer</li>
+<li>สายเคเบิ้ล (หากแยกโมดูลเซนเซอร์ออกจากตัวบอร์ด)</li>
+</ol>
+</li>
 </ul>
-<p><strong>Pulse Width Modulation, or PWM</strong>, is a technique for getting analog results with digital means. Digital control is used to create a square wave, a signal switched between on and off. This on-off pattern can simulate voltages in between full on (5 Volts) and off (0 Volts) by changing the portion of the time the signal spends on versus the time that the signal spends off. The duration of "on time" is called the pulse width. To get varying analog values, you change, or modulate, that pulse width. If you repeat this on-off pattern fast enough with an LED for example, the result is as if the signal is a steady voltage between 0 and 5v controlling the brightness of the LED. <em>Reference: <a href="https://www.arduino.cc/en/tutorial/PWM">Arduino</a></em></p>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Buzzer.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >การต่อเชื่อมฮาร์ดแวร์</font>  </p>
+<ul>
+<li>
+<p><strong>การต่อกับโมดูล:</strong></p>
+<ul>
+<li>โมดูลถูกต่อเชื่อมไว้ด้วยลายวงจรบนบอร์ดอยู่แล้ว  </li>
+<li>บอร์ด Seeeduino เชื่อมต่อเข้ากับ PC โดยใช้สาย USB ที่ให้ในชุด  </li>
+</ul>
+</li>
+<li>
+<p><strong>ซอฟแวร์ที่ใช้</strong>:</p>
+<ul>
+<li>เปิด Arduino IDE.</li>
+<li>ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify &ensp; เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด  ให้ Upload โปรแกรมลงที่บอร์ด</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">BuzzerPin</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">Potentiometer</span> <span class="o">=</span> <span class="n">A0</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">pinMode</span><span class="p">(</span><span class="n">BuzzerPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+  <span class="n">pinMode</span><span class="p">(</span><span class="n">Potentiometer</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">potentioValue</span><span class="p">,</span> <span class="n">Value</span><span class="p">;</span>
+  <span class="n">potentioValue</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">Potentiometer</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">=</span> <span class="n">map</span><span class="p">(</span><span class="n">potentioValue</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span> <span class="c1">//Mapping potentiometer value to PWM signal value</span>
+  <span class="n">analogWrite</span><span class="p">(</span><span class="n">BuzzerPin</span><span class="p">,</span> <span class="n">Value</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+<ul>
+<li><font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">Value</span> <span class="o">=</span> <span class="n">map</span><span class="p">(</span><span class="n">potentioValue</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+</code></pre></div>
+
+<p><strong>ลักษณะการทำงาน:</strong>  </p>
+<p><strong>Syntax:</strong></p>
+<p>&emsp; map(<strong>value, fromLow, fromHigh, toLow, toHigh</strong>)</p>
+<p><strong>Description:</strong></p>
+<p>&emsp; เปลี่ยนช่วงของตัวเลขระดับหนึ่งไปเป็นอีกช่วงหนึ่ง &nbsp; จากช่วงระหว่าง <strong>fromLow</strong>  ถึง <strong>fromHigh</strong> เป็นช่วง <strong>toLow</strong> ถึง <strong>toHgih</strong></p>
+<p>&emsp; ทั้งนี้การทำงานของฟังก์ชั่น map() ไม่ได้มีข้อจำกัดเฉพาะช่วงที่อยู่ในค่าที่กำหนดในตัวแปรของฟังก์ชั่น เนื่องจากการทำงานนอกช่วงที่กำหนดบางครั้งอาจจะมีประโยชน์ในการสั่งการทำงานในโปรแกรมได้  &nbsp;แต่หากต้องการกำหนดให้ค่าตัวเลขอยู่ในช่วงที่กำหนด ให้ใช้พังก์ชั่น <code>constrain()</code> โดยฟังก์ชั่นนี้จะกำหนดให้ค่าที่ต่ำกว่าค่าขอบล่าง หรือ สูงกว่าค่าขอบบน อยู่ที่ขอบของช่วงที่กำหนด  </p>
+<p>&nbsp; ข้อสังเกต:  ค่าขอบล่างของทั้งช่วง <strong>fromLow</strong> และ <strong>toLow</strong> อาจมีค่าต่ำกว่า หรือ สูงกว่าค่า <strong>fromHigh</strong> หรือ <strong>toHigh</strong> ได้ ทั้งนี้เพื่อใช้ในการกลับด้านช่วงของสัญญาณ เช่น</p>
+<p><strong>y = map(x, 1, 50, 50, 1);</strong></p>
+<p>หรือใช้ในฟังก์ชั่นที่ต้องการแปลงให้เป็นค่าติดลบ</p>
+<p><strong>y = map(x, 1, 50, 50, -100);</strong></p>
+<p>ทั้ง 2 ตัวอย่างนี้ใช้งานได้ ไม่ผิด syntax</p>
+<p>อย่างไรก็ตามฟังก์ชั่น map() นี้จะงานกับตัวแปรแบบ int เท่านั้น ไม่สามารถใช้กับตัวเลขทศนิยมได้ เมื่อค่าที่ได้รับเป็นตัวแปรของฟังก์ชั่นมาในแบบทศนิยม  ฟังก์ชั่น map() จะปัดขึ้นให้เป็นจำนวนเต็ม</p>
+<p><strong>พารามิเตอร์:</strong></p>
+<p><strong>value</strong>: ค่าที่ต้องการแปลงช่วง</p>
+<p><strong>fromLow</strong>: ขอบล่างของช่วงปัจจุบัน</p>
+<p><strong>fromHigh</strong>: ขอบบนของช่วงปัจจุบัน</p>
+<p><strong>toLow</strong>: ขอบล่างของช่วงใหม่ที่ต้องการปรับ</p>
+<p><strong>toHigh</strong>: ขอบบนของช่วงใหม่ที่ต้องการปรับ</p>
+<p>ในโปรแกรมสำหรับการทดลองนี้ ใช้เพื่อปรับช่วงของตัวต้านทานปรับค่าได้ที่อ่านค่าจาก pin แบบแอนะลอก (0 ถึง 1023) ไปเป็นช่วงที่กำหนดความดังของบัซเซอร์ (0 ถึง 255)</p>
+<div class="highlight"><pre><span></span><code><span class="n">analogWrite</span><span class="p">(</span><span class="n">BuzzerPin</span><span class="p">,</span> <span class="n">Value</span><span class="p">);</span>
+</code></pre></div>
+
+<p><strong>ลักษณะการทำงาน:</strong></p>
+<p>&emsp; การสั่งให้ค่าระดับสัญญาณแบบแอนลอกแสดงค่าที่ pin สามารถใช้ในการกำหนดความส่างของหลอดแอลอีดี หรือ การขับเคลื่อนมอเตอร์ด้วยระดับความเร็วต่างๆ &nbsp; หลังจากที่เรียกใช้ analogWrite() ช่อง pin ที่เลือกจะกำเนิดสัญญาณรูปคลื่นสี่เหลี่ยมที่มีค่าความกว้างของพัสเป็นสัดส่วนตามที่กำหนด (duty cycle) อย่างต่อเนื่อง จนกว่าจะมีการเปลี่ยนแปลง</p>
+<p><strong>Syntax:</strong></p>
+<p>analogWrite(<strong>pin, value</strong>)</p>
+<p><strong>Parameters:</strong></p>
+<p><strong>pin</strong>:  <code>pin</code> ที่ต้องการใช้ โดยตัวแปรต้องเป็น: int.</p>
+<p><strong>value</strong>: สัดส่วนความกว้างของพัสต่อคาบ (duty cycle): มีค่าระหว่าง <code>0</code> (ระดับปิดสุด) และ <code>255</code> (ระดับเปิดสุด) โดยตัวแปรต้องเป็น: int.</p>
+<p>กำหนดค่าตัวระดับสัญญาณแอนะลอก (PWM) ไปควบคุมบัซเซอร์</p>
+<p><strong>ผลการทำงานของบอร์ด และการแสดงใน Serial Print:</strong></p>
+<p>&emsp; ระดับความดังของเสียงจากบัซเซอร์จะเปลี่จนกว่าจะมีการเปลี่ยนแปลงสัมพันธ์กับการปรับค่าตัวต้านทานปรับค่าได้</p>
+<p>&emsp;กรณีที่ได้ตัดแยกโมดูลออกจากตัวบอร์ด Grove Beginner Kit แล้ว ให้ใช้สายเคเบิ้ลของ Grove เพื่อต่อเชื่อมระหว่าง โมดูลบัซเซอร์ กับบอร์ด Seeeduino Lotus ที่ตำแหน่ง pin <strong>D5</strong>  </p>
+<hr />
+<ul>
+<li><font size=5;font color=#314B9F >การใช้งาน PWM</font></li>
+</ul>
+<p>ถึงตอนนี้เราได้เห็นการใช้งาน PWM แล้ว  ซึ่งจริงๆแล้วมันสามารถประยุกต์ใช้กับงานได้หลากหลาย อย่างไรก็ตามขอให้สังเกตว่าเราไม่สามารถใช้งานหลอดแอลอีดีบนบอร์ด Grove Beginner Kit <a href="www.arduitronics.com/product/3553">(GK00001)</a> นี้ต่ออยู่ที่ pin 4 แล้วด้วยลายวงจรบนบอร์ด  ในขณะที่การใช้งาน PWM ทำได้ที่ pin 3, 5, 6, 9, 10, 11 เท่านั้น &nbsp; ดังนั้นหากคุณต้องการควบคุมโมดูลหลอดแอลอีดีด้วยสัญญาณ PWM  คุณต้องแยกโมดูลนี้ออกจากตัวบอร์ด และต่อเชื่อมฮารด์แวร์ด้วยสายเคเบิ้ล</p>
+<p>ที่สำคัญท้ายสุด  เมื่อคุณต้องการใช้งานฟังก์ชั่น PWM คุณต้องแน่ใจว่าช่องสัญญาณ pin ที่คุณเลือกต้องมีเครื่องหมาย "~" กำกับด้วย</p>
+<h3 id="5">บทเรียนที่ 5:  ให้ความสว่างภายนอกเป็นตัวควบคุมความสว่างของหลอดแอลอีดี</h3>
+<p>&emsp; โมดูลเซนเซอร์แสงที่ใช้ในบทเรียนนี้ ภายในประกอบด้วยตัวต้านทานปรับค่าได้ตามความเข้ม (Intensity) ของแสงภายนอก  &nbsp; ซึ่งอุปกรณ์นี้มีชื่อเรียกเป็นทางการว่า Light Dependent Resistor (LDR) หรือ ตัวต้านทานปรับค่าได้ตามความเข้มของแสง  &nbsp; ในบทเรียนนี้เราจะทดลองการเขียนโปรแกรมเพื่อควบคุมความสว่างของหลอดแอลอีดี โดยให้ความสว่างขึ้นกับระดับความสว่างของแสงภายนอก  โดยหลอดแอลอีดีจะติดสว่างเมื่ออยู่ในที่มืด และ หลอดแอลอีดีจะดับเมื่ออยู่ในที่สว่าง</p>
+<p>ในบทเรียนต่อไปนี้เราจะใช้ Serial Monitor เพื่อสังเกตผลการทำงานของเซนเซอร์ ซึ่งจะมีการแนะนำการใช้งานเบื้องต้นดังนี้ !!!</p>
+<p><font size=5;font color=#314B9F >ข้อมูลเบื้องต้น:</font></p>
+<ul>
+<li><strong>What is Serial Monitor</strong></li>
+</ul>
 <p><br/><br />
 <br/><br />
 <br/>  </p>
@@ -1182,7 +1300,7 @@ Just like the LED module, Buzzer is also an output module, instead of lighting u
 <hr />
 <ol>
 <li id="fn:1">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><em>Reference: <a href="https://www.arduino.cc/en/tutorial/PWM">Arduino</a></em>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
@@ -1203,6 +1321,27 @@ Just like the LED module, Buzzer is also an output module, instead of lighting u
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+        
+          <a href="License/" title="License" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                License
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
