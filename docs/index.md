@@ -1,5 +1,5 @@
 # Welcome to Arduitronicshub  
-## ศูนย์กลางคู่มือบอร์ด Grove Beginner Kit for Arduino (GK00001) โดย Arduitronics.com
+## ศูนย์กลางคู่มือบอร์ด Grove Beginner Kit for Arduino ([GK00001](www.arduitronics.com/product/3553)) โดย [Arduitronics.com](www.arduitronics.com)
 
 ## ภาพรวมอุปกรณ์
 ![Screenshot](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Parts.jpg)
@@ -715,7 +715,242 @@ analogWrite(**pin, value**)
 
 <font size=5;font color=#314B9F >ข้อมูลเบื้องต้น:</font>
 
-- **What is Serial Monitor**
+- **Serial Monitor คืออะไร**
+
+Serial Monitor เป็นหน้าจอสำหรับแสดงผลการทำงานของบอร์ด Arduino  &nbsp;โดยเป็นการแสดงค่าที่ได้จากคำสั่งพิมพ์จากโปรแกรมเพื่อใช้รายงานผล หรือ ใช้ในการตรวจหาความผิดพลาด นอกจากนี้ยังสามารถใช้ในการส่งค่าอินพุทเพื่อให้โปรแกรมนำไปใช้งานต่อ  
+
+ข้อสังเกต: คุณต้องเช็คให้แน่ใจว่าอัตราการส่งข้อมูล (baud rate) ตรงกับที่กำหนดไว้ในโปรแกรม
+
+![](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Serial.jpg)
+
+คุณสามารถเปิดหน้าจอ Serial monitor ได้โดย **Tools** -> **Serial Monitor**
+
+![](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/20200217144001.jpg)
+
+
+- <font size=5;font color=#314B9F >อุปกรณ์ที่ใช้</font>
+    1. บอร์ด Seeeduino Lotus
+    2. โมดูล Grove LED
+    3. โมดูลวัดค่าแสดง Grove Light Sensor
+    4. เคเบิ้ล Grove Cable (ใช้กรณีที่แยกตัวโมดูลออกจากบอร์ดแล้ว)
+
+![](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Light.png)
+
+
+
+- <font size=5;font color=#314B9F >การต่อเชื่อมฮาร์ดแวร์</font>  
+    - **การต่อกับโมดูล:**
+        - โมดูลถูกต่อเชื่อมไว้ด้วยลายวงจรบนบอร์ดอยู่แล้ว  
+        - บอร์ด Seeeduino เชื่อมต่อเข้ากับ PC โดยใช้สาย USB ที่ให้ในชุด  
+
+    - **โหมดการทำงานของฮาร์ดแวร์ที่ใช้ในการทดลอง:**
+        - Input: โมดูลวัดค่าแสง
+        - Control: บอร์ด Seeeduino Lotus
+        - Output: โมดูลหลอดแอลอีดี  
+
+    - **ซอฟแวร์ที่ใช้**:
+        - เปิด Arduino IDE.
+        - ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify &ensp; เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด  ให้ Upload โปรแกรมลงที่บอร์ด
+
+```Cpp linenums="1"
+// Light Switch
+int sensorpin = A6; // Analog input pin that the sensor is attached to
+int ledPin = 4;    // LED port
+int sensorValue = 0;        // value read from the port
+int outputValue = 0;        // value output to the PWM (analog out)
+
+void setup() {
+  pinMode(ledPin,OUTPUT);
+  pinMode(sensorpin, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // read the analog in value:
+  sensorValue = analogRead(sensorpin);
+
+  Serial.println(sensorValue);
+
+  if (sensorValue < 200) {
+    digitalWrite(ledPin, LOW);
+  }
+  else {
+    digitalWrite(ledPin, HIGH);
+  }
+
+  delay(200);
+}
+```
+
+คุณสามารถอ่านค่าระดับความเข้มของแสงได้จาก **Serial Monitor** โดยไปที่ **Tools** -> **Serial Monitor**  
+
+- <font size=5;font color=#314B9F> อธิบายการทำงานของโค้ด</font>
+
+```cpp
+Serial.begin(9600);
+```
+
+
+**ลักษณะการทำงาน:**
+
+&emsp; กำหนดค่าอัตราการส่งข้อูลในหน่วยบิตต่อวินาที (baud) โดยส่งผ่านการสื่อสารแบบอนุกรม (Serial transmission) &nbsp เพื่อใช้ในการสื่อสารกับ Serial monitor ต้องแน่ใจว่าได้กำหนดค่าอัตราการส่งผ่านข้อมูล (baud rates) ไว้ตรงกับเมนูที่มุมขวาด้านล่างของหน้าจอ Serial Monitor &nbsp; คุณสามารถเลือกใช้ค่าอื่นที่เหมาะสมได้ เช่น การสื่อสารผ่าน pin 0 และ 1 เพื่อต่อเชื่อมกับอุปกรณ์ภายนอก ควรเลือกค่าอัตราการส่งข้อมูลให้เหมาะสมกับการทำงานของอุปกรณ์  
+
+ตัวเลือกที่สามารถกำหนดได้อีกส่วนคือ parity และ Stop bit (มีไว้เพื่อตรวจสอบความถูกต้องในการส่งข้อมูลแบบอนุกรม เพื่อให้แน่ใจว่าด้านส่งและด้านรับได้ข้อมูลที่ตรงกัน --เพิ่มเติมจากผู้แปล)  โดยมีค่าตั้งต้นไว้ที่ 8 บิต ไม่มีการเช็ค parity และมีบิตที่แสดงเมื่อต้องการหยุดทำงาน (Stop bit) ยาว 1 บิต  
+
+โปรแกรมที่ใช้ในการติดต่อกับฮาร์ดแวร์ใช้อัตราการส่งผ่านข้อมูลระหว่างกันที่ 9600
+
+
+**Syntax:**
+
+&emsp; Serial.begin(**speed**)
+
+**พารามิเตอร์:**
+
+&emsp; **speed**: อัตราการส่งข้อมูลมีค่าได้หลายแบบ เช่น `9600`, `115200` เป็นต้น
+
+ในโปรแกรมนี้ต้ังค่าไว้ที่ 9600.
+
+```cpp
+Serial.println(sensorValue);
+```
+
+
+**ลักษณะการทำงาน:**
+
+&emsp; แสดงค่าผ่านช่องสัญญาณแบบอนุกรม (Serial Port) ในลักษณะที่มนุษย์สามารถอ่านค่าได้เป็นตัวอักษร ASCII ตามด้วยค่าแสดงคำสั่งไปที่ต้นบรรทัด (ASCII 13 หรือ '\r') และค่าแสดงคำสั่งขึ้นบรรทัดใหม่ (ASCII 10 หรือ '\n')  ซึ่งทำงานเช่นเดียวกับคำสั่ง Serial.print()  
+
+
+**Syntax:**
+
+&emsp; Serial.println(**val**) หรือ Serial.println(**val**, **format**)
+
+**พารามิเตอร์:**
+
+&emsp; **val**: ค่าที่ต้องการแสดง  ชนิดข้อมูลที่ใช้: สามารถใช้ชนิดใดก็ได้
+
+&emsp; **format**: กำหนดลักษณะตัวเลขที่ต้องการแสดง (จำนวนเต็ม) หรือ แสดงจำนวนตำแหน่งหลังทศนิยม (สำหรับเลขชนิด floating point).
+
+ในการทดลองนี้เมื่อเปิดดู **Serial Monitor** จะแสดงค่าความสว่างที่อ่านค่าได้
+
+**ผลการทำงานของบอร์ด และการแสดงใน Serial Print:**
+
+&emsp; โมดูลหลอดแอลอีดีจะสว่างขึ้นถ้าอยู่ในที่มือ และจะดับเมื่อมีแสงภายนอก
+
+
+- <font size=5;font color=#314B9F >Breakout Guide</font>
+
+&emsp;กรณีที่ได้ตัดแยกโมดูลออกจากตัวบอร์ด Grove Beginner Kit แล้ว ให้ใช้สายเคเบิ้ลของ Grove เพื่อต่อเชื่อมระหว่าง โมดูลบัซเซอร์ กับบอร์ด Seeeduino Lotus ที่ตำแหน่ง pin **D4**  และต่อเชื่อมโมดูลอ่านค่าแสงไปที่ช่อง pin แบบแอนะลอก **A6**  
+
+
+
+### Lesson 6: ความเข้มเสียงควบคุมความสว่างของหลอดแอลอีดี
+
+&emsp; เซนเซอร์เสียงสามารถใช้ในการตรวจจับระดับความเข้มเสียงของสิ่งแวดล้อม  โดยแสดงผลเป็นความสว่างของแสงจากหลอดแอลอีดี  เราแน่ใจว่าคุณน่าจะเคยเห็นการใช้งานเสียงที่กำหนดควบคุมความสว่างของแสงมาบ้างแล้ว คราวนี้เราลองมาทำเองดูบ้าง และเช่นที่ผ่านมา การทำลองจะทำได้ไม่ยากเย็นนัก โดยใช้การพล็อตค่าใน Serial Plotter เพื่อสังเกตผลการวัดค่า  
+
+<font size=5;font color=#314B9F >ข้อมูลเบื้องต้น:</font>
+
+- **Serial Plotter คืออะไร**
+
+Serial Plotter มีลักษณะการทำงานเดียวกับ Serial Monitor ที่ใช้งานในบทเรียนที่ผ่านมา  &nbsp; แต่คราวนี้แทนที่จะแสดงค่าเป็นตัวอักษร  Serial Plotter นำค่าที่ส่งมาจาก Serial Port มาพล็อตแสดงค่าเป็นกราฟตามช่วงเวลาจริงของสัญญาณที่ได้รับ  ซึ่งเป็นประโยชน์มากในการสังเกตดูการเปลี่ยนแปลงของสัญญาณ  
+
+![](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/SerialPlotter.png)
+
+คุณสามารถเปิด Serial Plotter ได้โดยคลิ็กที่ **Tools** -> **Serial Plotter**
+
+![](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/serialplot.jpg)
+
+
+- **การลงมือปฏิบัติ:** ความสว่างของหลอดแอลอีดีขึ้นกับความเข้มของเสียง  เมื่อไม่มีเสียง หลอดแอลอีดีจะดับ
+
+- <font size=5;font color=#314B9F >อุปกรณ์ที่ใช้</font>
+    1. บอร์ด Seeeduino Lotus
+    2. โมดูล Grove LED
+    3. โมดูลเซนเซอร์เสียง (Grove Sound Sensor)
+    4. สายเคเบิ้ล Grove cable (ถ้าแยกตัวโมดูลออกจากบอร์ดแล้ว)
+
+![](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Sound.png)  
+
+- <font size=5;font color=#314B9F >การต่อเชื่อมฮาร์ดแวร์</font>  
+    - **การต่อกับโมดูล:**
+        - โมดูลถูกต่อเชื่อมไว้ด้วยลายวงจรบนบอร์ดอยู่แล้ว  
+        - บอร์ด Seeeduino เชื่อมต่อเข้ากับ PC โดยใช้สาย USB ที่ให้ในชุด  
+
+    - **โหมดการทำงานของฮาร์ดแวร์ที่ใช้ในการทดลอง:**
+        - Input: โมดูลวัดค่าแสง
+        - Control: บอร์ด Seeeduino Lotus
+        - Output: โมดูลหลอดแอลอีดี  
+
+    - **ซอฟแวร์ที่ใช้**:
+        - เปิด Arduino IDE.
+        - ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify &ensp; เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด  ให้ Upload โปรแกรมลงที่บอร์ด  
+
+```Cpp linenums="1"
+//Sound Control Light
+int soundPin = A2; // Analog sound sensor is to be attached to analog
+int ledPin = 4; // Digital LED is to be attached to digital
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  pinMode(soundPin, INPUT);
+  Serial.begin(9600);
+}
+void loop(){
+  int soundState = analogRead(soundPin); // Read sound sensor’s value
+  Serial.println(soundState);
+  // if the sound sensor’s value is greater than 400, the light will be on.
+  //Otherwise, the light will be turned off
+  if (soundState > 400) {
+    digitalWrite(ledPin, HIGH);
+    delay(100);
+  }else{
+    digitalWrite(ledPin, LOW);
+  }
+}
+```
+
+คุณสามารถอ่านค่าความเข้มของแสงได้จาก **Serial Plotter** โดยไปที่ **Tools** -> **Serial Plotter**  
+
+**ข้อสังเกต: คุณสามารถปรับค่าความสว่างได้ตามที่ต้องการ ขึ้นกับความสว่างของแสงในสิ่งแวดล้อม เพื่อการแสดงผลที่ชัดเจน**
+
+
+
+- <font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font>
+
+```cpp
+Serial.begin(9600);
+```
+
+ซอฟแวร์ทำงานบนเครื่องคอมพิวเตอร์ซึ่งสื่อสารกับบอร์ดที่ใช้ในการพัฒนาโปรแกรม  โดยมีอัตราการส่งข้อมูลที่ 9600  
+
+```cpp
+Serial.print(" ");
+```
+ฟังก์ชั่นนี้ใช้เพื่อกำหนดค่าให้แสดงที่ Serial Monitor  โดยค่าที่แสดงจะอยู่ระหว่างเครื่องหมาย " &emsp;   "  
+
+```cpp
+Serial.println( );
+```
+
+บรรทัดนี้แสดงค่าเหมือนด้านบน แต่ **serial.println** เป็นการสั่งให้ขึ้นบรรทัดใหม่  
+
+
+```cpp
+Serial.println(soundState);
+```
+Serial Monitor แสดงค่าที่อ่านได้จากเซนเซอร์เสียง  เมื่อคุณเปิดดู **serial monitor** คุณจะเห็นค่าที่แสดงเป็นตัวเลขที่สัมพันธ์กับค่าจากเซนเซอร์  
+
+
+**ผลการทำงานของบอร์ด และการแสดงใน Serial Print:**
+
+&emsp; โมดูลหลอดแอลอีดีจะสว่างขึ้นเมื่อมีเสียงดังจากสิ่งรอบข้าง
+
+
+- <font size=5;font color=#314B9F >หากตัดแยกโมดูลออกจากบอร์ดแล้ว</font>
+
+กรณีที่ได้ตัดแยกโมดูลออกจากตัวบอร์ด Grove Beginner Kit แล้ว ให้ใช้สายเคเบิ้ลของ Grove เพื่อต่อเชื่อมระหว่างโมดูลหลอดแอลอีดีกับบอร์ด Seeeduino Lotus ด้วย pin แบบดิจิทัล **D4** และโมดูลเซนเซอร์เสียง กับบอร์ด Seeeduino Lotus ที่ตำแหน่ง pin แบบแอนะลอก **A2**
+
+
+### Lesson 7: แสดงบนจอโอแอลอีดี (OLED)
+
 
 
 
