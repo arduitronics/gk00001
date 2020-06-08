@@ -310,6 +310,47 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    บทเรียนที่ 8: ตรวจจับค่าอุณหภูมิและความชื้น
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    บทเรียนที่ 9: วัดความความดันอากาศ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    บทเรียนที่ 10: จับความเคลื่อนไหว
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-projects" class="md-nav__link">
+    Bonus Projects
+  </a>
+  
+    <nav class="md-nav" aria-label="Bonus Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-1-music-dynamic-rhythm-lamp" class="md-nav__link">
+    Project 1: หลอดไฟสว่างตามเสียงเพลง (Music dynamic rhythm lamp)
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -493,6 +534,47 @@
           <li class="md-nav__item">
   <a href="#lesson-7-oled" class="md-nav__link">
     Lesson 7: แสดงบนจอโอแอลอีดี (OLED)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    บทเรียนที่ 8: ตรวจจับค่าอุณหภูมิและความชื้น
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    บทเรียนที่ 9: วัดความความดันอากาศ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    บทเรียนที่ 10: จับความเคลื่อนไหว
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-projects" class="md-nav__link">
+    Bonus Projects
+  </a>
+  
+    <nav class="md-nav" aria-label="Bonus Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-1-music-dynamic-rhythm-lamp" class="md-nav__link">
+    Project 1: หลอดไฟสว่างตามเสียงเพลง (Music dynamic rhythm lamp)
   </a>
   
 </li>
@@ -739,7 +821,7 @@
 <img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/func.png" /><br/></li>
 <li>ไปที่เมนู <code>Tools</code> -&gt; <code>Serial Monitor</code> หรือกดปุ่ม <strong>Serial Monitor</strong> ที่มุมขวาบน (รูปแว่นขยาย) คุณสามารถดูหน้าจอแสดงผลการทำงานของโปรแกรม:<br/>
 <img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/print.png" /><br/>
-<strong>หมายเหตุ:</strong> หากคุณติตตั้งโปรแกรมของเราจาก <a href="https://www.seeedstudio.com/4GB-Plug-and-Go-USB-Flash-Driver-for-Grove-Beginner-Kit-All-Resources-Included-p-4547.html">USB drive ของ Seeeddtudio</a> , จะมี  <strong>Files</strong> -&gt; <strong>Sketch Book</strong>, ไลบรารี่ทั้งหมดที่ต้องใช้
+<strong>หมายเหตุ:</strong> หากคุณติตตั้งโปรแกรมของเราจาก <a href="https://www.seeedstudio.com/4GB-Plug-and-Go-USB-Flash-Driver-for-Grove-Beginner-Kit-All-Resources-Included-p-4547.html">USB drive ของ SeeedStudio</a> , จะมี  <strong>Files</strong> -&gt; <strong>Sketch Book</strong>, ไลบรารี่ทั้งหมดที่ต้องใช้
 <img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Sketchbook.png" /><br />
 <br/>
 <strong>หมายเหตุ:</strong><br />
@@ -1548,6 +1630,893 @@ Serial Monitor แสดงค่าที่อ่านได้จากเ�
 </ul>
 <p>กรณีที่ได้ตัดแยกโมดูลออกจากตัวบอร์ด Grove Beginner Kit แล้ว ให้ใช้สายเคเบิ้ลของ Grove เพื่อต่อเชื่อมระหว่างโมดูลหลอดแอลอีดีกับบอร์ด Seeeduino Lotus ด้วย pin แบบดิจิทัล <strong>D4</strong> และโมดูลเซนเซอร์เสียง กับบอร์ด Seeeduino Lotus ที่ตำแหน่ง pin แบบแอนะลอก <strong>A2</strong></p>
 <h3 id="lesson-7-oled">Lesson 7: แสดงบนจอโอแอลอีดี (OLED)</h3>
+<p>จอแสดงผลแบบ OLED สามารถนำมาประยุกต์ใช้งานได้หลายแบบ &nbsp; ในบทนี้เราจะใช้แสดงค่าที่อ่านได้จากเซนเซอร์</p>
+<p><font size=5;font color=#314B9F >ข้อมูลเบื้องต้น:</font></p>
+<ul>
+<li><strong>Arduino Libraries คืออะไร!!</strong></li>
+</ul>
+<p>&emsp; บอร์ด Arduino สามารถใช้งานกับเซนเซอร์ชนิดต่างๆ ได้หลากหลายโดยมีไลบรารี่ควบคู่กันไป ฟังก์ชั่นต่างๆ ที่ใช้ในการเชื่อมต่อกับเซนเซอร์ หรือ ทำการควบคุมตัดต่อข้อมูล สามารถนำไลบรารี่มาใช้งานได้ในการเขียนโปรแกรมบน Arduino IDE เพียงติดตั้งไลบรารี่ได้ถูกต้องโดยเรียกใช้จาก <strong>Sketch</strong> -&gt;<strong>Include Library</strong>  </p>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/zip.jpg" /></p>
+<p>อ่่านข้อมูลเพิ่มเติมได้ที่ <a href="https://wiki.seeedstudio.com/How_to_install_Arduino_Library/">การติดตั้งไลบรารี่</a>.</p>
+<ul>
+<li><font size=5;font color=#314B9F >อุปกรณ์ที่ใช้</font><ol>
+<li>บอร์ด Seeeduino Lotus</li>
+<li>โมดูลหลอดแอลอีดี Grove OLED</li>
+<li>เคเบิ้ล Grove cable (ถ้าแยกตัวโมดูลออกจากบอร์ดแล้ว)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/OLED.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >การต่อเชื่อมฮาร์ดแวร์</font>  </p>
+<ul>
+<li>
+<p><strong>การต่อกับโมดูล:</strong></p>
+<ul>
+<li>โมดูลถูกต่อเชื่อมไว้ด้วยลายวงจรบนบอร์ดอยู่แล้ว  </li>
+<li>บอร์ด Seeeduino เชื่อมต่อเข้ากับ PC โดยใช้สาย USB ที่ให้ในชุด  </li>
+</ul>
+</li>
+<li>
+<p><strong>โหมดการทำงานของฮาร์ดแวร์ที่ใช้ในการทดลอง:</strong></p>
+<ul>
+<li>Input: โมดูลวัดค่าแสง</li>
+<li>Control: บอร์ด Seeeduino Lotus</li>
+<li>Output: โมดูลหลอดแอลอีดี  </li>
+</ul>
+</li>
+<li>
+<p><strong>ซอฟแวร์ที่ใช้</strong>:</p>
+<ul>
+<li>เปิด Arduino IDE.</li>
+<li>ติดตั้ง <strong>U8g2 library</strong>: โดยไปที่ <strong>Sketch</strong> -&gt; <strong>Include Library</strong> -&gt; <strong>Manage Libraries...</strong> และค้นหาคำว่า "<strong>U8g2</strong>" ภายใน <strong>Library Manager</strong>  เมื่อค้นแล้วจะเห็นตัวเลือก <strong>u8g2 library by oliver</strong> ให้คลิ๊กเพื่อติดตั้ง<br />
+<img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/U8g2-lib.png" /></li>
+<li>ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify &ensp; เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด  ให้ Upload โปรแกรมลงที่บอร์ด  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;Arduino.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;U8x8lib.h&gt;</span><span class="cp"></span>
+
+<span class="n">U8X8_SSD1306_128X64_ALT0_HW_I2C</span> <span class="nf">u8x8</span><span class="p">(</span><span class="cm">/* reset=*/</span> <span class="n">U8X8_PIN_NONE</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">setFlipMode</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">u8x8_font_chroma48medium8_r</span><span class="p">);</span>
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+<ul>
+<li><strong>อธิบายการทำงานของโค้ด</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;&gt;</span><span class="cp"></span>
+</code></pre></div>
+
+<p><strong>ลักษณะการทำงาน:</strong></p>
+<p>&emsp; <code>#include</code> ถูกใช้เพื่อเรียกไลบรารี่จากภายนอกเข้าไปรวมใน sketch  ทำให้โปรแกรมที่เขียนสามารถเข้าถึงไลบรารี่มาตรฐานต่างๆ ซึ่งใช้งานกับบอร์ด Arduino ที่รวบรวมไว้  </p>
+<p>&emsp; ข้อสังเกต <code>#include</code> ทำงานเหมือนกับ <code>#define</code> ไม่ต้องเขียนเครื่องหมาย ";" ต่อท้าย  ถ้าเติมเครื่องหมายนี้การคอมไพล์จะไม่ผ่าน  </p>
+<p><br/>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;U8x8lib.h&gt;</span><span class="cp"></span>
+</code></pre></div></p>
+<p><strong>#include</strong> เป็นคำสั่งที่ใช้กำหนดไฟล์เริ่มต้น (header file) ในไลบรารี่ U8x8lib.h จะมีเขียน</p>
+<p><br/>
+<div class="highlight"><pre><span></span><code><span class="n">U8X8_SSD1306_128X64_ALT0_HW_I2C</span> <span class="nf">u8x8</span><span class="p">(</span><span class="cm">/* reset=*/</span> <span class="n">U8X8_PIN_NONE</span><span class="p">);</span>
+</code></pre></div></p>
+<p><strong>ลักษณะการทำงาน:</strong></p>
+<p>เมื่อมีการระบุการใช้งานไลบรารี่แล้ว เราสามารถเรียกใช้ฟังก์ชั่นจากไลบรารี่ได้  </p>
+<p><br/>
+<div class="highlight"><pre><span></span><code><span class="n">u8x8</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</code></pre></div></p>
+<p><strong>ลักษณะการทำงาน:</strong></p>
+<p>&emsp; กำหนดและติดตั้งค่าเริ่มต้นเพื่อใช้งานจอ OLED กับบอร์ด Arduino &nbsp; โปรดดูรายละเอียดการติดตั้งสำหรับการใช้งาน U8g2 รุ่นต่างๆ ซึ่งอาจจะมีรายละเอียดที่แตกต่างกัน  </p>
+<p><strong>Syntax:</strong></p>
+<p>u8x8.begin()</p>
+<p>เริ่มต้นการใช้ไลบรารี่ u8g2  </p>
+<p><br/>
+<div class="highlight"><pre><span></span><code><span class="n">u8x8</span><span class="p">.</span><span class="n">setFlipMode</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></p>
+<p><strong>ลักษณะการทำงาน:</strong></p>
+<p>&emsp; จอภาพบางรุ่นมีความสามารถในการกลับด้าน 180 องศาภาพเก็บที่อยู่ภายในบัพเฟอร์ &nbsp;โมดูลจอภาพนี้เราใช้อยู่นี้สามารถกลับภาพได้ &nbsp;ข้อควรระวังคือ เมื่อสั่งให้กลับจอภาพแล้ว ต้องสั่งให้วาดภาพใหม่เพื่อให้เห็นภาพกลับด้าน &nbsp; ขั้นตอนการแสดงภาพกลับด้านคือ ให้ล้างภาพที่แสดงก่อน จากนั้นเปลี่ยนโหมดการแสดงภาพเป็นแสดงกลับหัว และสั่งให้วาดภาพที่เก็บไว้</p>
+<p><strong>Syntax:</strong></p>
+<p>&emsp;u8x8.setFlipMode(<strong>mode</strong>)</p>
+<p><strong>Parameters:</strong></p>
+<p>&emsp; <strong>mode</strong>: <code>0</code> หรือ <code>1</code></p>
+<p>กลับด้านภาพที่แสดงบนหน้าจอ</p>
+<p><br/></p>
+<div class="highlight"><pre><span></span><code><span class="n">u8x8</span><span class="p">.</span><span class="n">setCursor</span><span class="p">();</span>
+</code></pre></div>
+
+<p><strong>ลักษณะการทำงาน:</strong></p>
+<p>&emsp;กำหนดตำแหน่งของเคอร์เซอร์ซึ่งเป็นตำแหน่งของการเริ่มต้นพิมพ์ค่าบนหน้าจอ  </p>
+<p><strong>Syntax:</strong></p>
+<p>&emsp;u8x8.setCursor(<strong>x, y</strong>)</p>
+<p><strong>พารามิเตอร์:</strong></p>
+<p>&emsp;<strong>x, y</strong>: Column/row position for the cursor of the print function.</p>
+<p>&emsp;กำหนดตำแหน่งเคอร์เซอร์</p>
+<p><br/>  </p>
+<div class="highlight"><pre><span></span><code><span class="n">u8x8</span><span class="p">.</span><span class="n">setFont</span><span class="p">()</span>
+</code></pre></div>
+
+<p><strong>ลักษณะการทำงาน:</strong></p>
+<p>&emsp;ระบุให้ใช้ฟอนต์ u8x8 สำหรับการพิมพ์ตัวอักษร  </p>
+<p><strong>Syntax:</strong></p>
+<p>&emsp; u8x8.setFont(<strong>font_8x8</strong>)</p>
+<p>&emsp;กำหนดค่าฟอนต์ที่จะใช้แสดงบนจอ</p>
+<p><br/>
+<div class="highlight"><pre><span></span><code><span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
+</code></pre></div></p>
+<p>&emsp; สั่งให้แสดงภาพบนจอ</p>
+<p><strong>ผลการทำงานของบอร์ด และการแสดงใน Serial Print:</strong></p>
+<p>&emsp;พิมพ์คำว่า Hello World บนหน้าจอ OLED  </p>
+<p><strong>เอกสารอ้างอิงสำหรับไลบรารี่ U8g2</strong></p>
+<p>&emsp; หากคุณต้องการข้อมูลเพิ่มเติมสำหรับการใช้งานไลบรารี่ U8g2 โปรดดู<a href="https://github.com/olikraus/u8g2/wiki/u8g2reference">ที่นี่</a></p>
+<p><br/>
+- <font size=5;font color=#314B9F >หากตัดแยกโมดูลออกจากบอร์ดแล้ว</font></p>
+<p>กรณีที่ได้ตัดแยกโมดูลออกจากตัวบอร์ด Grove Beginner Kit แล้ว ให้ใช้สายเคเบิ้ลของ Grove เพื่อต่อเชื่อมระหว่างโมดูลจอ OLED เข้ากับบอร์ด Seeeduino Lotus โดยใช้การเชื่อมต่อแบบ <strong>I2C</strong> (ค่าแอดเดรสเริ่มต้นสำหรับใช้กับ I2C คือ 0x78)</p>
+<h3 id="8">บทเรียนที่ 8: ตรวจจับค่าอุณหภูมิและความชื้น</h3>
+<p>&emsp;เคยอยากรู้มั้ยว่าอุณหภูมิและความชื้นรอบตัวคุณมาค่าเท่าไหร่  &nbsp;อยากรู้ค่าที่แน่นอนเป็นตัวเลขรึเปล่า &nbsp;อยากรู้มั้ยว่าวันนี้อากาศจะร้อนแค่ไหน &nbsp;ถ้างั้นเรามาลองทำมิเตอร์วัดอุณหภูมิกัน  </p>
+<p><font size=5;font color=#314B9F >ข้อมูลเบื้องต้น:</font></p>
+<ul>
+<li><strong>การสื่อสารด้วยรูปแบบ I2C คืออะไร</strong></li>
+</ul>
+<p><strong>รูปแบบสัญญาณที่ใช้เพื่อการสื่อสาร:</strong> รูปแบบที่เราจะใช้ในบทเรียนนี้เรียกว่า I2C และข้อมูลแบบย่อๆ ของการสื่อสารแบบ I2C มีดังนี้ <br />
+&emsp;I2C เป็นรูปแบบการสื่อสารที่ใช้สายเพียง 2 เส้นในการส่งข้อมูลระหว่างอุปกรณ์ซึ่งประกอบด้วย SDA และ SCL (SDA คือ สายสัญญาณข้อมูล และ SCL คือ สายสัญญาณกำหนดจังหวะเวลา หรือเรียกว่า "สัญญาณนาฬิกา")  </p>
+<p>&emsp;สายทั้ง 2 เส้นนี้สามารถใช้งานได้แบบ 2 ทิศทาง คือส่งไป และ ส่งกลับได้ &nbsp; เมื่ออุปกรณ์หลัก (ในที่นี้คือบอร์ด Arduino) เริ่มส่งสัญญาณข้อมูลแอดเดรสและสัญญาณนาฬิกาไปที่อุปกรณ์ทุกตัวที่ต่อเชื่อมด้วย (อยู่บนบัสเดียวกัน) &nbsp;   อุปกรณ์ใดที่ได้รับทั้งสัญญาณจากสายทั้ง 2 เส้นนี้และตรวจพบว่าเป็นแอดเดรสของตัวเองก็จะเริ่มทำงาน  </p>
+<p>&emsp;การทำงานระหว่างมาสเตอร์ (master) และสเลฟ (slave) (ตัวส่งและตัวรับ) ที่อยู่บนบัสนั้นอาจะมีการเปลี่ยนแปลงได้ขึ้นกับทิศทางการส่งข้อมูลจากฝั่งใดไปอีกฝั่งนึง &nbsp; ถ้าอุปกรณ์ที่เป็นมาสเตอร์ต้องการส่งข้อมูลไปที่อุปกรณ์ที่เป็นสเลฟ ตัวมาสเตอร์จะเริ่มต้นด้วยการส่งแอดเดรสของตัวสเลฟเพื่อเรียกให้ตัวสเลฟที่ต้องการเรียกใช้เริ่มทำงาน &nbsp; จากนั้นจะส่งข้อมูลอื่นๆที่ใช้ในการทำงานตามต่อ และหยุดส่งข้อมูลเมื่อตัวมาสเตอร์ต้องการจบการทำงาน &nbsp;ด้วยหลักการเดียวกันนี้ หากตัวมาสเตอร์ต้องการรับข้อมูลจากตัวสเลฟ ตัวมาสเตอร์ต้องเริ่มต้นด้วยการเรียกสเลฟก่อน  </p>
+<p>&emsp;เมื่อตัวมาสเตอร์ได้รับข้อมูลที่ส่งกลับมาจากอุปกรณ์ที่เรียกแล้วและต้องการจบการทำงาน ตัวมาสเตอร์ก็จะหยุดส่งสัญญาณนาฬิกาและสิ้นสุดการส่งสัญญาณข้อมูล</p>
+<ul>
+<li>
+<p><strong>การทดลองในบทเรียนนี้:</strong> ใช้จอ OLED เพื่อแสดงค่าอุณหภูมิและความชื้น</p>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >อุปกรณ์ที่ใช้</font></p>
+<ol>
+<li>บอร์ด Seeeduino Lotus</li>
+<li>โมดูลจอ Grove OLED</li>
+<li>โมดูลวัดค่าอุณหภูมิและความชื้น Grove Temperature and Temperature Sensor</li>
+<li>เคเบิ้ล Grove cable (ถ้าแยกตัวโมดูลออกจากบอร์ดแล้ว)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Temp.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >การต่อเชื่อมฮาร์ดแวร์</font>  </p>
+<ul>
+<li><strong>การต่อกับโมดูล:</strong><ul>
+<li>โมดูลถูกต่อเชื่อมไว้ด้วยลายวงจรบนบอร์ดอยู่แล้ว  </li>
+<li>บอร์ด Seeeduino เชื่อมต่อเข้ากับ PC โดยใช้สาย USB ที่ให้ในชุด<br />
+<br/>                   </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >ซอฟแวร์ที่ใช้</font><br />
+            - เปิด Arduino IDE<br />
+            - ติดตั้ง <strong>Grove Temperature and Humidity Sensor(DHT11) library</strong>: ไปที่ <strong>Sketch</strong> -&gt; <strong>Include Library</strong> -&gt; <strong>Manage Libraries...</strong> ค้นหาคำว่า "<strong>Grove Temperature and Humidity Sensor(DHT11)</strong>" ภายใน <strong>Library Manager</strong> จากนั้นติดตั้ง
+<img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Temp-lib.png" />
+           - ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify   เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด ให้ Upload โปรแกรมลงที่บอร์ด</p>
+</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">//Temperature and Humidity Sensor</span>
+<span class="cp">#include</span> <span class="cpf">&quot;DHT.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;Arduino.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;U8x8lib.h&gt;</span><span class="cp"></span>
+
+<span class="cp">#define DHTPIN 3     </span><span class="c1">// what pin we&#39;re connected to</span>
+<span class="cp">#define DHTTYPE DHT11   </span><span class="c1">// DHT 11</span>
+<span class="n">DHT</span> <span class="nf">dht</span><span class="p">(</span><span class="n">DHTPIN</span><span class="p">,</span> <span class="n">DHTTYPE</span><span class="p">);</span>
+
+<span class="n">U8X8_SSD1306_128X64_ALT0_HW_I2C</span> <span class="nf">u8x8</span><span class="p">(</span><span class="cm">/* reset=*/</span> <span class="n">U8X8_PIN_NONE</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;DHTxx test!&quot;</span><span class="p">);</span>
+  <span class="n">dht</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">setPowerSave</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>  
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">setFlipMode</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="kt">float</span> <span class="n">temp</span><span class="p">,</span> <span class="n">humi</span><span class="p">;</span>
+  <span class="n">temp</span> <span class="o">=</span> <span class="n">dht</span><span class="p">.</span><span class="n">readTemperature</span><span class="p">();</span>
+  <span class="n">humi</span> <span class="o">=</span> <span class="n">dht</span><span class="p">.</span><span class="n">readHumidity</span><span class="p">();</span>
+
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">u8x8_font_chroma48medium8_r</span><span class="p">);</span>
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">33</span><span class="p">);</span>
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Temp:&quot;</span><span class="p">);</span>
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">);</span>
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">setCursor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">);</span>
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Humidity:&quot;</span><span class="p">);</span>
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">humi</span><span class="p">);</span>
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;%&quot;</span><span class="p">);</span>
+  <span class="n">u8x8</span><span class="p">.</span><span class="n">refreshDisplay</span><span class="p">();</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+<ul>
+<li><font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">float</span> <span class="n">temp</span><span class="p">,</span> <span class="n">humi</span><span class="p">;</span>
+</code></pre></div>
+
+<p>กำหนดตัวแปรที่ใช้เก็บค่าที่อ่านจากเซนเซอร์</p>
+<div class="highlight"><pre><span></span><code><span class="n">temp</span> <span class="o">=</span> <span class="n">dht</span><span class="p">.</span><span class="n">readTemperature</span><span class="p">();</span>
+<span class="n">humi</span> <span class="o">=</span> <span class="n">dht</span><span class="p">.</span><span class="n">readHumidity</span><span class="p">();</span>
+</code></pre></div>
+
+<p><strong>ลักษณะการทำงาน:</strong></p>
+<p>&emsp; ฟังก์ชั่นนี้ใช้ในการอ่านค่าอุณหภูมิและความชื้นจากเซนเซอร์  </p>
+<p>&emsp; <strong>Syntax:</strong></p>
+<p><strong>dht.readTemperature()</strong> และ <strong>dht.readHumidity()</strong>. ชนิดของค่าที่อ่าน: เลขทศนิยม (float)</p>
+<p>&emsp;เรียกใช้ฟังก์ชั่นนี้เพื่ออ่านค่าอุณหภูมิและความชื้น จากนั้นเก็บค่าไว้ในตัวแปร  </p>
+<p><br/>
+<strong>ผลการทำงานของบอร์ด และการแสดงใน Serial Print:</strong></p>
+<p>&emsp;ค่าอุณหภูมิและความชื้นปรากฏแสดงบนจอ OLED  </p>
+<ul>
+<li><font size=5;font color=#314B9F >หากตัดแยกโมดูลออกจากบอร์ดแล้ว</font></li>
+</ul>
+<p>กรณีที่ได้ตัดแยกโมดูลออกจากตัวบอร์ด Grove Beginner Kit แล้ว ให้ใช้สายเคเบิ้ลของ Grove เพื่อต่อเชื่อมระหว่างโมดูลจอ OLED เข้ากับบอร์ด Seeeduino Lotus โดยใช้การเชื่อมต่อแบบ <strong>I2C</strong> (ค่าแอดเดรสเริ่มต้นสำหรับใช้กับ I2C คือ 0x78) และต่อโมดูลวัดค่าอุณหภูมิและความชื้นไปที่บอร์ด Seeduino Lotus โดยใช้ pin <strong>D3</strong>  </p>
+<h3 id="9">บทเรียนที่ 9: วัดความความดันอากาศ</h3>
+<p>&emsp; โมดูลวัดค่าความดันอากาศ (BMP280) เป็นโมดูลที่ใช้เซนเซอร์ของ Bosch BMP280 ซึ่งเป็นเซนเซอร์ที่มีความแม่นยำสูง และใช้กำลังไฟฟ้าน้อย &nbsp;โมดูลนี้สามารถใช้ในการวัดค่าอุณหภูมิและความดันบรรยากาศได้อย่างแม่นยำ &nbsp;เนื่องจากความดันอากาศมีการเปลี่ยนแปลงตามระดับความสูง&nbsp;จึงสามารถใช้ในการแสดงค่าระดับความสูงของที่ตั้งอุปกรณ์ได้  </p>
+<ul>
+<li><font size=5;font color=#314B9F >อุปกรณ์ที่ใช้</font><ol>
+<li>บอร์ด Seeeduino Lotus</li>
+<li>โมดูลวัดความดันอากาศ Grove Air Pressure Sensor</li>
+<li>เคเบิ้ล Grove cable (ถ้าแยกตัวโมดูลออกจากบอร์ดแล้ว)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/AirPressure.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >การต่อเชื่อมฮาร์ดแวร์</font></p>
+<ul>
+<li><strong>การต่อกับโมดูล:</strong><ul>
+<li>โมดูลถูกต่อเชื่อมไว้ด้วยลายวงจรบนบอร์ดอยู่แล้ว  </li>
+</ul>
+</li>
+<li>บอร์ด Seeeduino เชื่อมต่อเข้ากับ PC โดยใช้สาย USB ที่ให้ในชุด</li>
+</ul>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >ซอฟแวร์ที่ใช้</font></p>
+<ul>
+<li>เปิด Arduino IDE  </li>
+<li>ติดตั้ง <strong>Grove Barometer Sensor library</strong>: ไปที่ <strong>Sketch</strong> -&gt; <strong>Include Library</strong> -&gt; <strong>Manage Libraries...</strong> ค้นหาคำว่า "<strong>Grove BMP280</strong>" ภายใน <strong>Library Manager</strong> จากนั้นติดตั้ง  </li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/BMP-lib.png" /></p>
+<ul>
+<li>ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify   เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด ให้ Upload โปรแกรมลงที่บอร์ด  </li>
+<li>ในโปรแกรมนี้ ข้อมูลจากบารอมิเตอร์จะถูกส่งไปที่บอดร์ด Seeeduino โดยใช้บัส I2C และจากนั้นบอร์ด Seeeduino จะสั่งให้พิมพ์ค่าที่อ่านได้ใน Serial Monitor &nbsp; ให้เปิด <strong>serial monitor</strong> เพื่อดูผลการทำงาน  </li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">//Air pressure detection</span>
+<span class="cp">#include</span> <span class="cpf">&quot;Seeed_BMP280.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;Wire.h&gt;</span><span class="cp"></span>
+
+<span class="n">BMP280</span> <span class="n">bmp280</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">bmp280</span><span class="p">.</span><span class="n">init</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Device not connected or broken!&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kt">float</span> <span class="n">pressure</span><span class="p">;</span>
+
+    <span class="c1">//get and print temperatures</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Temp: &quot;</span><span class="p">);</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">bmp280</span><span class="p">.</span><span class="n">getTemperature</span><span class="p">());</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">);</span> <span class="c1">// The unit for  Celsius because original arduino don&#39;t support speical symbols</span>
+
+    <span class="c1">//get and print atmospheric pressure data</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Pressure: &quot;</span><span class="p">);</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">pressure</span> <span class="o">=</span> <span class="n">bmp280</span><span class="p">.</span><span class="n">getPressure</span><span class="p">());</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Pa&quot;</span><span class="p">);</span>
+
+    <span class="c1">//get and print altitude data</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Altitude: &quot;</span><span class="p">);</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">bmp280</span><span class="p">.</span><span class="n">calcAltitude</span><span class="p">(</span><span class="n">pressure</span><span class="p">));</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;m&quot;</span><span class="p">);</span>
+
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="c1">//add a line between output of different times.</span>
+
+    <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+<ul>
+<li><font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;Wire.h&gt;</span><span class="cp"></span>
+</code></pre></div>
+
+<p><strong>#include</strong> เป็นคำสั่งกำหนดค่าเริ่มต้นภายใน Header file  &nbsp; ในการทดลองนี้เราใช้ไลบรารี่ <Wire.h> ซึ่งมีอยู่แล้วใน Arduino IDE (ไม่ต้องติดตั้งเอง)  </p>
+<p><br/>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;Seeed_BMP280.h&quot;</span><span class="cp"></span>
+</code></pre></div>
+เป็นคำสั่งกำหนดค่าเริ่มต้นภายใน Header file ของ Seeed_BMP280.h โดยไฟล์นี้อยู่ในโฟลเดอร์เดียวกันกับโปรแกรมเปิดอยู่</p>
+<p><br/>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">bmp280</span><span class="p">.</span><span class="n">init</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Device not connected or broken!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>ลักษณะการทำงาน:</strong></p>
+<p>&emsp; เพื่อเริ่มต้นการอ่านค่าความดันอากาศ สั่งโดยใช้คำสั่ง bmp280.init() &nbsp; จากนั้นใช้เงื่อนไขแบบ if เพื่อตรวจสอบสภาวะการเริ่มทำงานว่าพร้อมหรือยัง &nbsp;ถ้าพร้อมให้ข้ามไปทำงานต่อ &nbsp; ถ้าไม่พร้อมให้แจ้งเตือนด้วยข้อความ "Device not connected or broken!" ในหน้าจอ Serial monitor  </p>
+<p><strong>Syntax:</strong></p>
+<p>&emsp;<strong>bmp280.init()</strong></p>
+<p>ถ้าความดันอากาศไม่พร้อมเริ่มต้น ให้แสดงข้อความใน Serial monitor  </p>
+<p><br/>
+<div class="highlight"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">bmp280</span><span class="p">.</span><span class="n">getTemperature</span><span class="p">());</span>
+</code></pre></div></p>
+<p><strong>ลักษณะการทำงาน:</strong></p>
+<p>&emsp;ฟังก์ชั่นนี้ใช้อ่านค่าอุณหภูมิจากเซนเซอร์  </p>
+<p><strong>Syntax:</strong></p>
+<p>&emsp;<strong>bmp280.getTemperature()</strong> ชนิดข้อมูลที่อ่าน: ทศนิยม (float)</p>
+<p>พิมพ์ค่าอุณหภูมิที่อ่านได้ที่ Serial monitor  </p>
+<p><br/>
+<div class="highlight"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">pressure</span> <span class="o">=</span> <span class="n">bmp280</span><span class="p">.</span><span class="n">getPressure</span><span class="p">());</span>
+</code></pre></div></p>
+<p><strong>ลักษณะการทำงาน:</strong></p>
+<p>&emsp;ฟังก์ชั่นนี้ใช้อ่านค่าความดันอากาศจากเซนเซอร์  </p>
+<p><strong>Syntax:</strong></p>
+<p>&emsp; <strong>bmp280.getPressure()</strong> ชนิดข้อมูลที่อ่าน: ทศนิยม (float)</p>
+<p>พิมพ์ค่าความดันอากาศที่อ่านได้ที่ Serial monitor  </p>
+<p><br/>
+<div class="highlight"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">bmp280</span><span class="p">.</span><span class="n">calcAltitude</span><span class="p">(</span><span class="n">pressure</span><span class="p">));</span>
+</code></pre></div></p>
+<p><strong>ลักษณะการทำงาน:</strong></p>
+<p>&emsp;รับค่าความดันอากาศมาคำนวณระดับความสูง  </p>
+<p><strong>Syntax:</strong></p>
+<p>&emsp;bmp280.calcAltitude(<strong>float</strong>) ชนิดข้อมูลที่อ่าน: ทศนิยม (float)</p>
+<p><strong>พารามิเตอร์:</strong></p>
+<p>&emsp;<strong>float</strong>: ค่าความดันอากาศ</p>
+<p>พิมพ์ค่าความดันอากาศ</p>
+<p><br/>
+<strong>ผลการทำงานของบอร์ด และการแสดงใน Serial Print:</strong></p>
+<p>&emsp;อ่านค่าความดันอากาศและแสดงค่าใน Serial monitor  </p>
+<ul>
+<li><font size=5;font color=#314B9F >หากตัดแยกโมดูลออกจากบอร์ดแล้ว</font></li>
+</ul>
+<p>ใช้เคเบิ้ลเพื่อต่อเชื่อมโมดูลวัดค่าความดันอากาศกับบอร์ด Seeeduino Lotos โดยใช้ <strong>I2C</strong> (สังเกต: แอดเดรสของโมดูลเพื่อใช้ในการติดต่อโดย I2C คือ 0x77 หรือ 0x76)  </p>
+<h3 id="10">บทเรียนที่ 10: จับความเคลื่อนไหว</h3>
+<p>&emsp; บทนี้จะเป็นการใช้งานเซนเซอร์ตัวสุดท้ายบนบอร์ด เซนเซอร์ตัวนี้ใช้ในการวัดความเร่ง 3 แกน (Triaxial Accelerometer) &nbsp; การใช้โมดูลนี้คุณสามารถตรวจจับความเคลื่อนไหวที่คุณต้องการ ซึ่งสามารถใช้ในการทดลองที่เกี่ยวข้องกับการเคลื่อนไหวได้</p>
+<ul>
+<li>
+<p><strong>การทดลองในบทเรียนนี้:</strong> เมื่อความเคลื่อนไวถูกตรวจพบ บัซเซอร์จะส่งเสียงร้องเพื่อแสดงว่าตัวอุปกรณ์มีการเคลื่อนไหว  </p>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >อุปกรณ์ที่ใช้</font></p>
+<ol>
+<li>บอร์ด Seeeduino Lotus</li>
+<li>โมดูลวัดความเร่ง 3 แกน Grove 3-axis Accelerometer</li>
+<li>เคเบิ้ล Grove cable (ถ้าแยกตัวโมดูลออกจากบอร์ดแล้ว)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Gyro.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >การต่อเชื่อมฮาร์ดแวร์</font></p>
+<ul>
+<li><strong>การต่อกับโมดูล:</strong><ul>
+<li>โมดูลถูกต่อเชื่อมไว้ด้วยลายวงจรบนบอร์ดอยู่แล้ว  </li>
+</ul>
+</li>
+<li>บอร์ด Seeeduino เชื่อมต่อเข้ากับ PC โดยใช้สาย USB ที่ให้ในชุด</li>
+</ul>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >ซอฟแวร์ที่ใช้</font></p>
+<ul>
+<li>เปิด Arduino IDE  </li>
+<li>ดาว์นโหลด <a href="https://github.com/Seeed-Studio/Seeed_Arduino_LIS3DHTR">3-Axis Digital Accelerometer( ±2g to 16g)</a>  จาก Github  คลิ๊กที่ <strong>Sketch</strong> &gt; <strong>Include library</strong> &gt; <strong>Add .ZIP library</strong> import ไลบรารี่ไว้ที่ Arduino IDE  </li>
+<li>ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify   เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด ให้ Upload โปรแกรมลงที่บอร์ด  </li>
+<li>ในโปรแกรมนี้ ข้อมูลความเร่งถูกส่งจากเซนเซอร์ไปที่บอร์ด Seeeduino โดยใช้บัส I2C จากนั้นบอร์ด Seeeduino พิมพ์ค่าบน serial monitor  &nbsp; เปิด <strong>serial monitor</strong> เพื่อดูผล  </li>
+</ul>
+</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">//Gravity Acceleration</span>
+<span class="cp">#include</span> <span class="cpf">&quot;LIS3DHTR.h&quot;</span><span class="cp"></span>
+<span class="cp">#ifdef SOFTWAREWIRE</span>
+    <span class="cp">#include</span> <span class="cpf">&lt;SoftwareWire.h&gt;</span><span class="cp"></span>
+    <span class="n">SoftwareWire</span> <span class="nf">myWire</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">LIS3DHTR</span><span class="o">&lt;</span><span class="n">SoftwareWire</span><span class="o">&gt;</span> <span class="n">LIS</span><span class="p">;</span>       <span class="c1">//Software I2C</span>
+    <span class="cp">#define WIRE myWire</span>
+<span class="cp">#else</span>
+    <span class="cp">#include</span> <span class="cpf">&lt;Wire.h&gt;</span><span class="cp"></span>
+    <span class="n">LIS3DHTR</span><span class="o">&lt;</span><span class="n">TwoWire</span><span class="o">&gt;</span> <span class="n">LIS</span><span class="p">;</span>           <span class="c1">//Hardware I2C</span>
+    <span class="cp">#define WIRE Wire</span>
+<span class="cp">#endif</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">Serial</span><span class="p">)</span> <span class="p">{};</span>
+    <span class="n">LIS</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">WIRE</span><span class="p">,</span> <span class="mh">0x19</span><span class="p">);</span> <span class="c1">//IIC init</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+    <span class="n">LIS</span><span class="p">.</span><span class="n">setOutputDataRate</span><span class="p">(</span><span class="n">LIS3DHTR_DATARATE_50HZ</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">LIS</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;LIS3DHTR didn&#39;t connect.&quot;</span><span class="p">);</span>
+        <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">//3 axis</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;x:&quot;</span><span class="p">);</span> <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationX</span><span class="p">());</span> <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;  &quot;</span><span class="p">);</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;y:&quot;</span><span class="p">);</span> <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationY</span><span class="p">());</span> <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;  &quot;</span><span class="p">);</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;z:&quot;</span><span class="p">);</span> <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationZ</span><span class="p">());</span>
+
+    <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+<ul>
+<li><font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;LIS3DHTR.h&quot;</span><span class="cp"></span>
+<span class="cp">#ifdef SOFTWAREWIRE</span>
+    <span class="cp">#include</span> <span class="cpf">&lt;SoftwareWire.h&gt;</span><span class="cp"></span>
+    <span class="n">SoftwareWire</span> <span class="nf">myWire</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">LIS3DHTR</span><span class="o">&lt;</span><span class="n">SoftwareWire</span><span class="o">&gt;</span> <span class="n">LIS</span><span class="p">;</span>   <span class="c1">//Software I2C</span>
+    <span class="cp">#define WIRE myWire</span>
+<span class="cp">#else</span>
+    <span class="cp">#include</span> <span class="cpf">&lt;Wire.h&gt;</span><span class="cp"></span>
+    <span class="n">LIS3DHTR</span><span class="o">&lt;</span><span class="n">TwoWire</span><span class="o">&gt;</span> <span class="n">LIS</span><span class="p">;</span>        <span class="c1">//Hardware I2C</span>
+    <span class="cp">#define WIRE Wire</span>
+<span class="cp">#endif</span>
+</code></pre></div>
+
+<p>สั่งให้โมดูลเริ่มต้นทำงานโดยใช้ I2C แบบซอท์ฟแวร์ หรือ I2C แบบฮาร์ดแวร์<br />
+(แบบซอท์ฟแวร์ คือ ทำงานโดยใช้โปรแกรมเป็นการควบคุมให้สื่อสารแบบ I2C  ในขณะที่ I2C แบบฮาร์ดแวร์ เป็นการใช้ฟังก์ชั่นการทำงานที่มีอยู่บนไมโครคอนโทรลเลอร์  )</p>
+<p><br/>
+<div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">Serial</span><span class="p">)</span> <span class="p">{};</span>
+</code></pre></div></p>
+<p>โปรแกรมหยุดทำงานที่นี่ หากไม่ได้เปิดหน้าจอ Serial monitor ดังนั้นเปิดซะเพื่อทำงานต่อ  </p>
+<p><br/></p>
+<div class="highlight"><pre><span></span><code><span class="n">LIS</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">WIRE</span><span class="p">,</span> <span class="mh">0x19</span><span class="p">);</span>
+<span class="n">LIS</span><span class="p">.</span><span class="n">setOutputDataRate</span><span class="p">(</span><span class="n">LIS3DHTR_DATARATE_50HZ</span><span class="p">);</span>
+</code></pre></div>
+
+<p><strong>ลักษณะการทำงาน:</strong> สั่งเริ่มต้นการทำงานของเซนเซอร์ความเร่ง</p>
+<p><strong>Syntax:</strong>
+&emsp; <code>LIS.begin(Wire, address)</code>.</p>
+<p><strong>Description:</strong>
+&emsp; ตั้งค่าอัตราความถี่ของการวัดความเร่ง  </p>
+<p><strong>Syntax:</strong>
+&emsp; <code>LIS.setOutputDataRate(odr_type_t odr)</code>.</p>
+<p>สั่งเริ่มต้นการทำงานของเซนเซอร์ความเร่งและกำหนดให้แสดงค่าในอัตรา 50 ครั้งต่อวินาที (50 Hz)  </p>
+<p><br/>
+<div class="highlight"><pre><span></span><code><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;x:&quot;</span><span class="p">);</span> <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationX</span><span class="p">());</span> <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;  &quot;</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;y:&quot;</span><span class="p">);</span> <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationY</span><span class="p">());</span> <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;  &quot;</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;z:&quot;</span><span class="p">);</span> <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">LIS</span><span class="p">.</span><span class="n">getAccelerationZ</span><span class="p">());</span>
+</code></pre></div></p>
+<p><strong>ลักษณะการทำงาน:</strong></p>
+<p>&emsp; ฟังก์ชั่นนี้ใช้เพื่ออ่านค่าความเร่งในแกน X จากเซนเซอร์  </p>
+<p><strong>Syntax:</strong></p>
+<p>&emsp; <strong>LIS.getAccelerationX()</strong> ชนิดข้อมูลที่อ่าน: ทศนิยม (float)  </p>
+<p><br/>
+<strong>ลักษณะการทำงาน:</strong></p>
+<p>&emsp; ฟังก์ชั่นนี้ใช้เพื่ออ่านค่าความเร่งในแกน Y จากเซนเซอร์  </p>
+<p><strong>Syntax:</strong></p>
+<p>&emsp;  <strong>LIS.getAccelerationY()</strong> ชนิดข้อมูลที่อ่าน: ทศนิยม (float)  </p>
+<p><br/>
+<strong>ลักษณะการทำงาน:</strong></p>
+<p>&emsp; ฟังก์ชั่นนี้ใช้เพื่ออ่านค่าความเร่งในแกน Z จากเซนเซอร์  </p>
+<p><strong>Syntax:</strong></p>
+<p>&emsp; <strong>LIS.getAccelerationZ()</strong> ชนิดข้อมูลที่อ่าน: ทศนิยม (float)</p>
+<p>พิมพ์ค่าความเร่งจาก 3 แกนที่อ่านค่าได้ที่ Serial monitor  </p>
+<p><strong>ผลการทำงานของบอร์ด และการแสดงใน Serial Print:</strong></p>
+<p>แสดงค่าความเร่งทั้ง 3 แกนที่อ่านจากเซนเซอร์ และแสดงค่าใน Serial Monitor  </p>
+<p><br/>
+- <font size=5;font color=#314B9F >หากตัดแยกโมดูลออกจากบอร์ดแล้ว</font></p>
+<p>กรณีที่ได้ตัดแยกโมดูลออกจากตัวบอร์ด Grove Beginner Kit แล้ว ให้ใช้สายเคเบิ้ลของ Grove เพื่อต่อเชื่อมระหว่างโมดูลเซนเซอร์ความเร่ง 3 แกน ไปที่บอร์ด Seeeduino Lotus โดยใช้ <strong>I2C</strong>  (สังเกต: แอดเดรส I2C ของเซนเซอร์คือ 0x19)</p>
+<h2 id="bonus-projects">Bonus Projects</h2>
+<h3 id="project-1-music-dynamic-rhythm-lamp">Project 1: หลอดไฟสว่างตามเสียงเพลง (Music dynamic rhythm lamp)</h3>
+<ul>
+<li>
+<p><strong>รายละเอียดของโปรเจ็ค:</strong> ในการทดลองนี้เราจะสร้างให้บัซเซอร์สร้างเสียงเพลง และหลอดแอลอีดีกระพริบตามจังหวะ ซึ่งจะเปลี่ยนแปลงตามความถี่และจังหวะของเพลง  </p>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >อุปกรณ์ที่ใช้</font></p>
+<ol>
+<li>บอร์ด Seeeduino Lotus</li>
+<li>โมดูลหลอดแอลอีดี Grove LED</li>
+<li>โมดูลบัซเซอร์ Buzzer</li>
+<li>เคเบิ้ล Grove Cables (ถ้าแยกตัวโมดูลออกจากบอร์ดแล้ว)  </li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/project1.png" /></p>
+<ul>
+<li>
+<p><font size=5;font color=#314B9F >Hardware connection</font></p>
+<ul>
+<li><strong>การต่อเชื่อมฮาร์ดแวร์:</strong><ul>
+<li>โมดูลถูกต่อเชื่อมไว้ด้วยลายวงจรบนบอร์ดอยู่แล้ว  </li>
+</ul>
+</li>
+<li>บอร์ด Seeeduino เชื่อมต่อเข้ากับ PC โดยใช้สาย USB ที่ให้ในชุด  </li>
+</ul>
+</li>
+<li>
+<p><font size=5;font color=#314B9F >ซอฟแวร์ที่ใช้</font></p>
+<ul>
+<li>เปิด Arduino IDE  </li>
+<li>ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify   เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด ให้ Upload โปรแกรมลงที่บอร์ด  </li>
+</ul>
+</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">//Music Dynamic Rhythm Lamp</span>
+<span class="cp">#define NTD0 -1</span>
+<span class="cp">#define NTD1 294</span>
+<span class="cp">#define NTD2 330</span>
+<span class="cp">#define NTD3 350</span>
+<span class="cp">#define NTD4 393</span>
+<span class="cp">#define NTD5 441</span>
+<span class="cp">#define NTD6 495</span>
+<span class="cp">#define NTD7 556</span>
+
+<span class="cp">#define NTDL1 147</span>
+<span class="cp">#define NTDL2 165</span>
+<span class="cp">#define NTDL3 175</span>
+<span class="cp">#define NTDL4 196</span>
+<span class="cp">#define NTDL5 221</span>
+<span class="cp">#define NTDL6 248</span>
+<span class="cp">#define NTDL7 278</span>
+
+<span class="cp">#define NTDH1 589</span>
+<span class="cp">#define NTDH2 661</span>
+<span class="cp">#define NTDH3 700</span>
+<span class="cp">#define NTDH4 786</span>
+<span class="cp">#define NTDH5 882</span>
+<span class="cp">#define NTDH6 990</span>
+<span class="cp">#define NTDH7 112</span>
+
+<span class="cp">#define WHOLE 1</span>
+<span class="cp">#define HALF 0.5</span>
+<span class="cp">#define QUARTER 0.25</span>
+<span class="cp">#define EIGHTH 0.25</span>
+<span class="cp">#define SIXTEENTH 0.625</span>
+
+<span class="kt">int</span> <span class="n">tune</span><span class="p">[]</span><span class="o">=</span>
+<span class="p">{</span>
+<span class="n">NTD3</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD5</span><span class="p">,</span>
+<span class="n">NTD5</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span>
+<span class="n">NTD1</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span>
+<span class="n">NTD3</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span>
+<span class="n">NTD3</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD5</span><span class="p">,</span>
+<span class="n">NTD5</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span>
+<span class="n">NTD1</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span>
+<span class="n">NTD2</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span>
+<span class="n">NTD2</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span>
+<span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span>
+<span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span>
+<span class="n">NTD1</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTDL5</span><span class="p">,</span><span class="n">NTD0</span><span class="p">,</span>
+<span class="n">NTD3</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD5</span><span class="p">,</span>
+<span class="n">NTD5</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span><span class="n">NTD4</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span>
+<span class="n">NTD1</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="n">NTD2</span><span class="p">,</span><span class="n">NTD3</span><span class="p">,</span>
+<span class="n">NTD2</span><span class="p">,</span><span class="n">NTD1</span><span class="p">,</span><span class="n">NTD1</span>
+<span class="p">};</span>
+
+<span class="kt">float</span> <span class="n">durt</span><span class="p">[]</span><span class="o">=</span>
+<span class="p">{</span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+<span class="mi">1</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+<span class="mi">1</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+<span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+<span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+<span class="mi">1</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="n">length</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">tonepin</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">ledp</span><span class="o">=</span><span class="mi">4</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">pinMode</span><span class="p">(</span><span class="n">tonepin</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span>
+  <span class="n">pinMode</span><span class="p">(</span><span class="n">ledp</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span>
+  <span class="n">length</span><span class="o">=</span><span class="k">sizeof</span><span class="p">(</span><span class="n">tune</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">tune</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">x</span><span class="o">&lt;</span><span class="n">length</span><span class="p">;</span><span class="n">x</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">tone</span><span class="p">(</span><span class="n">tonepin</span><span class="p">,</span><span class="n">tune</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span>
+    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledp</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">400</span><span class="o">*</span><span class="n">durt</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span>
+    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">ledp</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">durt</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span>
+    <span class="n">noTone</span><span class="p">(</span><span class="n">tonepin</span><span class="p">);</span>
+
+  <span class="p">}</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+
+<ul>
+<li><font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font>
+<br/>
+<div class="highlight"><pre><span></span><code><span class="cp">#define NTD</span>
+</code></pre></div>
+ให้นิยามค่าความถี่ของโน้ต ซึ่งแบ่งออกเป็น base/alto/treble  </li>
+</ul>
+<p><br/>
+<div class="highlight"><pre><span></span><code><span class="cp">#define WHOLE 1</span>
+<span class="cp">#define HALF 0.5</span>
+<span class="cp">#define QUARTER 0.25</span>
+<span class="cp">#define EIGHTH 0.25</span>
+<span class="cp">#define SIXTEENTH 0.625</span>
+</code></pre></div></p>
+<p>สังเกต: จังหวะ (rhythm) แบ่งแยกออกเป็น 1 จังหวะ ครึ่งจังหวะ  &frac14; จังหวะ  และ &#8539; จังหวะ  เราสามารถกำหนดให้จังหวะของโน้ตเป็น 1 เต็ม หรือ ครึ่งจังหวะ หรือ &frac14; จังหวะ หรือ &#8539; จังหวะได้  </p>
+<p><br/>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">tune</span><span class="p">[]</span><span class="o">=</span><span class="p">...</span>
+</code></pre></div></p>
+<p>รายการของความถี่ของเสียงของเพลงที่เล่น  </p>
+<p><br/>
+<div class="highlight"><pre><span></span><code><span class="kt">float</span> <span class="n">durt</span><span class="p">[]</span><span class="o">=</span><span class="p">...</span>
+</code></pre></div>
+รายการของจังหวะของเสียงของเพลงที่เล่น  </p>
+<p><br/>
+<div class="highlight"><pre><span></span><code><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">durt</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span>
+</code></pre></div>
+ควบคุมการเปิดปิดของหลอดแอลอีดี  </p>
+<p><br/>
+<strong>ผลการทำงานของบอร์ด และการแสดงใน Serial Print:</strong></p>
+<p>&emsp; บัซเซอร์จะส่งเสียงตามความถี่ที่กำหนด ในขณะที่หลอดแอลอีดีจะกระพริบด้วยความถี่ที่กำหนด  </p>
+<p><br/>
+- <font size=5;font color=#314B9F >หากตัดแยกโมดูลออกจากบอร์ดแล้ว</font></p>
+<p>&emsp; เชื่อมต่อระหว่างโมดูลหลอดแอลอีดีและบอร์ด Seeeduino Lotus โดยใช้ pin แบบดิจิทัล <strong>D4</strong> และเชื่อมต่อกับโมดูลบัซเซอรโดยใช้ pin แบบดิจิทัล <strong>D5</strong>   </p>
 <p><br/><br />
 <br/><br />
 <br/>  </p>
