@@ -1781,32 +1781,5 @@ delay(100*durt[x]);
 
 
 
-<br/>  
-<br/>  
-<br/>  
-# ทดสอบ
-
-$$
-\frac{n!}{k!(n-k)!} = \binom{n}{k}
-$$
-
-
-Lorem ipsum[^1] dolor sit amet, consectetur adipiscing elit[^2].
 
 [^1]: *Reference: [Arduino](https://www.arduino.cc/en/tutorial/PWM)*
-[^2]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout แผนภาพโครงการ
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
