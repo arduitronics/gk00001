@@ -1611,7 +1611,7 @@ Serial.print("z:"); Serial.println(LIS.getAccelerationZ());
 
 
 
-- <font size=5;font color=#314B9F >Hardware connection</font>
+- <font size=5;font color=#314B9F >**การต่อเชื่อมฮาร์ดแวร์:**</font>
     - **การต่อเชื่อมฮาร์ดแวร์:**
         - โมดูลถูกต่อเชื่อมไว้ด้วยลายวงจรบนบอร์ดอยู่แล้ว  
     - บอร์ด Seeeduino เชื่อมต่อเข้ากับ PC โดยใช้สาย USB ที่ให้ในชุด  
@@ -1779,7 +1779,146 @@ delay(100*durt[x]);
 
 
 
+### Project 2: โคมไฟตั้งโต๊ะควบคุมด้วยแสงและเสียง  
 
+- **รายละเอียดของโปรเจ็ค::** โปรเจ็คนี้เป็นการสร้างโคมไฟขนาดเล็กที่ควบคุมได้ด้วยเสียงและแสง &nbsp; เราต้องใช้โมดูลหลอดแอลอีดีเพื่อเป็แเอาท์พุต ใช้เซนเซอร์แสงและเสียงเป็นอินพุต  ด้วยการทำงานรูปแบบนี้คุณสามารถสร้างฟังก์ชั่นการควบคุมหลอดไฟอัจริยะ (นิดหน่อย) &nbsp; ถ้าระดับความดังของเสียงสูงกว่าค่าที่ตั้งไว้ หลอดแอลอีดีจะสว่างขึ้น หรือ ถ้าแสงสว่างรอบๆอุปกรณ์มีความเข้มต่ำกว่าค่าที่ตั้งไว้ หลอดแอลอีดีก็จะสว่างขึ้นเช่นกัน  
+
+
+- <font size=5;font color=#314B9F >อุปกรณ์ที่ใช้</font>
+    1. บอร์ด Seeeduino Lotus
+    2. โมดูลหลอดแอลอีดี Grove LED
+    3. โมดูลวัดความเข้มแสงLight Sensor
+    4. โมดูลวันความดังเสียง  Sound Sensor
+    5. เคเบิ้ล Grove cable (ถ้หากแยกโมดูลเซนเซอร์ออกจากตัวบอร์ดแล้ว)
+
+![](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/project2.png)
+
+- <font size=5;font color=#314B9F >การต่อเชื่อมฮาร์ดแวร์</font>
+    - **การต่อเชื่อมฮาร์ดแวร์:**
+        - โมดูลถูกต่อเชื่อมไว้ด้วยลายวงจรบนบอร์ดอยู่แล้ว  
+    - บอร์ด Seeeduino เชื่อมต่อเข้ากับ PC โดยใช้สาย USB ที่ให้ในชุด  
+
+
+    - <font size=5;font color=#314B9F >Software Code</font>
+        - เปิด Arduino IDE  
+        - ก็อบปี้โปรแกรมด้านล่างนี้ จากนั้นคลิ๊กปุ่ม Verify   เมื่อ Arduino IDE แสดงว่าไม่มีข้อผิดพลาด ให้ Upload โปรแกรมลงที่บอร์ด  
+
+```Cpp linenums="1"
+//light Induction Desk Lamp
+int soundPin = A2; // Analog sound sensor is to be attached to analog
+int lightPin = A6; //Analog light sensor is to be attached to analog
+int ledPin = 4; // Digital LED is to be attached to digital
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  pinMode(lightPin, INPUT);
+  pinMode(soundPin, INPUT);
+}
+
+void loop(){
+  int soundState = analogRead(soundPin); // Read sound sensor’s value
+  int lightState = analogRead(lightPin); // Read light sensor’s value
+  // if the sound sensor's value is greater than 500 or the sound sensor's is less than 200, the light will be on.
+  //Otherwise, the light will be turned off
+if (soundState > 500 || lightState < 200) {
+  digitalWrite(ledPin, HIGH);
+  delay(500); //You can add the "//" to remove the delay
+}else{
+  digitalWrite(ledPin, LOW);
+}
+}
+```
+
+
+- <font size=5;font color=#314B9F >อธิบายการทำงานของโค้ด</font>
+
+```cpp
+if (soundState > 500 || lightState < 200) {
+  ...
+}
+```
+
+&emsp; โค้ดภายในวงเล็บเป็นเงื่อนไขการทำงานโดยใช้ลอจิค แบบ **&&** และ **||** ซึ่งมีรูปแบบ **if (expression 1 || expression 2)** และ **if (expression 1 && expression 2)**.
+
+
+
+
+In parentheses is a logical expression. Both **&&** and **||** are commonly used in logical expressions. The common usage is **if (expression 1 || expression 2)** and **if (expression 1 && expression 2)**.
+
+**||** เป็นการตรวจเช็คเงื่อนไขแบบ "หรือ" ดังนั้นถ้ามีเงื่อนไขที่เป็นจริงเพียงข้อเดียว โค้ดทั้งหมดในส่วนต่อมาก็จะทำงาน  
+
+**&&** เป็นการตรวจเช็คเงื่อนไขแบบ "และ" ดังนั้นโค้ดทั้งหมดในส่วนต่อมาจะทำงานก็ต่อเมื่อเงื่อนไขทั้งหมดเป็นจริง  
+
+
+**ผลการทำงานของบอร์ด และการแสดงใน Serial Print:**
+
+&emsp; ถ้าระดับความดังของเสียงรอบอุปกรณ์สูงพอ หรือ ความเข้มแสงต่ำกว่าค่าที่ตั้งไว้ &nbsp;หลอดแอลอีดีจะสว่างขึ้น
+
+
+<br/>
+- <font size=5;font color=#314B9F >หากตัดแยกโมดูลออกจากบอร์ดแล้ว</font>
+
+เชื่อมต่อระหว่างโมดูลหลอดแอลอีดีและบอร์ด Seeeduino Lotus โดยใช้ pin แบบดิจิทัล **D4** และเชื่อมต่อกับโมดูลวัดค่าแสงด้วย pin แบบแอนะลอก **A1** และต่อโมดูลวัดค่าเสียงเข้ากับบอร์ด Seeeduino Lotus ด้วย pin แบบแอนะลอก **A2** โดยใช้เคเบิ้ลที่ให้ไว้  
+
+
+
+## การสร้างโมดูลและบอร์ดของคุณเอง
+
+&emsp; หลังจากที่ได้ทำการทดลองใช้บอร์ดของเราแล้ว คุณก็พร้อมที่จะทำความเข้าใจการทำงานของ Arduino และฮาร์ดแวร์แบบโอเพนซอร์ซ (Opensource คือ การพัฒนาซอฟต์แวร์โดยวางอยู่บนแนวคิดที่อาศัยความร่วมมือของนักพัฒนาทั่วโลก)  ดังนั้นทำไมไม่ลองสร้างโมดูลหรือบอร์ดของคุณเองล่ะ  
+
+### EDA
+
+&emsp; ในการออกแบบบอร์ด คุณจำเป็นต้องออกแบบโดยใช้แผนภาพ (schematics) และโปรแกรมเครื่องมือออกแบบและจำลองแบบวงจรอิเล็กทรอนิกส์ (Electronics Design Automation - EDA) ต่อไปนี้เป็นโปรแกรมโอเพนซอร์ซที่ใช้ในการออกแบบวงจร
+
+- **KiCAD**
+
+[KiCad](https://www.kicad-pcb.org/) เป็นซอร์ฟแวร์ใช้งานฟรี เพื่อการออกแบบวงจรอิเล็กทรอนิกส์ &nbsp;โปรแกรมนี้ช่วยในการออกแบบวงจรโดยใช้แผนภาพ (schematics) และโปรแกรมแปลงให้เป็นลายบนแผ่นวงจร (PCB) &nbsp; ภายใต้โปรแกรมเดียวกันนี้จึงสามารถออกแบบและได้ผลลัพธ์เพื่อใช้ในการผลิตในรูปแบบ Gerber &nbsp;โปรแกรมใช้งานได้ทั้งระบบปฏิบัติการวินโดส์ ลินุกซ์ และ macOS ภายใต้ลิขสิทธิ์แบบ GNU GPL v3
+
+<br/>
+- **Geppetto**
+
+&emsp; ถ้าคุณไม่ต้องการใช้แผนภาพในการออกแบบแต่ต้องการแปลงต้นแบบวงจรโดยใช้ฐานจากโมดูลและผลิตภัณฑ์ต่างๆของ SeeedStudio เราแนะนำให้ลองใช้ Geppetto
+
+<br/>
+[Geppetto](https://geppetto.seeedstudio.com/) เป็นโปรแกรมที่ใช้งานง่ายและราคาถูกเมื่อต้องการออกแบบวงจรอิเล็กทรอนิกส์  คุณไม่ต้องรู้จักตัวต้านทาน คาปาซิเตอร์ ตัวเหนี่ยวนำ หรือการลงลายวงจรเพื่อออกแบบโมดูลของคุณ &nbsp; Geppetto ใช้งานง่ายเพียงแค่ลากและวาง   ใครๆก็สามารถสร้างอุปกรณ์ IoT ได้ &nbsp; เพื่อให้ใช้งานง่ายขึ้น Gepptto มีไลบรารี่จาก Seeed เพื่อให้คุณออกแบบโมดูลของคุณได้ง่ายที่สุด
+
+
+
+
+
+## Schematic Online Viewer
+
+<div class="altium-ecad-viewer" data-project-src="https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/res/Grove-Beginner-Kit-for-Arduino-SCH-PCB.zip" style="border-radius: 0px 0px 4px 4px; height: 500px; border-style: solid; border-width: 1px; border-color: rgb(241, 241, 241); overflow: hidden; max-width: 1280px; max-height: 700px; box-sizing: border-box;" />
+</div>
+
+
+## แหล่งข้อมูล
+
+1. [**Grove Beginner Kit for Arduino Wiki [PDF]**](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/res/Grove-Beginner-Kit-For-ArduinoPDF.pdf)
+
+2. [**Grove Beginner Kit for Arduino Schematic Design Files**](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/res/Grove-Beginner-Kit-for-Arduino-SCH-PCB.zip)
+
+3. **ไลบรารี่ของโมดูลบน Github:**
+      - [จอ OLED](https://github.com/olikraus/U8g2_Arduino)
+      - [โมดูลวัดอุณหภูมิและความชิ้น](https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor)
+      - [เซนเซอร์วัดความดันอากาศ](https://github.com/Seeed-Studio/Grove_BMP280)
+      - [เซนเซอร์วัดความเร่ง 3 แกน](https://github.com/Seeed-Studio/Seeed_Arduino_LIS3DHTR)
+
+4. [**Sensor Datasheet**](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/res/Grove-beginner-kit-for-arduino-datasheet.zip)
+
+5. [**โปรแกรมที่แสดงการทำงานของบอร์ดที่มาจากโรงงาน **](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/res/GroveBeginnerKitFirmwareFINAL.zip)
+
+6. [**Grove Beginner Kit For Arduino Resources in one(20200401)[7z]**](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/res/Grove-Beginner-Kit-For-Arduino-Resources-in-one(20200401).7z)
+
+## ข้อมูลเพิ่มเติม
+
+- [LSTM for live IoT data prediction](https://github.com/256ericpan/LSTM_IoT)
+
+
+
+## การช่วยเหลือทางเทคนิค
+
+คุณสามารถขอความช่วยเหลือไปที่ [forum](https://forum.seeedstudio.com/)<br /><p style="text-align:center"><a href="https://www.seeedstudio.com/act-4.html?utm_source=wiki&utm_medium=wikibanner&utm_campaign=newproducts" target="_blank"><img src="https://files.seeedstudio.com/wiki/Wiki_Banner/new_product.jpg" /></a></p>
 
 
 [^1]: *Reference: [Arduino](https://www.arduino.cc/en/tutorial/PWM)*
