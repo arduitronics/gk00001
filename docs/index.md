@@ -1,11 +1,27 @@
-# Welcome to Arduitronicshub  
-## ศูนย์กลางคู่มือบอร์ด Grove Beginner Kit for Arduino ([GK00001](www.arduitronics.com/product/3553)) โดย [Arduitronics.com](www.arduitronics.com)
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!---
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168885420-1"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'UA-168885420-1');
+</script>
+
+--->
+
+
+
+# Welcome to Arduitronics
+## ศูนย์กลางคู่มือบอร์ด Grove Beginner Kit for Arduino ([GK00001](http://www.arduitronics.com/product/3553)) โดย [Arduitronics.com](http://www.arduitronics.com)
 
 ## ภาพรวมอุปกรณ์
 ![Screenshot](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Parts.jpg)
 
 <b>ขนาดของอุปกรณ์</b> - 17.69 * 11.64 * 1.88cm  
-1. [<b>Grove - Led</b>](https://www.arduitronics.com/product3565): โมดูลแอลอีดีพร้อมใช้งานได้สะดวก  <br/>
+1. [<b>Grove - Led</b>](https://www.arduitronics.com/product/3565): โมดูลแอลอีดีพร้อมใช้งานได้สะดวก  <br/>
 2. [<b>Grove - Buzzer</b>](https://www.arduitronics.com/product/3566): โมดูลบัซเซอร์ (buzzer) <br/>
 3. <b>Grove - OLED ขนาด 0.96 นิ้ว</b>: โมดูล OLED ขนาด 0.96 นิ้ว <br/>
 4. [<b>Grove - ปุ่มกด</b>](https://www.arduitronics.com/product/3578): โมดูลปุ่มกด (buzzer) <br/>
@@ -793,7 +809,7 @@ Serial.begin(9600);
 
 **ลักษณะการทำงาน:**
 
-&emsp; กำหนดค่าอัตราการส่งข้อูลในหน่วยบิตต่อวินาที (baud) โดยส่งผ่านการสื่อสารแบบอนุกรม (Serial transmission) &nbsp เพื่อใช้ในการสื่อสารกับ Serial monitor ต้องแน่ใจว่าได้กำหนดค่าอัตราการส่งผ่านข้อมูล (baud rates) ไว้ตรงกับเมนูที่มุมขวาด้านล่างของหน้าจอ Serial Monitor &nbsp; คุณสามารถเลือกใช้ค่าอื่นที่เหมาะสมได้ เช่น การสื่อสารผ่าน pin 0 และ 1 เพื่อต่อเชื่อมกับอุปกรณ์ภายนอก ควรเลือกค่าอัตราการส่งข้อมูลให้เหมาะสมกับการทำงานของอุปกรณ์  
+&emsp; กำหนดค่าอัตราการส่งข้อูลในหน่วยบิตต่อวินาที (baud) โดยส่งผ่านการสื่อสารแบบอนุกรม (Serial transmission) &nbsp; เพื่อใช้ในการสื่อสารกับ Serial monitor ต้องแน่ใจว่าได้กำหนดค่าอัตราการส่งผ่านข้อมูล (baud rates) ไว้ตรงกับเมนูที่มุมขวาด้านล่างของหน้าจอ Serial Monitor &nbsp; คุณสามารถเลือกใช้ค่าอื่นที่เหมาะสมได้ เช่น การสื่อสารผ่าน pin 0 และ 1 เพื่อต่อเชื่อมกับอุปกรณ์ภายนอก ควรเลือกค่าอัตราการส่งข้อมูลให้เหมาะสมกับการทำงานของอุปกรณ์  
 
 ตัวเลือกที่สามารถกำหนดได้อีกส่วนคือ parity และ Stop bit (มีไว้เพื่อตรวจสอบความถูกต้องในการส่งข้อมูลแบบอนุกรม เพื่อให้แน่ใจว่าด้านส่งและด้านรับได้ข้อมูลที่ตรงกัน --เพิ่มเติมจากผู้แปล)  โดยมีค่าตั้งต้นไว้ที่ 8 บิต ไม่มีการเช็ค parity และมีบิตที่แสดงเมื่อต้องการหยุดทำงาน (Stop bit) ยาว 1 บิต  
 
@@ -1170,7 +1186,7 @@ u8x8.print();
 - <font size=5;font color=#314B9F >อุปกรณ์ที่ใช้</font>
     1. บอร์ด Seeeduino Lotus
     2. โมดูลจอ Grove OLED
-    3. โมดูลวัดค่าอุณหภูมิและความชื้น Grove Temperature and Temperature Sensor
+    3. โมดูลวัดค่าอุณหภูมิและความชื้น [<b>Grove - Temperature and Humidity sensor</b>](https://www.arduitronics.com/product/3571)
     4. เคเบิ้ล Grove cable (ถ้าแยกตัวโมดูลออกจากบอร์ดแล้ว)
 
 ![](https://files.seeedstudio.com/wiki/Grove-Beginner-Kit-For-Arduino/img/Temp.png)
